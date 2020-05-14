@@ -230,13 +230,9 @@ small {
 .btn-success,
 .btn-info,
 .btn-warning,
-.btn-danger {
+.btn-danger,
+.btn-gray{
   color: $white;
-}
-
-.btn-gray {
-  border-color: $gray-400;
-  color: $gray-700;
 }
 
 .btn-default {
@@ -257,9 +253,9 @@ small {
 
 .btn {
   font-family: $font-family-sans-serif;
-  border-radius: 8px;
+  border-radius: 4px;
   border: none;
-  text-transform: initial;
+  text-transform: uppercase;
   &.dropdown-toggle {
     text-transform: initial;
   }
@@ -690,7 +686,7 @@ h6,
 code {
   font-size: 85%;
   background-color: theme-color("warning-light");
-  color: theme-color("warning");
+  color: #F29112;
   padding: 0;
 }
 

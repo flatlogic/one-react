@@ -7,11 +7,15 @@
   top: 0;
   bottom: 0;
   height: 100vh;
-  //border-right: $sidebar-border;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
   transition: background-color .2s ease, margin .2s ease;
   @include scroll-bar($sidebar-scrollbar-bg);
+
+  .menuWrapper {
+    overflow-y: auto;
+    height: 100%;
+  }
 }
 
 .logoStyle {
@@ -19,15 +23,17 @@
 }
 
 .sidebarWrapper {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   min-width: $sidebar-width-open;
   transition: width $sidebar-transition-time ease-in-out;
   background-color: var(--sidebar-bg-color);
+  box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
+  z-index: 999;
 }
 
 .sidebarClose.sidebarWrapper {

@@ -108,10 +108,11 @@
   }
 
   .themeHelperBtn {
+    margin-left: 16px;
     position: fixed;
     top: 27%;
     right: unset;
-    width: 74px;
+    width: 60px;
     transform: translateX(-76px);
     margin-top: -($widget-padding-vertical);
     cursor: pointer;

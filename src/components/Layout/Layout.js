@@ -20,12 +20,20 @@ import BreadcrumbHistory from "../BreadcrumbHistory";
 import Helper from '../Helper'
 
 // pages
-import Typography from "../../pages/typography";
+import Typography from "../../pages/core/typography";
+import Colors from '../../pages/core/colors'
+import Grid from '../../pages/core/grid'
 import Maps from "../../pages/maps";
 import Notifications from "../../pages/notifications/Notifications";
 import Icons from "../../pages/icons";
-import Tables from "../../pages/tables";
+import StaticTables from "../../pages/tables/static";
+import DynamicTables from "../../pages/tables/dynamic";
 import Charts from "../../pages/charts";
+import Alerts from '../../pages/ui-elements/alerts'
+import Badge from '../../pages/ui-elements/badge'
+import Card from '../../pages/ui-elements/card'
+import Buttons from '../../pages/ui-elements/buttons'
+import VektorMap from '../../pages/maps/vector'
 
 class Layout extends React.Component {
   static propTypes = {
@@ -110,24 +118,32 @@ class Layout extends React.Component {
                 >
                   <Switch>
                     <Route
-                      path="/app/main"
+                      path="/app/dashboard"
                       exact
-                      render={() => <Redirect to="/app/main/dashboard" />}
+                      render={() => <Redirect to="/app/dashboard/analytics" />}
                     />
                     <Route
-                      path="/app/main/dashboard"
+                      path="/app/dashboard/analytics"
                       exact
                       component={Dashboard}
                     />
-                    <Route path={"/app/typography"} component={Typography} />
-                    <Route path={"/app/tables"} component={Tables} />
-                    <Route path={"/app/ui/maps"} component={Maps} />
+                    <Route path={"/app/core/typography"} component={Typography} />
+                    <Route path={"/app/core/colors"} component={Colors} />
+                    <Route path={"/app/core/grid"} component={Grid} />
+                    <Route path={"/app/tables/basic"} component={StaticTables} />
+                    <Route path={"/app/tables/dynamic"} component={DynamicTables} />
+                    <Route path={"/app/maps/google"} component={Maps} />
+                    <Route path={"/app/maps/vektor"} component={VektorMap} />
                     <Route
                       path={"/app/ui/notifications"}
                       component={Notifications}
                     />
                     <Route path={"/app/ui/icons"} component={Icons} />
-                    <Route path={"/app/ui/charts"} component={Charts} />
+                    <Route path={"/app/ui/alerts"} component={Alerts} />
+                    <Route path={"/app/ui/badge"} component={Badge} />
+                    <Route path={"/app/ui/card"} component={Card} />
+                    <Route path={"/app/ui/buttons"} component={Buttons} />
+                    <Route path={"/app/charts/overview"} component={Charts} />
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>

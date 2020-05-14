@@ -33,37 +33,39 @@ $gray-200: #e9ecef !default;
 $gray-300: #d6dee5 !default;
 $gray-400: #c1ccd3 !default;
 $gray-500: #a3aeb7 !default;
+$gray-550: #999 !default;
 $gray-600: #798892 !default;
 $gray-700: #495057 !default;
 $gray-800: #3c484f !default;
 $gray-900: #29323a !default;
-$black:    #000 !default;
+$black:    #323232 !default;
+
 $gray-light: $gray-100 !default;
 
-$blue:         #1F7DB6 !default;
+$blue:         #007BC6 !default;
 $indigo:       #7f3ddb !default;
 $purple:       #2CA0BA !default;
 $pink:         #e54e9a !default;
-$red:          #FD5F00 !default;
+$red:          #F5695A !default;
 $orange:       #ff7d47 !default;
-$yellow:       #FDA700 !default;
-$green:        #68ca66 !default;
+$yellow:       #FEB04A !default;
+$green:        #3BBF97 !default;
 $teal:         #21AE8C !default;
-$cyan:         #17a2b8 !default;
+$cyan:         #12B4DE !default;
 $dark-gray:    #D7DFE6 !default;
 $gray-inverse: #002B49 !default;
 $subtle-white: #EAF0F6 !default;
 
 $theme-colors: (
   primary: $blue,
-  secondary: $gray-600,
-  success: #2BB87C,
-  info: $purple,
-  warning: #FFBF69,
-  danger: #FF7769,
+  secondary: $gray-550,
+  success: $green,
+  info: $cyan,
+  warning: $yellow,
+  danger: $red,
   dark: $gray-800,
-  inverse: $gray-inverse,
-  gray: $gray-300,
+  inverse: $black,
+  gray: #C1C1C1,
   light: $gray-100,
   default: #e9ecef,
   primary-light: #dee4ee,

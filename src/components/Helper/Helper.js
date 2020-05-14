@@ -71,7 +71,7 @@ class Helper extends Component {
           className={`${s.themeHelperBtn} bg-warning helper-button`}
           onClick={this.toggle}
         >
-          <img src={themeImg} alt="spinner" />
+          <img src={themeImg} alt="theme-color-change" className={"mr-1"}/>
         </div>
         <Widget className={`${s.themeHelperContent} mb-0 rounded-0`}>
           <div className={s.helperHeader}>
