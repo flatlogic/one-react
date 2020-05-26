@@ -22,9 +22,9 @@ class VectorMap extends React.Component {
     map.zoomControl.valign = 'top';
     map.zoomControl.dx = 35;
     map.zoomControl.dy = 120;
-    map.zoomControl.minusButton.background.fill = am4core.color("#1A86D0");
+    map.zoomControl.minusButton.background.fill = am4core.color("#FEB04A");
     map.zoomControl.minusButton.background.fillOpacity = 0.2;
-    map.zoomControl.plusButton.background.fill = am4core.color("#1A86D0");
+    map.zoomControl.plusButton.background.fill = am4core.color("#FEB04A");
     map.zoomControl.plusButton.background.fillOpacity = 0.2;
     let plusButtonHoverState = map.zoomControl.plusButton.background.states.create("hover");
     plusButtonHoverState.properties.fillOpacity = 0.5;
@@ -32,8 +32,8 @@ class VectorMap extends React.Component {
     minusButtonHoverState.properties.fillOpacity = 0.5;
     let polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.tooltipText = "{name}";
-    polygonTemplate.fill = am4core.color("#1A86D0");
-    polygonTemplate.fillOpacity = 0.2;
+    polygonTemplate.fill = am4core.color("#323232");
+    polygonTemplate.fillOpacity = 0.5;
     let hs = polygonTemplate.states.create("hover");
     hs.properties.fillOpacity = 0.5;
     let placeSeries = map.series.push(new am4maps.MapImageSeries());
@@ -43,8 +43,8 @@ class VectorMap extends React.Component {
     place.propertyFields.longitude = "longitude";
     let circle = place.createChild(am4core.Circle);
     circle.radius = 5;
-    circle.fill = am4core.color("#1A86D0");
-    circle.stroke = am4core.color("#ffffff");
+    circle.fill = am4core.color("#FEB04A");
+    circle.stroke = am4core.color("#FEB04A");
     circle.strokeWidth = 2;
     placeSeries.data = places;
     circle.tooltipText = '{name}';
@@ -61,12 +61,6 @@ class VectorMap extends React.Component {
     return (
       <div>
         <div className={s.amchartsMap} id="vector-map"></div>
-        <header className="page-title">
-          <p className="page-title fs-sm m-0">
-            <span className="fw-semi-bold">1 656 843</span>
-            <span className="ml-xs circle bg-gray"><i className="text-gray-lighter fa fa-circle"/></span>
-          </p>
-        </header>
       </div>);
   }
 

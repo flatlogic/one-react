@@ -1,5 +1,6 @@
 import { 
   CHANGE_THEME,
+    CHANGE_THEME_COLOR,
   CHANGE_SIDEBAR_COLOR,
   CHANGE_NAVBAR_COLOR,
   NAVBAR_TYPE_TOGGLE,
@@ -10,7 +11,11 @@ import config from '../config'
 
 export const DashboardThemes = {
   LIGHT: "light",
-  DARK: "dark"
+  DARK: "dark",
+  WARNING: "warning",
+  DANGER: "danger",
+  SUCCESS: "success",
+  INFO: "info",
 };
 
 export const SidebarTypes = {
@@ -38,7 +43,8 @@ const defaultState = {
   sidebarColor: DashboardThemes.LIGHT,
   navbarColor:  config.app.colors.dark,
   navbarType: NavbarTypes.STATIC,
-  sidebarType: SidebarTypes.SOLID
+  sidebarType: SidebarTypes.SOLID,
+  themeColor: 'warning',
 };
 
 export default function layoutReducer(state = defaultState, action) {
@@ -47,6 +53,11 @@ export default function layoutReducer(state = defaultState, action) {
       return {
         ...state,
         dashboardTheme: action.payload
+      };
+    case CHANGE_THEME_COLOR:
+      return {
+        ...state,
+        themeColor: action.payload
       };
     case CHANGE_SIDEBAR_COLOR:
       return {

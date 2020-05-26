@@ -1,7 +1,7 @@
 import config from './config';
 
 const colors = config.app.colors;
-const { info, danger, warning, success} = colors;
+const { warning } = colors;
 const chartColors = config.app.chartColors;
 const {axisColor} = chartColors;
 

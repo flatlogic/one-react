@@ -20,13 +20,11 @@ class ApexCharts extends Component {
 
     return (
       <div>
-        <h1 className="page-title">Visual - <span className="fw-semi-bold">Apex Charts</span></h1>
-        <p>For more information please read full <a href="https://apexcharts.com/docs/vue-charts/">documentation</a></p>
         <Row>
           <Col xl={6} lg={6} xs={12}>
             <Widget
-              title={<h5>Apex <span className="fw-semi-bold">Line Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Apex Line Chart</p>}
+              customDropDown
             >
               <ApexChart 
                 className="sparkline-chart"
@@ -38,9 +36,8 @@ class ApexCharts extends Component {
           </Col>
           <Col xl={6} lg={6} xs={12}>
             <Widget
-              title={<h5>Apex <span className="fw-semi-bold">Area Chart</span></h5>}
-              close collapse
-            >
+              title={<p className={"fw-bold"}>Apex Area Chart</p>}
+              customDropDown>
               <ApexChart 
                 className="sparkline-chart"
                 type={"area"}
@@ -51,8 +48,8 @@ class ApexCharts extends Component {
           </Col>
           <Col xl={6} lg={6} xs={12}>
             <Widget
-              title={<h5>Apex <span className="fw-semi-bold">Column Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Apex Column Chart</p>}
+              customDropDown
             >
               <ApexChart  
                 className="sparkline-chart"
@@ -64,8 +61,8 @@ class ApexCharts extends Component {
           </Col>
           <Col xl={6} lg={6} xs={12}>
             <Widget
-              title={<h5>Apex <span className="fw-semi-bold">Bar Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Apex Bar Chart</p>}
+              customDropDown
             >
               <ApexChart 
                 className="sparkline-chart"
@@ -77,8 +74,8 @@ class ApexCharts extends Component {
           </Col>
           <Col xl={12} lg={12} xs={12}>
             <Widget
-              title={<h5>Apex <span className="fw-semi-bold">Mixed Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Apex Mixed Chart</p>}
+              customDropDown
             >
               <ApexChart
                 className="sparkline-chart"
@@ -93,8 +90,8 @@ class ApexCharts extends Component {
             <Row>
               <Col lg={6} xs={12}>
                 <Widget
-                  title={<h5>Apex <span className="fw-semi-bold">Pie Chart</span></h5>}
-                  close collapse
+                  title={<p className={"fw-bold"}>Apex Pie Chart</p>}
+                  customDropDown
                 >
                   <ApexChart 
                     className="sparkline-chart"
@@ -107,8 +104,8 @@ class ApexCharts extends Component {
               </Col>
               <Col lg={6} xs={12}>
                 <Widget
-                  title={<h5>Apex <span className="fw-semi-bold">Donut Chart</span></h5>}
-                  close collapse
+                  title={<p className={"fw-bold"}>Apex Donut Chart</p>}
+                  customDropDown
                 >
                   <ApexChart 
                     className="sparkline-chart"
@@ -121,8 +118,8 @@ class ApexCharts extends Component {
               </Col>
               <Col lg={12} xs={12}>
                 <Widget
-                  title={<h5>Apex <span className="fw-semi-bold">Heat Map Chart</span></h5>}
-                  close collapse
+                  title={<p className={"fw-bold"}>Apex Heat Map Chart</p>}
+                  customDropDown
                 >
                   <ApexChart 
                     className="sparkline-chart"
@@ -137,8 +134,8 @@ class ApexCharts extends Component {
           </Col>
           <Col lg={6} xs={12}>
           <Widget
-            title={<h5>Apex <span className="fw-semi-bold">Radial Chart</span></h5>}
-            close collapse
+            title={<p className={"fw-bold"}>Apex Radial Chart</p>}
+            customDropDown
           >
             <ApexChart 
               className="sparkline-chart"

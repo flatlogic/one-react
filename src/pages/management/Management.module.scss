@@ -1,0 +1,46 @@
+@import '../../styles/app';
+
+.bootstrapTable {
+  border: none;
+
+  :global .table {
+    thead,
+    tbody {
+      th,
+      td {
+        color: $text-color !important;
+        background-color: $white !important;
+        border-right: none;
+        border-left: none;
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+    }
+
+    thead th {
+      background: transparent;
+    }
+
+    tbody td {
+      vertical-align: middle;
+    }
+  }
+}
+
+.image {
+  width: 100px;
+}
+
+.promoAlert {
+  transition: 0.6s;
+  transition-timing-function: ease;
+  transform: translateX(-130vw);
+  position: absolute;
+  width: 500px;
+  top: 40px;
+  right: 40px;
+}
+
+.showAlert {
+  transform: translateX(0);
+}

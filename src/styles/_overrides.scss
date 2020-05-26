@@ -125,15 +125,17 @@ legend {
 /*  Badge */
 // Add colors for badges
 .badge {
-  padding: 4px;
+  padding: 5px;
   font-weight: $font-weight-bold;
   font-size: 11px;
+  border-radius: 4px;
 }
 
 .badge-success,
 .badge-info,
 .badge-warning,
-.badge-danger {
+.badge-danger,
+.badge-secondary {
   color: $white;
 }
 
@@ -149,6 +151,7 @@ legend {
   &.badge-pill {
     padding: 0.4em 0.6em;
     font-weight: 700;
+    border-radius: 10px;
   }
 
   .list-group-item > & {
@@ -172,7 +175,7 @@ legend {
 
 .table-bordered {
   th {
-    background-color: $text-color !important;
+    background-color: $text-color;
   }
 }
 
@@ -600,6 +603,12 @@ h6,
 // Navs
 // --------------------------------------------------
 
+.nav-pills {
+  .nav-link.active {
+    background-color: theme-color('warning');
+  }
+}
+
 .nav-tabs {
   &.nav-item + .nav-item {
     margin-left: 0;
@@ -831,4 +840,12 @@ pre {
 .sparkline-chart {
   min-height: 50px !important;
   margin: 0 auto;
+}
+
+a {
+  color: theme-color('warning')
+}
+
+.jumbotron {
+  background-color: $white;
 }

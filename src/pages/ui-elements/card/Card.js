@@ -11,10 +11,10 @@ import {
   CardImg,
 } from 'reactstrap';
 
-import lifestyleImg from '../../../images/cards/lifestyle.jpg';
-import isometricImg from '../../../images/cards/isometric.jpg';
-import mountainsImg from '../../../images/cards/mountains.jpeg';
-import reactnativeImg from '../../../images/cards/rns.png';
+import lifestyleImg from '../../../images/cards/lifestyle.png';
+import isometricImg from '../../../images/cards/isometric.png';
+import poolImg from '../../../images/cards/pool.png';
+import iphonesImg from '../../../images/cards/iphones.png';
 
 
 const Cards = () => (
@@ -83,7 +83,7 @@ const Cards = () => (
           </CardBody>
         </Card>
         <Card className="mb-xlg border-0" style={{ position: 'relative' }}>
-          <CardImg top width="100%" src={mountainsImg} alt="Card image cap" />
+          <CardImg top width="100%" src={poolImg} alt="Card image cap" />
           <Badge className="mt-lg fw-thin rounded-0" color="success" style={{ position: 'absolute' }}>New</Badge>
           <CardBody>
             <CardTitle>Weekly Inspiration</CardTitle>
@@ -97,7 +97,7 @@ const Cards = () => (
       </Col>
       <Col xs={12} sm={6} md={4}>
         <Card className="border-0 mb-4">
-          <CardImg top width="100%" src={reactnativeImg} alt="Card image cap" />
+          <CardImg top width="100%" src={iphonesImg} alt="Card image cap" />
           <CardBody>
             <small>Technology</small><br />
             <CardTitle className="mb mt-xs">

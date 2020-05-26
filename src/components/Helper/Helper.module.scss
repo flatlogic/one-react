@@ -31,7 +31,7 @@
         padding-left: 30px;
 
         &:after {
-          background-color: theme-color('warning');
+          background-color: var(--main-color);
           width: 9px;
           height: 9px;
           left: 4px;
@@ -39,7 +39,7 @@
         }
 
         &:before {
-          border: 2px solid theme-color("warning")
+          border: 2px solid var(--main-color);
         }
   
         &:before, &:after {
@@ -108,6 +108,7 @@
   }
 
   .themeHelperBtn {
+    background-color: var(--main-color);
     margin-left: 16px;
     position: fixed;
     top: 27%;

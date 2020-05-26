@@ -48,7 +48,7 @@
   justify-content: center;
   align-items: center;
   height: 66px;
-  background-color: #feb049;
+  background-color: var(--logo-background-color);
   font-size: 30px;
   width: 100%;
   font-weight: $font-weight-light;
@@ -86,7 +86,6 @@
   padding: 34px 0 10px;
   overflow-y: auto;
   overflow-x: hidden;
-  position: absolute;
   width: 100%;
 }
 

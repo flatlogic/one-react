@@ -60,7 +60,7 @@ export default {
       xaxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
-      colors: ['#005792']
+      colors: ['#FEB04A']
     }
   },
   area: {
@@ -90,7 +90,7 @@ export default {
       chart: {
         stacked: true,
       },
-      colors: ['#1A86D0', '#21AE8C', '#c1ccd3'],
+      colors: ['#007BC6', '#3BBF97', '#E9ECEF'],
       dataLabels: {
         enabled: false
       },
@@ -116,7 +116,7 @@ export default {
       data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
     }],
     options: {
-      colors: ["#1A86D0"],
+      colors: ["#12B4DE"],
       chart: {
         height: 350,
         type: 'bar',
@@ -216,7 +216,7 @@ export default {
       chart: {
         stacked: true
       },
-      colors: ['#005792', '#FD5F00'],
+      colors: ['#F5695A', '#007BC6'],
       plotOptions: {
         bar: {
           horizontal: true,

@@ -10,6 +10,7 @@ import {
 } from "../../reducers/layout";
 import {
   changeTheme,
+  changeThemeColor,
   changeSidebarColor,
   changeNavbarColor,
   navbarTypeToggle,
@@ -45,7 +46,7 @@ class Helper extends Component {
   };
 
   changeTheme = (state) => {
-    this.props.dispatch(changeTheme(state));
+    // this.props.dispatch(changeTheme(state));
     this.props.dispatch(changeSidebarColor(state));
   };
 
@@ -61,6 +62,11 @@ class Helper extends Component {
     this.props.dispatch(changeNavbarColor(value));
   };
 
+  updateThemeColor = (value) => {
+    this.props.dispatch(changeTheme(value));
+    this.props.dispatch(changeThemeColor(value));
+  };
+
   render() {
     const { isOpened } = this.state;
     const { navbarColor, sidebarColor, navbarType, sidebarType } = this.props;
@@ -68,10 +74,10 @@ class Helper extends Component {
     return (
       <div className={cx(s.themeHelper, { [s.themeHelperOpened]: isOpened })}>
         <div
-          className={`${s.themeHelperBtn} bg-warning helper-button`}
+          className={`${s.themeHelperBtn} helper-button`}
           onClick={this.toggle}
         >
-          <img src={themeImg} alt="theme-color-change" className={"mr-1"}/>
+          <img src={themeImg} alt="theme-color-change" className={"mr-1"} />
         </div>
         <Widget className={`${s.themeHelperContent} mb-0 rounded-0`}>
           <div className={s.helperHeader}>
@@ -79,7 +85,9 @@ class Helper extends Component {
           </div>
 
           <div className="theme-settings">
-            <h6 className="navbar-type-switcher mb-3 fw-semi-bold">Navbar Type</h6>
+            <h6 className="navbar-type-switcher mb-3 fw-semi-bold">
+              Navbar Type
+            </h6>
             <div className="form-group row">
               <div className="abc-radio">
                 <input
@@ -105,7 +113,9 @@ class Helper extends Component {
               </div>
             </div>
 
-            <h6 className="mt-4 navbar-color-picker mb-3 fw-semi-bold">Navbar Color</h6>
+            <h6 className="mt-4 navbar-color-picker mb-3 fw-semi-bold">
+              Navbar Color
+            </h6>
             <CustomColorPicker
               colors={config.app.colors}
               activeColor={navbarColor}
@@ -113,7 +123,9 @@ class Helper extends Component {
               customizationItem={"navbar"}
             />
 
-            <h6 className="mt-4 sidebar-type-switcher mb-3 fw-semi-bold">Sidebar Type</h6>
+            <h6 className="mt-4 sidebar-type-switcher mb-3 fw-semi-bold">
+              Sidebar Type
+            </h6>
             <div className="form-group row">
               <div className="abc-radio">
                 <input
@@ -140,7 +152,9 @@ class Helper extends Component {
               </div>
             </div>
 
-            <h6 className="mt-4 sidebar-color-picker mb-3 fw-semi-bold">Sidebar Color</h6>
+            <h6 className="mt-4 sidebar-color-picker mb-3 fw-semi-bold">
+              Sidebar Color
+            </h6>
             <CustomColorPicker
               colors={config.app.colors}
               activeColor={sidebarColor}
@@ -148,11 +162,14 @@ class Helper extends Component {
               customizationItem={"sidebar"}
             />
 
-            <h6 className="mt-4 navbar-color-picker mb-3 fw-semi-bold">Theme Color</h6>
+            <h6 className="mt-4 navbar-color-picker mb-3 fw-semi-bold">
+              Theme Color
+            </h6>
             <CustomColorPicker
-                colors={config.app.themeColors}
-                activeColor={"#FEBE69"}
-                updateColor={this.updateColor}
+              colors={config.app.themeColors}
+              activeColor={this.props.themeColor}
+              updateColor={this.updateThemeColor}
+              customizationItem={"theme"}
             />
           </div>
           <div className="mt-5">
@@ -186,6 +203,7 @@ function mapStateToProps(store) {
     navbarColor: store.layout.navbarColor,
     navbarType: store.layout.navbarType,
     sidebarType: store.layout.sidebarType,
+    themeColor: store.layout.themeColor
   };
 }
 

@@ -50,7 +50,7 @@ class BreadcrumbHistory extends Component {
                 {this.renderBreadCrumbs()}
               </Breadcrumb>
             </Col>
-            {this.props.url === "/app/main/dashboard" ? (
+            {this.props.url === "/app/dashboard/analytics" || this.props.url === "/app/dashboard/visits" ? (
               <Col lg={7} className={`d-flex align-items-start justify-content-center pr-0 ${s.dashboardButtons} mt-1`}>
                 <UncontrolledButtonDropdown className={"ml-lg-auto ml-md-0"}>
                   <DropdownToggle

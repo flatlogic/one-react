@@ -77,19 +77,15 @@
     line-height: 16px;
     margin-top: 5px;
     margin-right: 35px;
-    background: rgba(255, 234, 206, 0.51);
+    background: var(--badge-background-color);
     color: var(--badge-item-color);
-    border: 1px solid #FFAD01;
+    border: 1px solid var(--badge-border-color);
     font-weight: 400;
     width: 24px;
     height: 24px;
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 12px;
     }
-  }
-
-  .headerNode {
-    color: var(--important-notification)
   }
 
   .headerUpdate {
@@ -117,20 +113,25 @@
 }
 
 .headerLabel {
-  font-weight: 600;
-  color: var(--sidebar-item-active-color);
+  font-weight: 700;
+  padding: 7px 4px;
+  color: $white;
+  border-radius: 12px;
 }
 
 .collapsed .activeCaret {
   transform: rotate(90deg);
+  color: var(--main-color)
 }
 
-img.caret, img.activeCaret {
+i.caret, i.activeCaret {
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: 35px !important;
   margin-bottom: 0;
+  font-size: 26px;
+  color: #C1C2C1;
 
   @include transition(transform 0.3s ease-in-out);
 }
@@ -152,9 +153,9 @@ img.caret, img.activeCaret {
 
   ul {
     margin-top: 13px;
-    background: rgba(#FFAD01, .1);
+    background: var(--sidebar-ui-background-color);
     padding: $spacer;
-    border-right: 3px #FFAB3C solid;
+    border-right: 3px var(--main-color) solid;
 
     li {
       list-style: none;

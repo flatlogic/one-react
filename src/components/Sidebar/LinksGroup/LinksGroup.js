@@ -86,7 +86,7 @@ class LinksGroup extends Component {
             {this.props.header}{" "}
             {this.props.label && (
               <sup
-                className={`${s.headerLabel} ${s.headerUpdate} text-${this.props
+                className={`${s.headerLabel} ${s.headerUpdate} bg-${this.props
                   .labelColor || "warning"}`}
               >
                 {this.props.label}
@@ -122,7 +122,7 @@ class LinksGroup extends Component {
               {this.props.header}{" "}
               {this.props.label && (
                 <sup
-                  className={`${s.headerLabel} ${s.headerUpdate} text-${this
+                  className={`${s.headerLabel} ${s.headerUpdate} bg-${this
                     .props.labelColor || "warning"}`}
                 >
                   {this.props.label}
@@ -154,7 +154,7 @@ class LinksGroup extends Component {
             {this.props.header}{" "}
             {this.props.label && (
               <sup
-                className={`${s.headerLabel} text-${this.props.labelColor ||
+                className={`${s.headerLabel} bg-${this.props.labelColor ||
                   "warning"}`}
               >
                 {this.props.label}
@@ -197,13 +197,14 @@ class LinksGroup extends Component {
                   <sup
                     className={`${s.headerLabel} ${
                       s.headerNode
-                    } ml-1 text-${this.props.labelColor || "warning"}`}
+                    } ml-1 bg-${this.props.labelColor || "warning"}`}
                   >
                     {this.props.label}
                   </sup>
                 )}
                 { isOpen ?
-                  <img src={activeCaret} className={`${s.activeCaret}`} /> : <img className={`${s.caret}`} src={caret}/>
+                    <i className={`fa fa-angle-down ${s.activeCaret}`} aria-hidden="true" /> :
+                    <i className={`fa fa-angle-down ${s.caret}`} aria-hidden="true" />
                 }
               </a>
               {/* eslint-enable */}

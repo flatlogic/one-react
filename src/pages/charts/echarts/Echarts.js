@@ -36,13 +36,11 @@ class Echarts extends PureComponent {
 
     return (
       <div>
-        <h1 className="page-title">Visual - <span className="fw-semi-bold">Echarts</span></h1>
-        <p>For more information please read full <a href="https://ecomfe.github.io/vue-echarts/">documentation</a></p>
         <Row>
-          <Col lg={{size: 10, offset: 1}} xs={12}>
+          <Col xs={12}>
             <Widget
-              title={<h5>Echarts <span className="fw-semi-bold">Bar Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Echarts Bar Chart</p>}
+              customDropDown
             >
               <ReactEchartsCore
                 echarts={echarts}
@@ -53,8 +51,8 @@ class Echarts extends PureComponent {
           </Col>
           <Col lg={6} xs={12}>
             <Widget
-              title={<h5>Echarts <span className="fw-semi-bold">Pie Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Echarts Pie Chart</p>}
+              customDropDown
             >
               <ReactEchartsCore
                 echarts={echarts}
@@ -65,8 +63,8 @@ class Echarts extends PureComponent {
           </Col>
           <Col lg={6} xs={12}>
             <Widget
-              title={<h5>Echarts <span className="fw-semi-bold">Polar Chart</span></h5>}
-              close collapse
+              title={<p className={"fw-bold"}>Echarts Polar Chart</p>}
+              customDropDown
             >
               <ReactEchartsCore
                 echarts={echarts}
@@ -77,8 +75,8 @@ class Echarts extends PureComponent {
           </Col>
           <Col lg={12} xs={12}>
           <Widget
-            title={<h5>Echarts <span className="fw-semi-bold">Line Chart</span></h5>}
-            close collapse
+            title={<p className={"fw-bold"}>Echarts Line Chart</p>}
+            customDropDown
           >
             <ReactEchartsCore
               echarts={echarts}
@@ -89,8 +87,8 @@ class Echarts extends PureComponent {
           </Col>
           <Col lg={6} xs={12}>
           <Widget
-            title={<h5>Echarts <span className="fw-semi-bold">Scatter Chart</span></h5>}
-            close collapse
+            title={<p className={"fw-bold"}>Echarts Scatter Chart</p>}
+            customDropDown
           >
             <ReactEchartsCore
               echarts={echarts}
@@ -101,8 +99,8 @@ class Echarts extends PureComponent {
           </Col>
           <Col lg={6} xs={12}>
           <Widget
-            title={<h5>Echarts <span className="fw-semi-bold">Gauge Chart</span></h5>}
-            close collapse
+            title={<p className={"fw-bold"}>Echarts Gauge Chart</p>}
+            customDropDown
           >
             <ReactEchartsCore
               echarts={echarts}

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ColorPicker from 'rc-color-picker';
 import PropTypes from 'prop-types';
 import s from './ColorPicker.module.scss';
 
@@ -26,7 +25,26 @@ class CustomColorPicker extends Component {
           </ul>
         </div>
       )      
-    } else {
+    } else if (customizationItem === 'theme') {
+          return (
+              <div>
+                  <ul className={s.colorsList}>
+                      {Object.entries(colors).map(color => {
+                              return (
+                                  <li
+                                      key={color[1]}
+                                      className={`${s.colorBox} ${(activeColor === color[0]) ? s.activeThemeColor : ""}`}
+                                      style={{ background: color[1] }}
+                                      onClick={() => updateColor(color[0])}
+                                  ></li>
+                              )
+                          }
+                      )}
+
+                  </ul>
+              </div>
+          )
+      } else {
       return (
         <div>
           <ul className={s.colorsList}>

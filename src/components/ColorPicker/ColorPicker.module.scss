@@ -25,7 +25,10 @@
     }
 
     &.active {
-      border: 3px solid theme-color("warning")
+      border: 3px solid var(--main-color);
+    }
+    &.activeThemeColor {
+      border: 3px solid $black;
     }
   }
 }

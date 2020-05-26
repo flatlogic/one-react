@@ -21,6 +21,8 @@ import p2 from "../../images/people/p2.png";
 import p3 from "../../images/people/p3.png";
 import p4 from "../../images/people/p4.png";
 import p5 from "../../images/userAvatar.png";
+import {withRouter} from "react-router-dom";
+import {connect} from "react-redux";
 
 const orderValueOverride = {
   options: {
@@ -847,4 +849,10 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+function mapStateToProps(store) {
+  return {
+    sidebarColor: store.layout.sidebarColor,
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(Dashboard));
