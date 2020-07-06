@@ -1,18 +1,19 @@
 @import "../../styles/app";
 
 .root {
-  position: relative;
+  position: fixed;
   width: $sidebar-width-open;
   left: 0;
   top: 0;
   bottom: 0;
   height: 100vh;
+  //border-right: $sidebar-border;
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);
-  transition: background-color .2s ease, margin .2s ease;
-  @include scroll-bar($sidebar-scrollbar-bg);
+  transition: background-color 0.2s ease, margin 0.2s ease;
 
   .menuWrapper {
+    @include scroll-bar($sidebar-scrollbar-bg);
     overflow-y: auto;
     height: 100%;
   }
@@ -23,23 +24,27 @@
 }
 
 .sidebarWrapper {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   overflow-y: hidden;
   overflow-x: hidden;
   min-width: $sidebar-width-open;
-  transition: width $sidebar-transition-time ease-in-out;
+  transition: min-width $sidebar-transition-time ease-in-out;
   background-color: var(--sidebar-bg-color);
-  box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
   z-index: 999;
+  box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
 }
 
 .sidebarClose.sidebarWrapper {
-  width: $sidebar-width-closed;
   @include media-breakpoint-down(sm) {
-    width: 0;
+    min-width: 0;
+  }
+  & .root {
+    @include media-breakpoint-down(sm) {
+      width: 0;
+    }
   }
 }
 
@@ -65,7 +70,7 @@
 }
 
 .sidebarClose .logo {
-  width: 50px;
+  display: none;
 }
 
 .staticSidebar .logo {
@@ -83,10 +88,11 @@
     background-color: rgba(#000000, 0.2);
     width: 85%;
   }
-  padding: 34px 0 10px;
+  padding: 0 0 10px;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+  height: 250px;
 }
 
 .navTitle {

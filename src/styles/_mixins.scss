@@ -46,6 +46,8 @@
 
 @mixin scroll-bar($color) {
   &::-webkit-scrollbar {
+    position: absolute;
+    top: 0;
     height: 8px;
     width: 4px;
   }

@@ -9,6 +9,8 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { getProductsRequest } from '../../actions/products';
 
+import ProductImg from '../../images/products/product6.png'
+
 class Product extends React.Component {
     static propTypes = {
         products: PropTypes.array,
@@ -39,25 +41,12 @@ class Product extends React.Component {
         if (this.getId()) {
             product = this.findProduct(this.getId());
         } else {
-            product = {
-                img: 'static/media/img1.jpg',
-                title: 'trainers',
-                subtitle: 'Trainers In White',
-                price: 76,
-                rating: 4.6,
-                description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
-                description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
-                code: 135234,
-                hashtag: "whitetrainers",
-                technology: [
-                    "Ollie patch",
-                    "Cup soles",
-                    "Vulcanized rubber soles"
-                ],
-                reviews: 32
-            }
+            product = this.findProduct(1);
         }
         const products = this.props.products;
+
+
+        console.log(this.getId())
 
         return (
             <div className="product-details">

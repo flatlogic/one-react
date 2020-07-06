@@ -5,9 +5,9 @@ import { Collapse, Badge } from "reactstrap";
 import { Route } from "react-router";
 import classnames from "classnames";
 import { connect } from "react-redux";
-
-import caret from '../../../images/caret.svg'
-import activeCaret from '../../../images/caret-active.svg'
+import {
+  closeSidebar,
+} from "../../../actions/navigation";
 
 import s from "./LinksGroup.module.scss";
 
@@ -45,7 +45,7 @@ class LinksGroup extends Component {
   constructor(props) {
     super(props);
     this.togglePanelCollapse = this.togglePanelCollapse.bind(this);
-
+    this.closeSidebarOnClick = this.closeSidebarOnClick.bind(this)
     this.state = {
       headerLinkWasClicked: true
     };
@@ -57,6 +57,10 @@ class LinksGroup extends Component {
           headerLinkWasClicked: !this.state.headerLinkWasClicked ||
               (this.props.activeItem && !this.props.activeItem.includes(this.props.index)),
       });
+  }
+
+  closeSidebarOnClick() {
+    if (window.innerWidth <= 768) this.props.dispatch(closeSidebar())
   }
 
   render() {
@@ -111,6 +115,7 @@ class LinksGroup extends Component {
               s.headerLink,
               this.props.className
             )}
+            onClick={() => this.closeSidebarOnClick()}
           >
             <NavLink
               to={this.props.link}
@@ -148,6 +153,7 @@ class LinksGroup extends Component {
               if (this.props.link.includes("menu")) {
                 e.preventDefault();
               }
+              this.props.onClick();
             }}
             exact={exact}
           >
@@ -203,8 +209,8 @@ class LinksGroup extends Component {
                   </sup>
                 )}
                 { isOpen ?
-                    <i className={`fa fa-angle-down ${s.activeCaret}`} aria-hidden="true" /> :
-                    <i className={`fa fa-angle-down ${s.caret}`} aria-hidden="true" />
+                    <i className={`fa fa-angle-down fa-rotate-270 ${s.activeCaret}`} aria-hidden="true" /> :
+                    <i className={`fa fa-angle-down fa-rotate-270 ${s.caret}`} aria-hidden="true" />
                 }
               </a>
               {/* eslint-enable */}
@@ -223,6 +229,7 @@ class LinksGroup extends Component {
                         childrenLinks={child.childrenLinks}
                         deep={this.props.deep + 1}
                         key={ind} // eslint-disable-line
+                        onClick={() => this.closeSidebarOnClick()}
                       />
                     ))}
                 </ul>

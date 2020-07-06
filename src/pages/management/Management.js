@@ -19,6 +19,10 @@ import Widget from "../../components/Widget";
 import Rating from "../product/components/Rating/Rating";
 import s from "./Management.module.scss";
 
+// icons
+import EditIcon from '../../images/icons/create.svg'
+import DeleteIcon from '../../images/icons/delete.svg'
+
 import {
   getProductsRequest,
   deleteProductRequest,
@@ -100,7 +104,11 @@ class Management extends React.Component {
         <Button
           color="info"
           size="xs"
-          style={{backgroundColor: 'transparent', color: '#9FDBE9', display: 'block'}}
+          style={{
+            backgroundColor: "transparent",
+            color: "#9FDBE9",
+            display: "block",
+          }}
           onClick={() =>
             this.props.history.push("/app/ecommerce/management/" + row.id)
           }
@@ -110,7 +118,12 @@ class Management extends React.Component {
             <i className="la la-edit" />
           </span>
         </Button>
-        <Button id={"popoverDelete_" + row.id} style={{backgroundColor: 'transparent', color: '#FF7769'}} color="danger" size="xs">
+        <Button
+          id={"popoverDelete_" + row.id}
+          style={{ backgroundColor: "transparent", color: "#FF7769" }}
+          color="danger"
+          size="xs"
+        >
           {this.props.isDeleting && this.props.idToDelete === row.id ? (
             <Loader size={14} />
           ) : (
@@ -198,6 +211,8 @@ class Management extends React.Component {
         <Alert
           color="warning"
           className={cx(s.promoAlert, { [s.showAlert]: this.state.promoAlert })}
+          toggle={() => this.setState({ promoAlert: false })}
+          style={{paddingRight: 20}}
         >
           This page is only available in{" "}
           <a
@@ -210,63 +225,47 @@ class Management extends React.Component {
           </a>{" "}
           integration!
         </Alert>
-        <Widget
-            title={<p className={"fw-bold"}>List of Products</p>}
-          customDropDown
-          fetchingData={this.props.isReceiving}
-        >
-          <Button color="success" className={"text-capitalize"} onClick={() => this.createNewProduct()}>
-            Create Product
-          </Button>
-          <BootstrapTable
-            data={this.props.products}
-            version="4"
-            pagination
-            options={options}
-            search
-            tableContainerClass={`table-striped ${s.bootstrapTable}`}
-            bordered={false}
-          >
-            <TableHeaderColumn
-              dataField="id"
-              isKey={true}
-              className="width-50"
-              columnClassName="width-50"
+        {this.props.products.map((product) => (
+          <Widget>
+            <div
+              className={"d-flex align-items-center justify-content-between"}
             >
-              <span className="fs-sm">ID</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn dataField="img" dataFormat={this.imageFormatter}>
-              <span className="fs-sm">Image</span>
-            </TableHeaderColumn>
-            <TableHeaderColumn
-              dataField="title"
-              dataFormat={this.titleFormatter}
-            >
-              <span className="fs-sm">Title</span>
-            </TableHeaderColumn>
-            {window.innerWidth >= 768 && (
-              <TableHeaderColumn dataField="subtitle">
-                <span className="fs-sm">Subtitle</span>
-              </TableHeaderColumn>
-            )}
-            {window.innerWidth >= 768 && (
-              <TableHeaderColumn dataField="price">
-                <span className="fs-sm">Price($)</span>
-              </TableHeaderColumn>
-            )}
-            {window.innerWidth >= 768 && (
-              <TableHeaderColumn
-                dataField="rating"
-                dataFormat={this.ratingFormatter}
+              <img src={product.img} height={130} width={170} />
+              <h3 className={"mb-0"}>{product.title}</h3>
+              <div
+                className={
+                  "d-flex flex-column align-items-center justify-content-center"
+                }
               >
-                <span className="fs-sm">Rating</span>
-              </TableHeaderColumn>
-            )}
-            <TableHeaderColumn dataFormat={this.apiFormatter}>
-              <span className="fs-sm">Api</span>
-            </TableHeaderColumn>
-          </BootstrapTable>
-        </Widget>
+                <Rating rating={"4.0"} size={1} />
+                <button className="btn-link ml-3" style={{ fontSize: 14 }}>
+                  53 Reviews
+                </button>
+              </div>
+              <div
+                className={
+                  "d-flex flex-column align-items-center justify-content-center"
+                }
+              >
+                <small className={"fw-thin"}>STARTING MSRP:</small>
+                <h4 className={"mb-0"}>${product.price}</h4>
+              </div>
+              <div
+                className={
+                  "d-flex flex-column align-items-center justify-content-center"
+                }
+              >
+                <Button color={"info"} className={"mb-2 w-100"}>
+                  <img src={EditIcon} alt="edit" width={18} style={{paddingBottom: 4}}/>
+                  Edit
+                </Button>
+                <Button color={"danger"} className={"w-100"}>
+                  <img src={DeleteIcon} alt="delete" width={18} style={{paddingBottom: 4}}/>
+                  Delete</Button>
+              </div>
+            </div>
+          </Widget>
+        ))}
       </div>
     );
   }

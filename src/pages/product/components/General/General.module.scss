@@ -8,8 +8,7 @@
 .title {
   margin-top: $content-padding / 2;
   font-weight: $font-weight-normal;
-  text-transform: uppercase;
-  font-size: $font-size-lg;
+  font-size: 25px;
   color: theme-color('dark');
 }
 
@@ -26,6 +25,12 @@
   font-size: $font-size-lg;
   margin-bottom: 25px;
   color: theme-color('dark');
+}
+
+.colorBox {
+  min-width: 41px;
+  height: 41px;
+  cursor: pointer;
 }
 
 .ratingWrapper {

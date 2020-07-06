@@ -83,6 +83,7 @@
     font-weight: 400;
     width: 24px;
     height: 24px;
+    font-size: 10px;
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 12px;
     }
@@ -120,7 +121,7 @@
 }
 
 .collapsed .activeCaret {
-  transform: rotate(90deg);
+  transform: rotate(360deg);
   color: var(--main-color)
 }
 
@@ -130,7 +131,7 @@ i.caret, i.activeCaret {
   margin-left: auto;
   margin-right: 35px !important;
   margin-bottom: 0;
-  font-size: 26px;
+  font-size: 20px;
   color: #C1C2C1;
 
   @include transition(transform 0.3s ease-in-out);

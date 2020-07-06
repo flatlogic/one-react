@@ -1,7 +1,7 @@
 // Products photos
-import img1 from '../../images/products/img1.jpg';
-import img2 from '../../images/products/img2.jpg';
-import img3 from '../../images/products/img3.jpg';
+import img1 from '../../images/products/product1.png';
+import img2 from '../../images/products/product2.png';
+import img3 from '../../images/products/product3.png';
 
 export default [
   {

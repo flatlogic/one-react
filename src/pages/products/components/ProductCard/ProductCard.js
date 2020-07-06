@@ -1,81 +1,109 @@
-import React, { Component } from 'react';
-import cx from 'classnames';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import React, {Component} from "react";
+import cx from "classnames";
+import PropTypes from "prop-types";
+import {withRouter} from "react-router-dom";
 
-import Rating from '../../../product/components/Rating/Rating';
+import Rating from "../../../product/components/Rating/Rating";
+import Widget from "../../../../components/Widget";
 
-import star from '../../../../images/stars/star.svg';
-import starFilled from '../../../../images/stars/star-filled.svg';
+import {Button} from "reactstrap";
 
-import s from './ProductCard.module.scss';
+import star from "../../../../images/stars/star.svg";
+import starFilled from "../../../../images/stars/star-filled.svg";
+
+import s from "./ProductCard.module.scss";
 
 class ProductCard extends Component {
-  state = {
-    favourite: this.props.favourite,
-  };
+    state = {
+        favourite: this.props.favourite,
+    };
 
-  changeFavourite() {
-    this.setState(pvState => ({ favourite: !pvState.favourite }));
-  }
+    changeFavourite() {
+        this.setState((pvState) => ({favourite: !pvState.favourite}));
+    }
 
-  openProduct(id) {
-      this.props.history.push('/app/ecommerce/product/' + id);
-  }
+    openProduct(id) {
+        this.props.history.push("/app/ecommerce/product/" + id);
+    }
 
-  render() {
-    const { img, title, subtitle, price, discount, rating, id, createdAt, updatedAt } = this.props;
-    const {favourite} = this.state;
-    const newPrice = discount ? price - (price * discount / 100) : price;
-    const label = discount ? "Sale" : createdAt === updatedAt ? "New" : null;
-    return (
-      <div className={[s.productCard, 'product-card'].join(' ')}>
-        <div onClick={() => {this.openProduct(id)}} className={s.productCardPhoto} style={{ backgroundImage: `url(${img})` }}>
-          {label && <div className={cx(s.label, label === 'Sale' ? 'bg-danger' : 'bg-success')}>{label}</div>}
-          <button className={s.star} onClick={() => this.changeFavourite()}>
-            <img src={favourite ? starFilled : star} alt="star" />
-          </button>
-        </div>
-        <div className={s.productCardDataWrapper}>
-          <div className={cx(s.productsCardTitle, 'title')}>{title}</div>
-          <div className={cx(s.productsCardDescription, 'description')}>{subtitle}</div>
-        </div>
-        <div className={s.productsCardPrice}>
-          {!discount
-            ? `$${price}`
-            : <div className={s.sale}>
-              <span className={s.old}>${price}</span>
-              {discount}% off
-           <span className={s.new}> ${newPrice}</span>
-            </div>
-          }
-          {rating && <Rating rating={rating} size="sm" />}
-        </div>
-      </div>
-    );
-  }
+    render() {
+        const {
+            img,
+            title,
+            subtitle,
+            price,
+            discount,
+            rating,
+            id,
+            createdAt,
+            updatedAt,
+        } = this.props;
+        const {favourite} = this.state;
+        const newPrice = discount ? price - (price * discount) / 100 : price;
+        const label = discount ? "Sale" : createdAt === updatedAt ? "New" : null;
+        return (
+            <Widget>
+                <div className={[s.productCard, "product-card"].join(" ")}>
+                    <div
+                        onClick={() => {
+                            this.openProduct(id);
+                        }}
+                        className={s.productCardPhoto}
+                        style={{backgroundImage: `url(${img})`}}
+                    >
+                        {label && (
+                            <div
+                                className={cx(
+                                    s.label,
+                                    label === "Sale" ? "bg-danger" : "bg-success", "rounded-left"
+                                )}
+                            >
+                                {label}
+                            </div>
+                        )}
+                        <button className={s.star} onClick={() => this.changeFavourite()}>
+                            <img src={favourite ? starFilled : star} alt="star"/>
+                        </button>
+                    </div>
+                    <div className={s.productCardDataWrapper}>
+                        <div className={cx(s.productsCardTitle, "title mb-1")}>{title}</div>
+                    </div>
+                    <div className={`${s.productsCardPrice} mb-2`}>
+                        {rating && (
+                            <div className={"d-flex align-items-center"}>
+                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <small className={"mb-0 pl-1"}>{rating}.0</small>
+                                <button className="btn-link ml-3" style={{fontSize: 14}}>
+                                    53 Reviews
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                    <div className={s.sale}>
+                        <label className={"mb-1"}>STARTING MSRP</label>
+                        <h3 className={"mb-4"}>${price}</h3>
+                    </div>
+                    <Button color={"success"} className={s.addBtn}>
+                        <i className={"la la-shopping-cart"} style={{fontSize: 21, marginTop: -5, marginRight: 5}}/>
+                        Add to Cart
+                    </Button>
+                </div>
+            </Widget>
+        );
+    }
 }
 
 ProductCard.propTypes = {
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  price: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-  ]).isRequired,
-  discount: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-  ]),
-    rating: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-    ]).isRequired,
+    img: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    discount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 ProductCard.getDefaultProps = {
-  rating: null,
+    rating: null,
 };
 
 export default withRouter(ProductCard);

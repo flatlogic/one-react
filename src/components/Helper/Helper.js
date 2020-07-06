@@ -48,6 +48,9 @@ class Helper extends Component {
   changeTheme = (state) => {
     // this.props.dispatch(changeTheme(state));
     this.props.dispatch(changeSidebarColor(state));
+    if (state === 'dark') {
+      this.props.dispatch(sidebarTypeToggle("solid"));
+    }
   };
 
   navbarStateToggle = (state) => {
@@ -56,6 +59,9 @@ class Helper extends Component {
 
   sidebarStateToggle = (state) => {
     this.props.dispatch(sidebarTypeToggle(state));
+    if (state === 'transparent') {
+      this.props.dispatch(changeSidebarColor("light"));
+    }
   };
 
   updateColor = (value) => {
@@ -77,7 +83,7 @@ class Helper extends Component {
           className={`${s.themeHelperBtn} helper-button`}
           onClick={this.toggle}
         >
-          <img src={themeImg} alt="theme-color-change" className={"mr-1"} />
+          <img src={themeImg} alt="theme-color-change" className={"mr-1"} width={"30px"}/>
         </div>
         <Widget className={`${s.themeHelperContent} mb-0 rounded-0`}>
           <div className={s.helperHeader}>
@@ -93,7 +99,7 @@ class Helper extends Component {
                 <input
                   onChange={() => this.navbarStateToggle(NavbarTypes.STATIC)}
                   type="radio"
-                  checked={navbarType === NavbarTypes.STATIC ? true : ""}
+                  checked={navbarType === NavbarTypes.STATIC}
                   name="navbar-type"
                   id="navbar_static"
                 />
@@ -104,7 +110,7 @@ class Helper extends Component {
                 <input
                   onChange={() => this.navbarStateToggle(NavbarTypes.FLOATING)}
                   type="radio"
-                  checked={navbarType === NavbarTypes.FLOATING ? true : ""}
+                  checked={navbarType === NavbarTypes.FLOATING}
                   name="navbar-type"
                   id="navbar_floating"
                   className={s.radio}

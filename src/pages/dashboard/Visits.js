@@ -13,6 +13,99 @@ import peopleA2 from "../../images/people/a2.jpg";
 import peopleA5 from "../../images/people/a5.jpg";
 import peopleA4 from "../../images/people/a4.jpg";
 
+import stocksImg from "../../images/stocks.svg";
+import stocksDownImg from "../../images/stocksDown.svg";
+import ApexChart from "react-apexcharts";
+import {chartData} from "./chartsMock";
+import p1 from "../../images/people/p1.png";
+import p2 from "../../images/people/p2.png";
+import p3 from "../../images/people/p3.png";
+import p4 from "../../images/people/p4.png";
+import p5 from "../../images/userAvatar.png";
+
+const splineArea = {
+  series: [
+    {
+      name: "Users",
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: "Sessions",
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
+  options: {
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      colors: ["rgba(255, 205, 101, .2)", 'rgba(0,0,0,0)'],
+      type: 'solid'
+    },
+    colors: ["#FFBF69", "#323232"],
+    legend: {
+      position: "top",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [
+        "2018-09-19T00:00:00.000Z",
+        "2018-09-19T01:30:00.000Z",
+        "2018-09-19T02:30:00.000Z",
+        "2018-09-19T03:30:00.000Z",
+        "2018-09-19T04:30:00.000Z",
+        "2018-09-19T05:30:00.000Z",
+        "2018-09-19T06:30:00.000Z",
+      ],
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  },
+};
+
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -22,6 +115,10 @@ class Dashboard extends React.Component {
     };
     this.checkTable = this.checkTable.bind(this);
   }
+
+  state = {
+    splineArea: { ...splineArea },
+  };
 
   checkTable(id) {
     let arr = [];
@@ -79,52 +176,57 @@ class Dashboard extends React.Component {
                 146 Countries, 2759 Cities
               </p>
               <div className="row progress-stats mb-4">
-                <div className="col-md-9 col-12">
+                <div className="col-12">
                   <h6 className="name">Foreign Visits</h6>
                   <Progress
                     color="success"
                     value="80"
-                    className="bg-white progress-xs"
+                    className="progress-xs"
+                    style={{backgroundColor: 'rgba(129, 212, 187, 0.2)'}}
                   />
                 </div>
               </div>
               <div className="row progress-stats mb-3">
-                <div className="col-md-9 col-12">
+                <div className="col-12">
                   <h6 className="name">Local Visits</h6>
                   <Progress
                     color="danger"
                     value="39"
-                    className="bg-white progress-xs"
+                    className="progress-xs"
+                    style={{backgroundColor: 'rgba(255, 119, 105, .2)'}}
                   />
                 </div>
               </div>
               <div className="row progress-stats mb-4">
-                <div className="col-md-9 col-12">
+                <div className="col-12">
                   <h6 className="name">Sound Frequencies</h6>
                   <Progress
                     color="info"
                     value="80"
-                    className="bg-white progress-xs"
+                    className="progress-xs"
+                    style={{backgroundColor: 'rgba(159, 219, 233, .2)'}}
                   />
                 </div>
               </div>
               <div className="row progress-stats mb-3">
-                <div className="col-md-9 col-12">
+                <div className="col-12">
                   <h6 className="name">Sound Frequencies</h6>
                   <Progress
                     color="warning"
                     value="80"
-                    className="bg-white progress-xs"
+                    className="progress-xs"
+                    style={{backgroundColor: 'rgba(255, 191, 105, .2)'}}
                   />
                 </div>
               </div>
               <div className="row progress-stats mb-3">
-                <div className="col-md-9 col-12">
+                <div className="col-12">
                   <h6 className="name">Sound Frequencies</h6>
                   <Progress
                     color="success"
                     value="80"
-                    className="bg-white progress-xs"
+                    className="progress-xs"
+                    style={{backgroundColor: 'rgba(129, 212, 187, 0.2)'}}
                   />
                 </div>
               </div>
@@ -134,97 +236,58 @@ class Dashboard extends React.Component {
 
         <Row>
           <Col lg={4} xs={12}>
-            <Widget title={<h6> USERBASE GROWTH </h6>} customDropDown>
-              <div className="stats-row">
-                <div className="stat-item">
-                  <h6 className="name">Overall Growth</h6>
-                  <p className="value">76.38%</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">Montly</h6>
-                  <p className="value">10.38%</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">24h</h6>
-                  <p className="value">3.38%</p>
-                </div>
-              </div>
-              <Progress
-                color="success"
-                value="60"
-                className="bg-gray-lighter progress-xs"
-              />
-              <p>
-                <small>
-                  <span className="circle bg-primary text-white">
-                    <i className="fa fa-chevron-up" />
-                  </span>
-                </small>
-                <span className="fw-semi-bold">&nbsp;17% higher</span>
-                &nbsp;than last month
-              </p>
-            </Widget>
-          </Col>
-          <Col lg={4} xs={12}>
-            <Widget title={<h6> TRAFFIC VALUES </h6>} customDropDown>
-              <div className="stats-row">
-                <div className="stat-item">
-                  <h6 className="name">Overall Values</h6>
-                  <p className="value">17 567 318</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">Montly</h6>
-                  <p className="value">55 120</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name">24h</h6>
-                  <p className="value">9 695</p>
-                </div>
+            <Widget title={<p className={"fw-bold"}>Userbase Growth</p>} customDropDown>
+              <div className="d-flex justify-content-between mt-3">
+                <p>Overlall Growth</p>
+                <p>78,3%</p>
               </div>
               <Progress
                 color="danger"
                 value="60"
-                className="bg-gray-lighter progress-xs"
+                className="progress-xs"
+                style={{backgroundColor: 'rgba(255, 119, 105, .2)'}}
               />
-              <p>
-                <small>
-                  <span className="circle bg-primary text-white">
-                    <i className="fa fa-chevron-down" />
-                  </span>
-                </small>
-                <span className="fw-semi-bold">&nbsp;8% lower</span>
+              <p style={{fontSize: 14}} className={"mb-0"}>
+                <img src={stocksImg} alt="up"/>
+                <span className="text-success">&nbsp;17% higher</span>
                 &nbsp;than last month
               </p>
             </Widget>
           </Col>
           <Col lg={4} xs={12}>
-            <Widget title={<h6> RANDOM VALUES </h6>} customDropDown>
-              <div className="stats-row">
-                <div className="stat-item">
-                  <h6 className="name fs-sm">Overcome T.</h6>
-                  <p className="value">104.85%</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name fs-sm">Takeoff Angle</h6>
-                  <p className="value">14.29&deg;</p>
-                </div>
-                <div className="stat-item">
-                  <h6 className="name fs-sm">World Pop.</h6>
-                  <p className="value">7,211M</p>
-                </div>
+            <Widget title={<p className={"fw-bold"}>Traffic Values</p>} customDropDown>
+              <div className="d-flex justify-content-between mt-3">
+                <p>Overlall Growth</p>
+                <p>78,3%</p>
               </div>
               <Progress
-                color="bg-primary"
-                value="60"
-                className="bg-gray-lighter progress-xs"
+                  color="warning"
+                  value="60"
+                  className="progress-xs"
+                  style={{backgroundColor: 'rgba(255, 191, 105, .2)'}}
               />
-              <p>
-                <small>
-                  <span className="circle bg-primary text-white">
-                    <i className="fa fa-plus" />
-                  </span>
-                </small>
-                <span className="fw-semi-bold">&nbsp;8 734 higher</span>
+              <p style={{fontSize: 14}} className={"mb-0"}>
+                <img src={stocksDownImg} alt="down"/>
+                <span className="text-danger">&nbsp;17% lower</span>
+                &nbsp;than last month
+              </p>
+            </Widget>
+          </Col>
+          <Col lg={4} xs={12}>
+            <Widget title={<p className={"fw-bold"}>Sessions Time</p>} customDropDown>
+              <div className="d-flex justify-content-between mt-3">
+                <p>Overlall Growth</p>
+                <p>78,3%</p>
+              </div>
+              <Progress
+                  color="info"
+                  value="60"
+                  className="progress-xs"
+                  style={{backgroundColor: 'rgba(159, 219, 233, .2)'}}
+              />
+              <p style={{fontSize: 14}} className={"mb-0"}>
+                <img src={stocksImg} alt="up"/>
+                <span className="text-success">&nbsp;17% higher</span>
                 &nbsp;than last month
               </p>
             </Widget>
@@ -232,169 +295,104 @@ class Dashboard extends React.Component {
         </Row>
 
         <Row>
-          <Col lg={4} xs={12}>
+          <Col xs={8}>
             <Widget
               title={
-                <h6>
-                  <span className="badge badge-danger">New</span> Messages
-                </h6>
+                <p className={"fw-bold"}>Users, Session Analytics</p>
               }
               customDropDown
             >
-              <div className="widget-body undo_padding">
-                <div className="list-group list-group-lg">
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img
-                        className="rounded-circle"
-                        src={peopleA2}
-                        alt="..."
-                      />
-                      <i className="status status-bottom bg-success" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Chris Gray</h6>
-                      <p className="help-block text-ellipsis m-0">
-                        Hey! What&apos;s up? So many times since we
-                      </p>
-                    </div>
-                  </button>
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img
-                        className="rounded-circle"
-                        src={peopleA4}
-                        alt="..."
-                      />
-                      <i className="status status-bottom bg-success" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Jamey Brownlow</h6>
-                      <p className="help-block text-ellipsis m-0">
-                        Good news coming tonight. Seems they agreed to proceed
-                      </p>
-                    </div>
-                  </button>
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img
-                        className="rounded-circle"
-                        src={peopleA1}
-                        alt="..."
-                      />
-                      <i className="status status-bottom bg-warning" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Livia Walsh</h6>
-                      <p className="help-block text-ellipsis m-0">
-                        Check my latest email plz!
-                      </p>
-                    </div>
-                  </button>
-                  <button className="list-group-item text-left">
-                    <span className="thumb-sm float-left mr">
-                      <img
-                        className="rounded-circle"
-                        src={peopleA5}
-                        alt="..."
-                      />
-                      <i className="status status-bottom bg-danger" />
-                    </span>
-                    <div>
-                      <h6 className="m-0">Jaron Fitzroy</h6>
-                      <p className="help-block text-ellipsis m-0">
-                        What about summer break?
-                      </p>
-                    </div>
-                  </button>
-                </div>
-              </div>
-              <footer className="bg-body-light mt">
-                <input
-                  type="search"
-                  className="form-control form-control-sm"
-                  placeholder="Search"
-                />
-              </footer>
+              <Row style={{ marginTop: -36 }}>
+                <Col sm={12}>
+                  <ApexChart
+                      className="sparkline-chart"
+                      series={splineArea.series}
+                      options={splineArea.options}
+                      type={"area"}
+                      height={"350px"}
+                  />
+                </Col>
+              </Row>
             </Widget>
           </Col>
-
-          <Col lg={4} xs={12}>
+          <Col xs={4}>
             <Widget
-              title={
-                <h6>
-                  {" "}
-                  Market <span className="fw-semi-bold">Stats</span>
-                </h6>
-              }
-              customDropDown
+                title={
+                  <p className={"fw-bold"}>Recent Sales</p>
+                }
+                customDropDown
             >
-              <div className="widget-body">
-                <h3>$720 Earned</h3>
-                <p className="fs-mini text-muted mb mt-sm">
-                  Target <span className="fw-semi-bold">$820</span> day earnings
-                  is <span className="fw-semi-bold">96%</span> reached.
-                </p>
-              </div>
-              <div className={`widget-table-overflow ${s.table}`}>
-                <Table striped size="sm">
-                  <thead className="no-bd">
+              <Row>
+                <Col sm={12}>
+                  <Table className={"mb-0 mt-4"} borderless responsive>
+                    <thead>
                     <tr>
-                      <th>
-                        <div className="checkbox abc-checkbox">
-                          <Input
-                            className="mt-0"
-                            id="checkbox210"
-                            type="checkbox"
-                            onClick={() => this.checkTable(0)}
-                            checked={this.state.checkedArr[0]}
-                            readOnly
-                          />{" "}
-                          <Label for="checkbox210" />
-                        </div>
+                      <th key={0} scope="col" className={"pl-0"}>
+                        State
                       </th>
-                      <th>&nbsp;</th>
-                      <th>&nbsp;</th>
+                      <th key={1} scope="col" className={"pl-0"}>
+                        Amount
+                      </th>
+                      <th key={2} scope="col" className={"pl-0"}>
+                        Date
+                      </th>
                     </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div className="checkbox abc-checkbox">
-                          <Input
-                            className="mt-0"
-                            id="checkbox212"
-                            type="checkbox"
-                            onClick={() => this.checkTable(1)}
-                            checked={this.state.checkedArr[1]}
-                            readOnly
-                          />{" "}
-                          <Label for="checkbox212" />
-                        </div>
+                    </thead>
+                    <tbody className="text-dark">
+                    <tr key={0}>
+                      <td className="fw-thin pl-0 fw-thin">
+                        <i className={`fa fa-circle text-danger mr-3`} />
+                        California
                       </td>
-                      <td>HP Core i7</td>
-                      <td className="text-align-right fw-semi-bold">$346.1</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div className="checkbox abc-checkbox">
-                          <Input
-                            className="mt-0"
-                            id="checkbox214"
-                            onClick={() => this.checkTable(2)}
-                            type="checkbox"
-                            checked={this.state.checkedArr[2]}
-                            readOnly
-                          />{" "}
-                          <Label for="checkbox214" />
-                        </div>
+                      <td className={"pl-0 fw-thin"}>
+                        $8400
                       </td>
-                      <td>Air Pro</td>
-                      <td className="text-align-right fw-semi-bold">$533.1</td>
+                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
                     </tr>
-                  </tbody>
-                </Table>
-              </div>
+                    <tr key={1}>
+                      <td className="fw-thin pl-0 fw-thin">
+                        <i className={`fa fa-circle text-info mr-3`} />
+                        Florida
+                      </td>
+                      <td className={"pl-0 fw-thin"}>
+                        $780
+                      </td>
+                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                    </tr>
+                    <tr key={1}>
+                      <td className="fw-thin pl-0 fw-thin">
+                        <i className={`fa fa-circle text-warning mr-3`} />
+                        New Mexico
+                      </td>
+                      <td className={"pl-0 fw-thin"}>
+                        $1300
+                      </td>
+                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                    </tr>
+                    <tr key={1}>
+                      <td className="fw-thin pl-0 fw-thin">
+                        <i className={`fa fa-circle text-success mr-3`} />
+                        Texas
+                      </td>
+                      <td className={"pl-0 fw-thin"}>
+                        $880
+                      </td>
+                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                    </tr>
+                    <tr key={1}>
+                      <td className="fw-thin pl-0 fw-thin">
+                        <i className={`fa fa-circle text-info mr-3`} />
+                        Mississippi
+                      </td>
+                      <td className={"pl-0 fw-thin"}>
+                        $9400
+                      </td>
+                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                    </tr>
+                    </tbody>
+                  </Table>
+                </Col>
+              </Row>
             </Widget>
           </Col>
         </Row>

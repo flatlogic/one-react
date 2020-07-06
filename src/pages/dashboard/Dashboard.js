@@ -460,7 +460,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={usersImg} alt="" style={{ paddingTop: 30 }} />
+                  <img src={usersImg} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -497,7 +497,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={smileImg} alt="" style={{ paddingTop: 30 }} />
+                  <img src={smileImg} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -596,7 +596,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={totalSale} alt="" style={{ paddingTop: 30 }} />
+                  <img src={totalSale} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -633,7 +633,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={orders} alt="" style={{ paddingTop: 30 }} />
+                  <img src={orders} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}

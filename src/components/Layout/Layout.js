@@ -59,6 +59,8 @@ import Management from "../../pages/management";
 import Products from "../../pages/products";
 import Product from "../../pages/product";
 import Profile from "../../pages/profile";
+import SPackage from "../../pages/package";
+import Email from '../../pages/email'
 
 class Layout extends React.Component {
   static propTypes = {
@@ -78,6 +80,7 @@ class Layout extends React.Component {
     super(props);
 
     this.handleSwipe = this.handleSwipe.bind(this);
+    this.handleCloseSidebar = this.handleCloseSidebar.bind(this);
   }
 
   componentDidMount() {
@@ -90,10 +93,16 @@ class Layout extends React.Component {
   }
 
   handleResize() {
-    if (window.innerWidth <= 768 && this.props.sidebarStatic) {
+    if (window.innerWidth <= 768) {
       this.props.dispatch(toggleSidebar());
     } else if (window.innerWidth >= 768) {
       this.props.dispatch(openSidebar());
+    }
+  }
+
+  handleCloseSidebar(e) {
+    if (e.target.closest("#sidebar-drawer") == null && this.props.sidebarOpened && window.innerWidth <= 768) {
+      this.props.dispatch(toggleSidebar());
     }
   }
 
@@ -116,7 +125,6 @@ class Layout extends React.Component {
       <div
         className={[
           s.root,
-          this.props.sidebarStatic ? `${s.sidebarStatic}` : "",
           !this.props.sidebarOpened ? s.sidebarClose : "",
           "flatlogic-one",
           `dashboard-${this.props.sidebarType === SidebarTypes.TRANSPARENT ? "light" : this.props.sidebarColor}`,
@@ -124,10 +132,11 @@ class Layout extends React.Component {
             this.props.dashboardTheme !== "light" &&
             this.props.dashboardTheme !== "dark"
               ? this.props.dashboardTheme
-              : ""
+              : "" 
           }`,
 
         ].join(" ")}
+        onClick={e => this.handleCloseSidebar(e)}
       >
         <Sidebar />
         <div className={s.wrap}>
@@ -223,8 +232,11 @@ class Layout extends React.Component {
                     <Route path={"/app/grid"} component={GridSeparate} />
                     <Route path={"/app/ecommerce/management"} component={Management} />
                     <Route path={"/app/ecommerce/products"} component={Products} />
+                    <Route path={"/app/ecommerce/product/:id"} component={Product} exact/>
                     <Route path={"/app/ecommerce/product"} component={Product} />
                     <Route path={"/app/profile"} component={Profile} />
+                    <Route path={"/app/package"} component={SPackage} />
+                    <Route path={"/app/email"} component={Email} />
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>

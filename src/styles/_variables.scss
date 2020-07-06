@@ -119,7 +119,7 @@ $sidebar-border: 1px solid darken($body-bg, 2%);
 
 $sidebar-item-border-color: transparent !default;
 $sidebar-item-active-color: $yellow !default;
-$sidebar-scrollbar-bg: #FFBF69;
+$sidebar-scrollbar-bg: rgba(0,0,0,0.1);
 
 $breadcrumb-divider: '>';
 $breadcrumb-padding-y: 0;

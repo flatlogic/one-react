@@ -1,13 +1,26 @@
 import config from "../../config";
 
+//images
+import ProductImg1 from '../../images/products/product1.png'
+import ProductImg2 from '../../images/products/product2.png'
+import ProductImg3 from '../../images/products/product3.png'
+import ProductImg4 from '../../images/products/product4.png'
+import ProductImg5 from '../../images/products/product5.png'
+import ProductImg6 from '../../images/products/product6.png'
+import ProductImg7 from '../../images/products/product7.png'
+import ProductImg8 from '../../images/products/product8.png'
+import ProductImg9 from '../../images/products/product9.png'
+import ProductImg10 from '../../images/products/product10.png'
+import ProductImg11 from '../../images/products/product11.png'
+import ProductImg12 from '../../images/products/product12.png'
+
 export default [
   {
     id: 1,
-    img: config.remote + '/assets/products/img1.jpg',
-    title: 'trainers',
-    subtitle: 'Trainers In White',
-    price: 76,
-    rating: 4.6,
+    img: ProductImg1,
+    title: 'Porsche 911',
+    price: 36000,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -22,11 +35,10 @@ export default [
   },
   {
     id: 2,
-    img: config.remote + '/assets/products/img2.jpg',
-    title: 'boots',
-    subtitle: 'Trainers In Blue',
-    price: 45,
-    rating: 4.6,
+    img: ProductImg2,
+    title: 'Porsche 911',
+    price: 52000,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -42,11 +54,10 @@ export default [
   },
   {
     id: 3,
-    img: config.remote + '/assets/products/img3.jpg',
-    title: 'flat sandals',
-    subtitle: 'Trainers In White',
-    price: 55,
-    rating: 4.6,
+    img: ProductImg3,
+    title: 'Mercedes ML',
+    price: 42380,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -61,11 +72,10 @@ export default [
   },
   {
     id: 4,
-    img: config.remote + '/assets/products/img4.jpg',
-    title: 'trainers',
-    subtitle: 'Trainers In White',
-    price: 76,
-    rating: 4.6,
+    img: ProductImg4,
+    title: 'Mercedes A Class',
+    price: 30520,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -80,11 +90,10 @@ export default [
   },
   {
     id: 5,
-    img: config.remote + '/assets/products/img5.jpeg',
-    title: 'boots',
-    subtitle: 'Trainers In Blue',
-    price: 45,
-    rating: 4.6,
+    img: ProductImg5,
+    title: 'Jeep Gran Cherokee',
+    price: 52000,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -100,11 +109,10 @@ export default [
   },
   {
     id: 6,
-    img: config.remote + '/assets/products/img6.jpg',
-    title: 'flat sandals',
-    subtitle: 'Trainers In White',
-    price: 55,
-    rating: 4.6,
+    img: ProductImg6,
+    title: 'Mercedes SLS',
+    price: 30520,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -119,11 +127,10 @@ export default [
   },
   {
     id: 7,
-    img: config.remote + '/assets/products/img1.jpg',
-    title: 'trainers',
-    subtitle: 'Trainers In White',
-    price: 76,
-    rating: 4.6,
+    img: ProductImg7,
+    title: 'Audi TT',
+    price: 42380,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -138,11 +145,10 @@ export default [
   },
   {
     id: 8,
-    img: config.remote + '/assets/products/img2.jpg',
-    title: 'boots',
-    subtitle: 'Trainers In Blue',
-    price: 45,
-    rating: 4.6,
+    img: ProductImg8,
+    title: 'Audi A3',
+    price: 30300,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -158,11 +164,10 @@ export default [
   },
   {
     id: 9,
-    img: config.remote + '/assets/products/img3.jpg',
-    title: 'flat sandals',
-    subtitle: 'Trainers In White',
-    price: 55,
-    rating: 4.6,
+    img: ProductImg9,
+    title: 'Toyota RAV 4',
+    price: 52000,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -177,11 +182,10 @@ export default [
   },
   {
     id: 10,
-    img: config.remote + '/assets/products/img4.jpg',
-    title: 'trainers',
-    subtitle: 'Trainers In White',
-    price: 76,
-    rating: 4.6,
+    img: ProductImg10,
+    title: 'Maserati',
+    price: 30520,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,
@@ -196,10 +200,9 @@ export default [
   },
   {
     id: 11,
-    img: config.remote + '/assets/products/img5.jpeg',
-    title: 'boots',
-    subtitle: 'Trainers In Blue',
-    price: 45,
+    img: ProductImg11,
+    title: 'BMW 3 Series',
+    price: 42380,
     rating: 4.6,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
@@ -216,11 +219,10 @@ export default [
   },
   {
     id: 12,
-    img: config.remote + '/assets/products/img6.jpg',
-    title: 'flat sandals',
-    subtitle: 'Trainers In White',
-    price: 55,
-    rating: 4.6,
+    img: ProductImg12,
+    title: 'Nissan 350z',
+    price: 30300,
+    rating: 4.0,
     description_1: "Sneakers (also known as athletic shoes, tennis shoes,gym shoes, runners, takkies, or trainers) are shoes primarily designed for sports or other forms of physical exercise, but which are now also often used for everyday wear.",
     description_2: "The term generally describes a type of footwear with a flexible sole made of rubber or synthetic material and an upper part made of leather or synthetic materials.",
     code: 135234,

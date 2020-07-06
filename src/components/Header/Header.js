@@ -155,10 +155,7 @@ class Header extends React.Component {
             onClick={this.toggleSidebar}
           >
             <i
-              className={`la la-bars ${
-                chroma(navbarColor).luminance() < 0.4 ? "text-white" : ""
-              }`}
-              style={{ color: "#000" }}
+              className={`la la-bars text-color`}
             />
           </NavLink>
         </NavItem>

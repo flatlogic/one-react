@@ -1,7 +1,6 @@
 @import '../../../../styles/app';
 
 .productCard {
-  margin-bottom: $spacer * 5;
   width: 100%;
 
   @include media-breakpoint-down(sm) {
@@ -15,8 +14,6 @@
   background-position: center;
   background-size: cover;
   position: relative;
-  border-radius: $border-radius;
-  box-shadow: var(--widget-shadow);
 
   @include media-breakpoint-down(sm) {
     height: 200px;
@@ -40,8 +37,12 @@
   .label {
     position: absolute;
     left: 0;
-    top: 15px;
-    padding: 1px 11px;
+    top: 17px;
+    border-radius: 0;
+    padding: .15rem 1rem;
+    transform: rotate(270deg);
+    font-size: 1rem;
+    font-weight: 300;
     color: $white;
   }
 
@@ -94,11 +95,12 @@
 }
 
 .productsCardTitle {
-  text-transform: uppercase;
   margin-top: $spacer;
   letter-spacing: 0.1px;
   font-weight: $font-weight-normal;
+  font-size: 25px;
   color: theme-color('dark');
+  white-space: nowrap;
 }
 
 .productsCardDescription {
@@ -113,10 +115,6 @@
   font-weight: $font-weight-semi-bold;
   align-items: center;
   justify-content: space-between;
-
-  .sale {
-    font-weight: $font-weight-normal;
-  }
 
   .old {
     color: $border-color;
@@ -163,4 +161,24 @@
       display: none;
     }
   }
+}
+
+.sale {
+  font-weight: $font-weight-normal;
+  label {
+    font-weight: $font-weight-thin;
+    font-size: 12px;
+  }
+  h3 {
+    font-size: 21px;
+    font-weight: $font-weight-semi-bold;
+  }
+}
+
+.addBtn {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }

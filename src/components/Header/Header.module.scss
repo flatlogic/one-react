@@ -31,9 +31,6 @@
       margin-right: $content-padding-sm;
     }
   }
-  a {
-    color: #DBDBDB
-  }
 
   .circleStyle {
     position: absolute;
@@ -86,10 +83,6 @@
       &-light {
         background-color: #F0F0F0;
       }
-    }
-
-    .focus .input-group-prepend {
-      background: #f8f9fa;
     }
   }
 }
@@ -218,7 +211,15 @@
     color: rgba(#DBDBDB, .5)
   }
   &Light {
-    color: rgba(#6B6B6B, .5)
+    color: rgba(#6B6B6B, .5);
+    &:focus {
+      background-color: #F0F0F0 !important;
+      color: $text-color;
+    }
+  }
+  &:focus {
+    background-color: #1E1E1E !important;
+    color: #fff;
   }
 }
 

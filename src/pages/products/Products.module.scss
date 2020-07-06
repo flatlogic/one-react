@@ -1,5 +1,21 @@
 @import '../../styles/app';
 
+.searchInput {
+  border-left: none;
+  width: 200px;
+  &:hover, &:focus {
+    border-color: #c1ccd3;
+  }
+}
+
+.searchIcon {
+  border: 1px solid #c1ccd3;
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+  padding-left: 1em;
+  border-right: none;
+}
+
 .productsListFilters {
   display: flex;
   flex-wrap: wrap;
@@ -54,4 +70,81 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* rc-slider customization */
+
+.sliderCustomization.verticalSlider {
+  height: 165px!important;
+  display: inline-block;
+  :global {
+    .rc-slider-handle {
+      margin-left: -11px!important;
+    }
+  }
+}
+
+.sliderCustomization {
+  :global {
+    .rc-slider-rail {
+      background-image: linear-gradient(180deg,#eee 0,#f8f8f8);
+      background-repeat: repeat-x;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+      border-radius: .3rem;
+    }
+    .rc-slider-handle {
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      cursor: -webkit-grab;
+      cursor: grab;
+      border-radius: 50%;
+      border: none;
+      background-color: #fff;
+      touch-action: pan-x;
+      box-shadow: inset 0 1px 0 hsla(0,0%,100%,.2), 0 1px 3px #000;
+    }
+    .rc-slider-handle:hover {
+      border-color: none;
+    }
+  }
+}
+
+.horizontalSlider {
+  margin: 18px 0;
+  :global {
+    .rc-slider-handle {
+      margin-top: -11px;
+    }
+  }
+
+}
+
+.rangeSlider {
+  :global {
+    .rc-slider-handle {
+      margin-top: -11px;
+    }
+  }
+}
+
+.sliderYellow {
+  :global {
+    .rc-slider-track {
+      background-color: theme-color("warning");
+    }
+  }
+}
+
+/* rc-slider customization end */
+
+/* react-select customization */
+
+:global {
+  .selectCustomization {
+    color: #000;
+  }
+}
+
+/* react-select end */
 

@@ -238,7 +238,7 @@ class Calendar extends React.Component {
           <Col md={6} lg={8} xs={12}>
             <Widget>
               <Row className="calendar-controls">
-                <Col md={3}>
+                <Col md={6}>
                   <ButtonGroup className="mr-sm">
                     <Button color="default" onClick={this.prev}>
                       <i className="fa fa-angle-left" />
@@ -251,7 +251,7 @@ class Calendar extends React.Component {
                     Today
                   </Button>
                 </Col>
-                <Col md={9} className="calendar-controls text-right">
+                <Col md={6} className="calendar-controls text-right">
                   <ButtonGroup>
                     <Button
                       color="default" onClick={() => this.changeView('dayGridMonth')}

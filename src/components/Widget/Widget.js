@@ -196,10 +196,12 @@ class Widget extends React.Component {
         } {...attributes}
         >
         {
-          title && (
+          title ? (
             typeof title === 'string'
               ? <h5 className={s.title}>{title}</h5>
               : <header className={s.title}>{title}</header>
+          ) : (
+              <header className={s.title}></header>
           )
         }
         

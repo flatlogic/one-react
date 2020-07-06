@@ -239,7 +239,6 @@ small {
 }
 
 .btn-default {
-  border-color: $gray-400;
   color: $gray-800;
 }
 
@@ -257,7 +256,6 @@ small {
 .btn {
   font-family: $font-family-sans-serif;
   border-radius: 4px;
-  border: none;
   text-transform: uppercase;
   &.dropdown-toggle {
     text-transform: initial;

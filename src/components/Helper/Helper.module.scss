@@ -40,6 +40,9 @@
 
         &:before {
           border: 2px solid var(--main-color);
+          &:not(:checked) {
+            border: 2ox solid $input-border-color;
+          }
         }
   
         &:before, &:after {
@@ -123,10 +126,11 @@
     display: flex;
     justify-content: center;
 
-    i {
+    img {
       animation-duration: 6500ms;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
+      animation-name: spin;
     }
 
     i:first-of-type {
@@ -162,16 +166,8 @@
     top: 0;
 
     &::-webkit-scrollbar {
-      width: 1em;
+      display: none;
     }
-    &::-webkit-scrollbar-track {
-      box-shadow: none;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #333;
-      outline: 1px solid #000;
-    }
-
   }
 
   .themeHelperSharing {
