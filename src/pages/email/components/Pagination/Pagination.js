@@ -4,7 +4,7 @@ import cx from 'classnames';
 import s from './Pagination.module.scss';
 
 const Pagination = () => (
-  <div className={s.pagination}>
+  <div className={`${s.pagination}`}>
     <span className={s.paginationText}>Showing 1 - 10 of 96 messages</span>
     <div className={s.paginationPages}>
       <button className={cx(s.button, s.buttonDisabled)}><i className="fa fa-chevron-left" /></button>

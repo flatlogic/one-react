@@ -3,13 +3,10 @@ import cx from "classnames";
 import PropTypes from "prop-types";
 import {withRouter} from "react-router-dom";
 
-import Rating from "../../../product/components/Rating/Rating";
 import Widget from "../../../../components/Widget";
 
 import {Button} from "reactstrap";
 
-import star from "../../../../images/stars/star.svg";
-import starFilled from "../../../../images/stars/star-filled.svg";
 
 import s from "./ProductCard.module.scss";
 
@@ -30,20 +27,18 @@ class ProductCard extends Component {
         const {
             img,
             title,
-            subtitle,
             price,
             discount,
             rating,
             id,
             createdAt,
             updatedAt,
+            activeList
         } = this.props;
-        const {favourite} = this.state;
-        const newPrice = discount ? price - (price * discount) / 100 : price;
         const label = discount ? "Sale" : createdAt === updatedAt ? "New" : null;
         return (
             <Widget>
-                <div className={[s.productCard, "product-card"].join(" ")}>
+                <div className={cx(s.productCard, "product-card", {[s.productCardList]: activeList})}>
                     <div
                         onClick={() => {
                             this.openProduct(id);
@@ -61,9 +56,6 @@ class ProductCard extends Component {
                                 {label}
                             </div>
                         )}
-                        <button className={s.star} onClick={() => this.changeFavourite()}>
-                            <img src={favourite ? starFilled : star} alt="star"/>
-                        </button>
                     </div>
                     <div className={s.productCardDataWrapper}>
                         <div className={cx(s.productsCardTitle, "title mb-1")}>{title}</div>

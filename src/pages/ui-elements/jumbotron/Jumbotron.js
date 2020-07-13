@@ -9,7 +9,7 @@ import {
 
 const Jumb = () => (
   <div>
-    <Jumbotron fluid>
+    <Jumbotron fluid className={"shadow"}>
       <Container fluid>
         <h1 className="display-3">Fluid jumbotron</h1>
         <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
@@ -17,7 +17,7 @@ const Jumb = () => (
     </Jumbotron>
     <Row>
       <Col xs={12} md={8}>
-        <Jumbotron>
+        <Jumbotron className={"shadow"}>
           <h1 className="display-3">Hello, world!</h1>
           <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
           <hr className="my-2" />

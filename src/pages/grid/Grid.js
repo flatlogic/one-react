@@ -263,13 +263,8 @@ class Grid extends React.Component {
                     </span>
                   </div>
                 }
-                customControls={true}
-                prompt={true}
-                customClose={true}
-                customCollapse={true}
-                customFullscreen={true}
-                customReload={true}
-                bodyClass={"pt-3 px-0 py-0"}
+                customDropDown
+                bodyClass={"pt-3 "}
               >
                 <ul className={"news-list stretchable"}>
                   {this.state.gridData.news.map((item) => (
@@ -314,7 +309,7 @@ class Grid extends React.Component {
                 </div>
               </Widget>
 
-              <Widget className={s.customGrayBg} customBody={true}></Widget>
+              <Widget className={s.customGrayBg} customBody={true} bodyClass={"p-0"}></Widget>
             </Sortable>
           </Col>
         </Row>

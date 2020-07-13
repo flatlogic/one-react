@@ -74,16 +74,18 @@
 
   .badge {
     float: right;
-    line-height: 16px;
+    line-height: 15px;
     margin-top: 5px;
     margin-right: 35px;
     background: var(--badge-background-color);
     color: var(--badge-item-color);
     border: 1px solid var(--badge-border-color);
     font-weight: 400;
-    width: 24px;
-    height: 24px;
-    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+    border-radius: 50%;
+    padding: 0.22em 0.5em;
     @media (min-width: map_get($grid-breakpoints, lg)) and (min-height: $screen-lg-height), (max-width: map_get($grid-breakpoints, md) - 1px) {
       margin-top: 12px;
     }

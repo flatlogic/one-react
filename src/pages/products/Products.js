@@ -15,6 +15,7 @@ import {
   Label,
   FormGroup,
 } from "reactstrap";
+import cx from 'classnames'
 import { Range, createSliderWithTooltip } from "rc-slider";
 import s from "./Products.module.scss";
 import { getProductsRequest } from "../../actions/products";
@@ -63,15 +64,22 @@ class ProductList extends Component {
     });
   };
 
+  forceUpdate() {
+    return this.setState({});
+  }
+
   componentDidMount() {
     this.props.dispatch(getProductsRequest());
+    if (this.props.products.length !== 0) {
+      this.setState({ localProducts: this.props.products });
+    }
+    window.addEventListener("resize", this.forceUpdate.bind(this));
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.products !== prevProps.products) {
       this.setState({ localProducts: this.props.products });
     }
-    console.log(this.state.localProducts);
   }
 
   render() {
@@ -90,10 +98,9 @@ class ProductList extends Component {
       });
     };
 
-    const { isModalActive, modalId } = this.state;
     return (
       <Row>
-        <Col xs={3} className={"d-md-down-none"}>
+        <Col xs={3} className={cx({"d-none": window.innerWidth < 1164})}>
           {/* eslint-disable */}
           {/* eslint-enable */}
           <Widget title={<p className={"fw-bold"}>Filters</p>} >
@@ -102,7 +109,7 @@ class ProductList extends Component {
               className="checkbox abc-checkbox abc-checkbox-warning mb-1 mt-1"
               check
             >
-              <Input id="checkbox1" type="checkbox" defaultChecked />{" "}
+              <Input id="checkbox1" type="checkbox" defaultChecked  onChange={(e) => console.log(e.currentTarget)}/>{" "}
               <Label for="checkbox1" check>
                 All
               </Label>
@@ -131,7 +138,9 @@ class ProductList extends Component {
             <span className="slider-warning">
               <RangeTooltip
                 allowCross={false}
-                defaultValue={[9, 70]}
+                defaultValue={[10061, 70000]}
+                min={0}
+                max={100000}
                 className={`${s.sliderCustomization} ${s.rangeSlider} ${s.sliderYellow} mt-2`}
               />
               &nbsp;
@@ -317,7 +326,7 @@ class ProductList extends Component {
             <Button color={"danger"} outline className={"mt-3 w-100"} style={{fontSize: 12}}>remove filters</Button>
           </Widget>
         </Col>
-        <Col xs={9}>
+        <Col xs={window.innerWidth < 1164 ? 12 : 9}>
           <Row>
             <Col xs={12}>
               <Widget>
@@ -327,7 +336,7 @@ class ProductList extends Component {
                       addonType="prepend"
                       className={s.searchIcon}
                     >
-                      <img src={SearchIcon} alt="search" />
+                      <img src={SearchIcon} alt="search" width={"24px"} height={"23px"}/>
                     </InputGroupAddon>
                     <Input
                       type="text"
@@ -368,7 +377,7 @@ class ProductList extends Component {
                     lg={this.state.activeList ? 12 : 6}
                     xl={this.state.activeList ? 12 : 6}
                   >
-                    <ProductCard key={item.id} {...item} />
+                    <ProductCard key={item.id} {...item} activeList={this.state.activeList} />
                   </Col>
                 ))}
               </Row>

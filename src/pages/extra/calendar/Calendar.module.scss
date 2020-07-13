@@ -11,7 +11,11 @@
     }
 
     .fc .fc-today {
-      background-color: rgba($purple, .2);
+      background-color: rgba($yellow, .1);
+    }
+
+    .fc-day-number {
+      padding: .8rem !important;
     }
 
     .fc-day-grid-event {
@@ -27,9 +31,14 @@
     }
 
     a.fc-event {
-      height: auto;
-      line-height: $line-height-base;
-      width: 100%;
+      text-decoration: none;
+      cursor: pointer;
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      position: relative;
+      min-width: calc(100% - 15px);
+      text-align: center;
     }
 
     /* ****  Full Calendar Custom   **** */
@@ -59,10 +68,8 @@
 .customExternalEvent {
   margin: 10px 0;
   padding: 6px;
-  font-size: $font-size-mini;
+  font-size: .9rem;
   cursor: pointer;
   border-radius: $border-radius;
-  background-color: $white;
-  border: 1px solid #ccc;
-  box-shadow: var(--widget-shadow);
+  box-shadow: 4px 4px 25px rgba(109,105,105,0.15);
 }

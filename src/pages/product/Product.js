@@ -9,8 +9,6 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { getProductsRequest } from '../../actions/products';
 
-import ProductImg from '../../images/products/product6.png'
-
 class Product extends React.Component {
     static propTypes = {
         products: PropTypes.array,
@@ -22,7 +20,7 @@ class Product extends React.Component {
     };
 
     componentDidMount() {
-        window.scrollTo(0,0);
+        document.querySelector('body').scrollTo(0,0)
         this.props.dispatch(getProductsRequest());
     }
 
@@ -44,9 +42,6 @@ class Product extends React.Component {
             product = this.findProduct(1);
         }
         const products = this.props.products;
-
-
-        console.log(this.getId())
 
         return (
             <div className="product-details">

@@ -224,11 +224,7 @@ table > thead > tr > th {
 
     > a {
       text-decoration: none;
-      color: $text-muted;
-
-      &:hover {
-        color: $text-muted;
-      }
+      color: $text-color;
     }
   }
 
@@ -245,8 +241,6 @@ table > thead > tr > th {
 
 .post-comments {
   margin-bottom: $spacer / 2;
-  margin-left: -20px;
-  margin-right: -20px;
   font-size: $font-size-sm;
 
   @include clearfix();

@@ -46,7 +46,7 @@ class Alerts extends Component {
     return (
       <div>
         <Row>
-          <Col xs={12}>
+          <Col xs={6}>
             <Widget
               title={<p style={{ fontWeight: 700 }}>Alert Messages</p>}
               customDropDown
@@ -60,7 +60,7 @@ class Alerts extends Component {
               </Alert>)}
             </Widget>
           </Col>
-          <Col xs={12}>
+          <Col xs={6}>
             <Widget
               title={<p style={{ fontWeight: 700 }}>Transparent Alerts</p>}
               customDropDown
@@ -75,7 +75,7 @@ class Alerts extends Component {
               </Alert>)}
             </Widget>
           </Col>
-          <Col xs={12}>
+          <Col xs={6}>
             <Widget
               title={<p style={{ fontWeight: 700 }}>Rounded Alerts</p>}
               customDropDown
@@ -90,7 +90,7 @@ class Alerts extends Component {
               </Alert>)}
             </Widget>
           </Col>
-          <Col xs={12}>
+          <Col xs={6}>
             <Widget
               title={<p style={{ fontWeight: 700 }}>Additional Content</p>}
               customDropDown

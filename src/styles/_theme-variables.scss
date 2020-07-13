@@ -6,7 +6,7 @@
   .flatlogic-one,
   .dashboard-light {
     --sidebar-ui-background-color: rgba(255, 173, 1, .1);
-    --main-color: #FFAD01;
+    --main-color: #feb049;
     --sidebar-item-active: #323232;
     --badge-background-color: rgba(255, 234, 206, 0.51);
     --badge-border-color: #FFAD01;
@@ -26,7 +26,7 @@
 
   .dashboard-dark {
     --sidebar-ui-background-color: #464646;
-    --main-color: #FFAD01;
+    --main-color: #feb049;
     --logo-color: #fff;
     --logo-background-color: #feb049;
     --badge-background-color: transparent;
@@ -44,12 +44,12 @@
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
   .dashboard-danger {
-    --main-color: #FF7769;
+    --main-color: #f5695a;
     --badge-background-color: #FFD6D2;
     --badge-item: #323232;
     --badge-border-color: #FFD6D2;
     --logo-color: #fff;
-    --logo-background-color: #FF7769;
+    --logo-background-color: #f5695a;
     --sidebar-action-bg: #f9fafe;
     --sidebar-item-active-color: "#FFFFFF";
     &.dashboard-light {
@@ -62,12 +62,12 @@
     --navbar-shadow: 0 15px 20px -20px rgba(var(--widget-shadow-color), 0.1), 0 0 15px rgba(var(--widget-shadow-color), 0.06);
   }
   .dashboard-info {
-    --main-color: #4DC7DF;
+    --main-color: #12b4de;
     --badge-background-color: #CAEEF5;
     --badge-item: #323232;
     --badge-border-color: #CAEEF5;
     --logo-color: #fff;
-    --logo-background-color: #4DC7DF;
+    --logo-background-color: #12b4de;
     --sidebar-action-bg: #f9fafe;
     --sidebar-item-active-color: "#FFFFFF";
     &.dashboard-light {
@@ -82,12 +82,12 @@
   }
 
   .dashboard-success {
-    --main-color: #81D4BB;
+    --main-color: #3bbf97;
     --badge-background-color: #D9F2EB;
     --badge-item: #323232;
     --badge-border-color: #D9F2EB;
     --logo-color: #fff;
-    --logo-background-color: #81D4BB;
+    --logo-background-color: #3bbf97;
     --sidebar-action-bg: #f9fafe;
     --sidebar-item-active-color: "#FFFFFF";
     &.dashboard-light {

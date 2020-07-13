@@ -29,6 +29,14 @@ const Typography = () => {
       </Row>
       <Row>
         <Col lg={6}>
+          <Widget title={"Text Size"}>
+            <h1 className="display-1">Display 1</h1>
+            <h1 className="display-2">Display 2</h1>
+            <h1 className="display-3">Display 3</h1>
+            <h1 className="display-4">Display 4</h1>
+          </Widget>
+        </Col>
+        <Col lg={6}>
           <Widget title={"Basic Text Settings"}>
             <p>
               You can use the mark tag to <mark>highlight</mark> text.
@@ -55,14 +63,6 @@ const Typography = () => {
             <p>
               <strong>This line rendered as bold text.</strong>
             </p>
-          </Widget>
-        </Col>
-        <Col lg={6}>
-          <Widget title={"Text Size"}>
-            <h1 className="display-1">Display 1</h1>
-            <h1 className="display-2">Display 2</h1>
-            <h1 className="display-3">Display 3</h1>
-            <h1 className="display-4">Display 4</h1>
           </Widget>
         </Col>
       </Row>

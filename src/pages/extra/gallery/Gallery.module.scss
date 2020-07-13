@@ -1,4 +1,4 @@
-@import '../../../styles/app';
+@import "../../../styles/app";
 
 .root {
   :global .tile {
@@ -12,16 +12,40 @@
   margin-bottom: $spacer;
 }
 
+:global .btn-group {
+  .btn {
+    transition: border-color 0.15s ease-in-out;
+    background-color: $white !important;
+    border-bottom: 2px solid transparent;
+    border: {
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+    text-transform: initial;
+    border-radius: 0;
+    color: rgba(50,50,50,0.5);
+    &.active {
+      border-bottom: 2px solid theme-color("warning") !important;
+      color: $text-color;
+    }
+    &:focus {
+      border: 0;
+    }
+  }
+}
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 30px;
 }
 
 .picture {
-  padding: 3px;
-  border-radius: $border-radius;
+  padding: 1em;
   background-color: $white;
+  border-radius: 8px;
+  border: none;
 
   > a {
     overflow: hidden;

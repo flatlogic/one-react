@@ -2,13 +2,17 @@
 
 .root {
   .searchResultCategories {
+    width: calc(100% + 60px);
+    margin: 0 -30px;
     > li > a {
       color: $gray-600;
       font-weight: $font-weight-normal;
+      padding: .5rem 2rem;
 
       &:hover {
         color: $gray-700;
         background-color: $gray-400;
+        border-radius: 0;
       }
     }
   }

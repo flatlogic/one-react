@@ -2,23 +2,26 @@ import React from 'react';
 import {
   Button,
   ButtonGroup,
+    Row,
+    Col
 } from 'reactstrap';
+import Widget from '../../../components/Widget'
 
 import Lightbox from 'react-images';
 import s from './Gallery.module.scss';
 
-import pic1 from '../../../images/pictures/1.jpg';
-import pic2 from '../../../images/pictures/2.jpg';
-import pic3 from '../../../images/pictures/3.jpg';
-import pic4 from '../../../images/pictures/4.jpg';
-import pic5 from '../../../images/pictures/5.jpg';
-import pic6 from '../../../images/pictures/6.jpg';
-import pic8 from '../../../images/pictures/8.jpg';
-import pic9 from '../../../images/pictures/9.jpg';
-import pic10 from '../../../images/pictures/10.jpg';
-import pic11 from '../../../images/pictures/11.jpg';
-import pic13 from '../../../images/pictures/13.jpg';
-import pic14 from '../../../images/pictures/14.jpg';
+import pic1 from '../../../images/pictures/24.png';
+import pic2 from '../../../images/pictures/25.png';
+import pic3 from '../../../images/pictures/26.png';
+import pic4 from '../../../images/pictures/27.png';
+import pic5 from '../../../images/pictures/28.png';
+import pic6 from '../../../images/pictures/29.png';
+import pic8 from '../../../images/pictures/30.png';
+import pic9 from '../../../images/pictures/31.png';
+import pic10 from '../../../images/pictures/32.png';
+import pic11 from '../../../images/pictures/33.png';
+import pic13 from '../../../images/pictures/34.png';
+import pic14 from '../../../images/pictures/35.png';
 
 const items = [
   {
@@ -229,18 +232,18 @@ class Gallery extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <div className={s.galleryControls}>
-          <ButtonGroup id="shuffle-buttons">
-            <Button color="default" onClick={() => this.filterChildren('all')} active={this.state.activeGroup === 'all'}>All</Button>
-            <Button color="default" onClick={() => this.filterChildren('nature')} active={this.state.activeGroup === 'nature'}>Nature</Button>
-            <Button color="default" onClick={() => this.filterChildren('people')} active={this.state.activeGroup === 'people'}>People</Button>
-            <Button color="default" onClick={() => this.filterChildren('space')} active={this.state.activeGroup === 'space'}>Space</Button>
-          </ButtonGroup>
-          <ButtonGroup id="order-buttons">
-            <Button color="default" onClick={() => this.orderChildren('asc')} active={this.state.order === 'asc'}><i className="fa fa-sort-numeric-asc" /></Button>
-            <Button color="default" onClick={() => this.orderChildren('desc')} active={this.state.order === 'desc'}><i className="fa fa-sort-numeric-desc" /></Button>
-          </ButtonGroup>
-        </div>
+        <Row>
+          <Col sm={12}>
+            <Widget>
+              <ButtonGroup id="shuffle-buttons" className={s.galleryBtnGroup}>
+                <Button color="default" onClick={() => this.filterChildren('all')} active={this.state.activeGroup === 'all'}>All</Button>
+                <Button color="default" onClick={() => this.filterChildren('nature')} active={this.state.activeGroup === 'nature'}>Nature</Button>
+                <Button color="default" onClick={() => this.filterChildren('people')} active={this.state.activeGroup === 'people'}>People</Button>
+                <Button color="default" onClick={() => this.filterChildren('space')} active={this.state.activeGroup === 'space'}>Space</Button>
+              </ButtonGroup>
+            </Widget>
+          </Col>
+        </Row>
         <div className={s.gallery}>
           {this.state.children.map((item, index) => {
             const key = item.name + index;
@@ -248,11 +251,12 @@ class Gallery extends React.Component {
               <div key={key} className={`${s.picture} card`}>
                 <a href={item.src} onClick={e => this.openLightbox(index, e)}><img className="figure-img" src={item.src} alt="..." /></a>
                 <div className={s.description}>
-                  <h6 className="mt-0 mb-xs">{item.name}</h6>
-                  <ul className="post-links">
-                    <li><button className="btn-link">{item.date}</button></li>
+                  <small className="mt-0 mb-sm">{item.name}</small>
+                  <hr className={"mt-1"}/>
+                   <ul className="post-links">
+                    <li><a href="#">{item.date}</a></li>
                     <li><button className="btn-link"><span className="text-danger"><i className={`fa ${item.like ? 'fa-heart' : 'fa-heart-o'}`} /> Like</span></button></li>
-                    <li><button className="btn-link">Details</button></li>
+                    <li><a href="#">Details</a></li>
                   </ul>
                 </div>
               </div>

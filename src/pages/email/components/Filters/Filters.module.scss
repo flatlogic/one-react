@@ -1,9 +1,6 @@
 @import '../../../../styles/app';
 
 .filters {
-  width: 16%;
-  padding-right: 15px;
-
   @media screen and (max-width: 1125px) {
     width: 100%;
     padding-right: 0;
@@ -15,8 +12,9 @@
 }
 
 .button {
-  width: 100%;
-  padding: 10px 14px !important;
+  margin: 0 -30px;
+  width: calc(100% + 60px);
+  padding: 10px 44px !important;
   display: flex !important;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +22,8 @@
   border-radius: 0.2rem;
   color: #868e96;
   background: transparent;
+  text-transform: initial;
+
 
   &:hover {
     background-color: #e5e5e5;
@@ -42,7 +42,8 @@
 }
 
 .buttonActive {
-  background-color: $white;
+  background-color: rgba(50,50,50,0.1);
   color: #555;
   font-weight: 600;
+  border-radius: 0;
 }

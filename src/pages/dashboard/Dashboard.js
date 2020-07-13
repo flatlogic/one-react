@@ -2,9 +2,21 @@ import React from "react";
 import { Row, Col, Table } from "reactstrap";
 
 import usersImg from "../../images/usersImg.svg";
+import usersDangerImg from '../../images/theme-icons/red/Users.svg'
+import usersSuccessImg from '../../images/theme-icons/green/Users.svg'
+import usersInfoImg from '../../images/theme-icons/blue/Users.svg'
 import smileImg from "../../images/smileImg.svg";
+import smileDangerImg from '../../images/theme-icons/red/Smile.svg'
+import smileSuccessImg from '../../images/theme-icons/green/Smile.svg'
+import smileInfoImg from '../../images/theme-icons/blue/Smile.svg'
 import totalSale from "../../images/total-sale.svg";
+import totalSaleDangerImg from '../../images/theme-icons/red/Sale.svg'
+import totalSaleSuccessImg from '../../images/theme-icons/green/Sale.svg'
+import totalSaleInfoImg from '../../images/theme-icons/blue/Sale.svg'
 import orders from "../../images/orders.svg";
+import ordersDangerImg from '../../images/theme-icons/red/Orders.svg'
+import ordersSuccessImg from '../../images/theme-icons/green/Orders.svg'
+import ordersInfoImg from '../../images/theme-icons/blue/Orders.svg'
 import stocksImg from "../../images/stocks.svg";
 import stocksDownImg from "../../images/stocksDown.svg";
 
@@ -15,14 +27,14 @@ import Widget from "../../components/Widget";
 import s from "./Dashboard.module.scss";
 import ApexChart from "react-apexcharts";
 
-//people
+// people
 import p1 from "../../images/people/p1.png";
 import p2 from "../../images/people/p2.png";
 import p3 from "../../images/people/p3.png";
 import p4 from "../../images/people/p4.png";
 import p5 from "../../images/userAvatar.png";
-import {withRouter} from "react-router-dom";
-import {connect} from "react-redux";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
 const orderValueOverride = {
   options: {
@@ -84,6 +96,127 @@ const orderValueOverride = {
   },
 };
 
+const orderValueOverrideDanger = {
+  options: {
+    chart: {
+      height: 350,
+      type: "bar",
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: ["rgba(255, 169, 131, 0.3)"],
+    plotOptions: {
+      bar: {
+        columnWidth: "40%",
+        distributed: true,
+        endingShape: "rounded",
+        startingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+      labels: {
+        show: false,
+      },
+    },
+    grid: {
+      padding: {
+        left: -9,
+        right: 0,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+  },
+};
+
+const orderValueOverrideInfo = {
+  options: {
+    chart: {
+      height: 350,
+      type: "bar",
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: ["rgba(255, 119, 105, .3)"],
+    plotOptions: {
+      bar: {
+        columnWidth: "40%",
+        distributed: true,
+        endingShape: "rounded",
+        startingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+      labels: {
+        show: false,
+      },
+    },
+    grid: {
+      padding: {
+        left: -9,
+        right: 0,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+  },
+};
+
+
 const convertionRateOverride = {
   series: [
     {
@@ -98,7 +231,72 @@ const convertionRateOverride = {
         show: false,
       },
     },
-    colors: ["rgba(246, 121, 93, 0.3)"],
+    colors: ["rgba(255, 169, 131, .3)"],
+    plotOptions: {
+      bar: {
+        columnWidth: "40%",
+        distributed: true,
+        endingShape: "rounded",
+        startingShape: "rounded",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+      labels: {
+        show: false,
+      },
+    },
+    grid: {
+      padding: {
+        left: -8,
+        right: 0,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+  },
+};
+
+const convertionRateOverrideDanger = {
+  series: [
+    {
+      data: [280, 300, 170, 200, 230, 190, 260, 100, 290, 280, 300, 250, 240],
+    },
+  ],
+  options: {
+    chart: {
+      height: 350,
+      type: "bar",
+      toolbar: {
+        show: false,
+      },
+    },
+    colors: ["rgba(50, 50, 50, 0.3)"],
     plotOptions: {
       bar: {
         columnWidth: "40%",
@@ -169,10 +367,76 @@ const area = {
       },
     },
     fill: {
-      type: 'solid',
-      colors: ["rgba(252, 215, 206, .25)"]
+      type: "solid",
+      colors: ["rgba(252, 215, 206, .25)"],
     },
     colors: ["rgba(246, 121, 93)"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+      labels: {
+        show: false,
+      },
+    },
+    grid: {
+      padding: {
+        left: 5,
+        right: 0,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+  },
+};
+
+const areaDanger = {
+  series: [
+    {
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
+  options: {
+    stroke: {
+      show: true,
+      curve: "smooth",
+      width: 3,
+    },
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      type: "solid",
+      colors: ["rgba(194, 194, 194, .3)"],
+    },
+    colors: ["#323232"],
     dataLabels: {
       enabled: false,
     },
@@ -235,8 +499,8 @@ const area2 = {
       },
     },
     fill: {
-      type: 'solid',
-      colors: ["rgba(255, 230, 179, .25)"]
+      type: "solid",
+      colors: ["rgba(255, 230, 179, .25)"],
     },
     colors: ["rgba(255, 173, 1)"],
     dataLabels: {
@@ -281,6 +545,139 @@ const area2 = {
   },
 };
 
+const area2Danger = {
+  series: [
+    {
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+  ],
+  options: {
+    stroke: {
+      show: true,
+      curve: "smooth",
+      width: 3,
+    },
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      type: "solid",
+      colors: ["rgba(255, 169, 131, .3)"],
+    },
+    colors: ["rgba(255, 169, 131, 1)"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+      labels: {
+        show: false,
+      },
+    },
+    grid: {
+      padding: {
+        left: 5,
+        right: 0,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+  },
+};
+
+const area2Info = {
+  series: [
+    {
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+  ],
+  options: {
+    stroke: {
+      show: true,
+      curve: "smooth",
+      width: 3,
+    },
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      type: "solid",
+      colors: ["rgba(255, 119, 105, .3)"],
+    },
+    colors: ["#FF7769"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    xaxis: {
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+      labels: {
+        show: false,
+      },
+    },
+    yaxis: {
+      show: false,
+      labels: {
+        show: false,
+      },
+    },
+    grid: {
+      padding: {
+        left: 5,
+        right: 0,
+      },
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: false,
+        },
+      },
+    },
+  },
+};
+
+
 const splineArea = {
   series: [
     {
@@ -301,8 +698,8 @@ const splineArea = {
       },
     },
     fill: {
-      colors: ["rgba(255, 205, 101, .2)", 'rgba(0,0,0,0)'],
-      type: 'solid'
+      colors: ["rgba(255, 205, 101, .2)", "rgba(0,0,0,0)"],
+      type: "solid",
     },
     colors: ["#FFBF69", "#323232"],
     legend: {
@@ -313,6 +710,9 @@ const splineArea = {
     },
     stroke: {
       curve: "smooth",
+    },
+    grid: {
+      borderColor: 'rgba(196, 196, 196, 0.2)'
     },
     yaxis: {
       labels: {
@@ -364,10 +764,270 @@ const splineArea = {
   },
 };
 
+const splineAreaDanger = {
+  series: [
+    {
+      name: "Income",
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: "Outcome",
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
+  options: {
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      colors: ["rgba(255, 214, 210, .3)", "rgba(0,0,0,0)"],
+      type: "solid",
+    },
+    colors: ["#FF7769", "#323232"],
+    legend: {
+      position: "top",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    grid: {
+      borderColor: 'rgba(196, 196, 196, 0.2)'
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [
+        "2018-09-19T00:00:00.000Z",
+        "2018-09-19T01:30:00.000Z",
+        "2018-09-19T02:30:00.000Z",
+        "2018-09-19T03:30:00.000Z",
+        "2018-09-19T04:30:00.000Z",
+        "2018-09-19T05:30:00.000Z",
+        "2018-09-19T06:30:00.000Z",
+      ],
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  },
+};
+
+const splineAreaSuccess = {
+  series: [
+    {
+      name: "Income",
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: "Outcome",
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
+  options: {
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      colors: ["rgba(217, 242, 235, .3)", "rgba(0,0,0,0)"],
+      type: "solid",
+    },
+    colors: ["#81D4BB", "#323232"],
+    legend: {
+      position: "top",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    grid: {
+      borderColor: 'rgba(196, 196, 196, 0.2)'
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [
+        "2018-09-19T00:00:00.000Z",
+        "2018-09-19T01:30:00.000Z",
+        "2018-09-19T02:30:00.000Z",
+        "2018-09-19T03:30:00.000Z",
+        "2018-09-19T04:30:00.000Z",
+        "2018-09-19T05:30:00.000Z",
+        "2018-09-19T06:30:00.000Z",
+      ],
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  },
+};
+
+const splineAreaInfo = {
+  series: [
+    {
+      name: "Income",
+      data: [31, 40, 28, 51, 42, 109, 100],
+    },
+    {
+      name: "Outcome",
+      data: [11, 32, 45, 32, 34, 52, 41],
+    },
+  ],
+  options: {
+    chart: {
+      height: 350,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      colors: ["rgba(202, 238, 245, 0.3)", "rgba(0,0,0,0)"],
+      type: "solid",
+    },
+    colors: ["#4DC7DF", "#323232"],
+    legend: {
+      position: "top",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    grid: {
+      borderColor: 'rgba(196, 196, 196, 0.2)'
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [
+        "2018-09-19T00:00:00.000Z",
+        "2018-09-19T01:30:00.000Z",
+        "2018-09-19T02:30:00.000Z",
+        "2018-09-19T03:30:00.000Z",
+        "2018-09-19T04:30:00.000Z",
+        "2018-09-19T05:30:00.000Z",
+        "2018-09-19T06:30:00.000Z",
+      ],
+      labels: {
+        style: {
+          colors: [
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+            "rgba(18, 4, 0, .5)",
+          ],
+          fontWeight: 300,
+        },
+      },
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  },
+};
+
+
 class Dashboard extends React.Component {
   constructor() {
     super();
-    this.forceUpdate = this.forceUpdate.bind(this)
+    this.forceUpdate = this.forceUpdate.bind(this);
+    this.updateChartsColor = this.updateChartsColor.bind(this);
   }
   state = {
     orderValue: { ...chartData.apex.column, ...orderValueOverride },
@@ -375,14 +1035,301 @@ class Dashboard extends React.Component {
     area: { ...area },
     area2: { ...area2 },
     splineArea: { ...splineArea },
+    pie: {
+      options: {
+        chart: {
+          type: 'donut'
+        },
+        colors: ['#FFBF69', "#323232", '#FF7769'],
+        labels: ["On progress", "Canceled", "Booked"],
+        stroke: {
+          show: false,
+          width: 0
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '45%'
+            }
+          }
+        },
+        dataLabels: {
+          dropShadow: {
+            enabled: false
+          }
+        },
+        legend: {
+          show: false
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              position: 'bottom'
+            }
+          }
+        }]
+      }
+    },
+    usersImg: usersImg,
+    smileImg: smileImg,
+    saleImg: totalSale,
+    ordersImg: orders
   };
 
+  updateChartsColor(themeColor) {
+    switch (themeColor) {
+      case "warning":
+        this.setState({
+          orderValue: { ...chartData.apex.column, ...orderValueOverride },
+          convertionRate: {
+            ...chartData.apex.column,
+            ...convertionRateOverride,
+          },
+          area: { ...area },
+          area2: { ...area2 },
+          splineArea: { ...splineArea },
+              pie: {
+                options: {
+                  chart: {
+                    type: 'donut'
+                  },
+                  colors: ['#FFBF69', "#323232", '#FF7769'],
+                  labels: ["On progress", "Canceled", "Booked"],
+                  stroke: {
+                    show: false,
+                    width: 0
+                  },
+                  plotOptions: {
+                    pie: {
+                      donut: {
+                        size: '45%'
+                      }
+                    }
+                  },
+                  dataLabels: {
+                    dropShadow: {
+                      enabled: false
+                    }
+                  },
+                  legend: {
+                    show: false
+                  },
+                  responsive: [{
+                    breakpoint: 480,
+                    options: {
+                      chart: {
+                        width: 200
+                      },
+                      legend: {
+                        position: 'bottom'
+                      }
+                    }
+                  }]
+                }
+              },
+          usersImg: usersImg,
+          smileImg: smileImg,
+          saleImg: totalSale,
+          ordersImg: orders
+        });
+        break;
+      case "danger":
+        this.setState({
+          orderValue: { ...chartData.apex.column, ...orderValueOverrideDanger },
+          convertionRate: {
+            ...chartData.apex.column,
+            ...convertionRateOverrideDanger,
+          },
+          area: { ...areaDanger },
+          area2: { ...area2Danger },
+          pie: {
+            options: {
+              chart: {
+                type: 'donut'
+              },
+              colors: ['#FF7769', "#323232", '#FFA983'],
+              labels: ["On progress", "Canceled", "Booked"],
+              stroke: {
+                show: false,
+                width: 0
+              },
+              plotOptions: {
+                pie: {
+                  donut: {
+                    size: '45%'
+                  }
+                }
+              },
+              dataLabels: {
+                dropShadow: {
+                  enabled: false
+                }
+              },
+              legend: {
+                show: false
+              },
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 200
+                  },
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }]
+            }
+          },
+          splineArea: { ...splineAreaDanger },
+          usersImg: usersDangerImg,
+          smileImg: smileDangerImg,
+          saleImg: totalSaleDangerImg,
+          ordersImg: ordersDangerImg
+        });
+        break;
+      case "success":
+        this.setState({
+          orderValue: { ...chartData.apex.column, ...orderValueOverrideDanger },
+          convertionRate: {
+            ...chartData.apex.column,
+            ...convertionRateOverrideDanger,
+          },
+          area: { ...areaDanger },
+          area2: { ...area2Danger },
+          splineArea: { ...splineAreaSuccess },
+          pie: {
+            options: {
+              chart: {
+                type: 'donut'
+              },
+              colors: ['#81D4BB', "#323232", '#FFA983'],
+              labels: ["On progress", "Canceled", "Booked"],
+              stroke: {
+                show: false,
+                width: 0
+              },
+              plotOptions: {
+                pie: {
+                  donut: {
+                    size: '45%'
+                  }
+                }
+              },
+              dataLabels: {
+                dropShadow: {
+                  enabled: false
+                }
+              },
+              legend: {
+                show: false
+              },
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 200
+                  },
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }]
+            }
+          },
+          usersImg: usersSuccessImg,
+          smileImg: smileSuccessImg,
+          saleImg: totalSaleSuccessImg,
+          ordersImg: ordersSuccessImg
+        });
+        break;
+      case "info":
+        this.setState({
+          orderValue: { ...chartData.apex.column, ...orderValueOverrideInfo },
+          convertionRate: {
+            ...chartData.apex.column,
+            ...convertionRateOverrideDanger,
+          },
+          area: { ...areaDanger },
+          area2: { ...area2Info },
+          splineArea: { ...splineAreaInfo },
+          pie: {
+            options: {
+              chart: {
+                type: 'donut'
+              },
+              colors: ['#4DC7DF', "#323232", '#FF7769'],
+              labels: ["On progress", "Canceled", "Booked"],
+              stroke: {
+                show: false,
+                width: 0
+              },
+              plotOptions: {
+                pie: {
+                  donut: {
+                    size: '45%'
+                  }
+                }
+              },
+              dataLabels: {
+                dropShadow: {
+                  enabled: false
+                }
+              },
+              legend: {
+                show: false
+              },
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 200
+                  },
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }]
+            }
+          },
+          usersImg: usersInfoImg,
+          smileImg: smileInfoImg,
+          saleImg: totalSaleInfoImg,
+          ordersImg: ordersInfoImg
+        });
+        break;
+    }
+  }
+
   componentDidMount() {
-    window.addEventListener("resize", this.forceUpdate.bind(this))
+    window.addEventListener("resize", this.forceUpdate.bind(this));
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.dashboardColor !== this.props.dashboardColor) {
+      switch (this.props.dashboardColor) {
+        case "warning":
+          this.updateChartsColor("warning");
+          break;
+        case "danger":
+          this.updateChartsColor("danger");
+          break;
+        case "success":
+          this.updateChartsColor("success")
+              break;
+        case "info":
+          this.updateChartsColor("info")
+              break;
+      }
+    }
   }
 
   forceUpdate() {
-    return this.setState({})
+    return this.setState({});
   }
 
   render() {
@@ -460,7 +1407,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={usersImg} alt="" style={{ paddingTop: 7 }} />
+                  <img src={this.state.usersImg} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -497,7 +1444,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={smileImg} alt="" style={{ paddingTop: 7 }} />
+                  <img src={this.state.smileImg} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -596,7 +1543,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={totalSale} alt="" style={{ paddingTop: 7 }} />
+                  <img src={this.state.saleImg} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -633,7 +1580,7 @@ class Dashboard extends React.Component {
                     "d-flex justify-content-center align-items-center mb-2"
                   }
                 >
-                  <img src={orders} alt="" style={{ paddingTop: 7 }} />
+                  <img src={this.state.ordersImg} alt="" style={{ paddingTop: 7 }} />
                 </Col>
                 <Col
                   sm={12}
@@ -703,24 +1650,24 @@ class Dashboard extends React.Component {
                   type={"donut"}
                   height={180}
                   series={chartData.apex.pie.series}
-                  options={chartData.apex.pie.options}
+                  options={this.state.pie.options}
                 />
               </Row>
               <Row className={`justify-content-between`}>
                 <Col sm={4}>
-                  <div className={`${s.pieElementsDanger} ${s.pieElements}`}>
+                  <div className={`${s.pieElements}`} style={{borderTopColor: this.state.pie.options.colors[2]}}>
                     <h4 className={"mt-3 mb-1"}>253</h4>
                     <p>Booked</p>
                   </div>
                 </Col>
                 <Col sm={4}>
-                  <div className={`${s.pieElementsWarning} ${s.pieElements}`}>
+                  <div className={`${s.pieElements}`} style={{borderTopColor: this.state.pie.options.colors[0]}}>
                     <h4 className={"mt-3 mb-1"}>1732</h4>
                     <p>On progress</p>
                   </div>
                 </Col>
                 <Col sm={4}>
-                  <div className={`${s.pieElementsBlack} ${s.pieElements}`}>
+                  <div className={`${s.pieElements}`} style={{borderTopColor: this.state.pie.options.colors[1]}}>
                     <h4 className={"mt-3 mb-1"}>50</h4>
                     <p>Canceled</p>
                   </div>
@@ -735,7 +1682,7 @@ class Dashboard extends React.Component {
               customDropDown
               title={<p className={"fw-bold"}>Recent Order</p>}
             >
-              <Table className={"mb-0"} borderless responsive>
+              <Table className={"mb-0"} responsive>
                 <thead>
                   <tr>
                     <th key={0} scope="col" className={"pl-0"}>
@@ -852,6 +1799,7 @@ class Dashboard extends React.Component {
 function mapStateToProps(store) {
   return {
     sidebarColor: store.layout.sidebarColor,
+    dashboardColor: store.layout.dashboardTheme,
   };
 }
 

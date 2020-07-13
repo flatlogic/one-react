@@ -49,66 +49,6 @@ class SPackage extends React.Component {
           <Col md={6}>
             <Widget
               title={
-                <p className={"fw-bold"}>Angular Version</p>
-              } customDropDown
-            >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={angularLogo} width="80" alt="" />
-              <h3>Angular 2+ Version</h3>
-              <p className="text-muted">We spent around <span className="fw-semi-bold">500</span> man-hours
-                developing and designing
-                Angular version, to match high engineering requirements.</p>
-              <p><a href="https://angular.io" rel="nofollow noopener noreferrer" target="_blank">Angular</a> is the
-                most mature and wide spread
-                front-end framework created by Google and used by many established enterprises.
-                It is a very good choice when
-                your expect your application to have a well-engineered structure
-                and development workflow. If you are familiar
-                with Java or .NET ecosystems Angular is definitely your choice.
-              </p>
-              <p>Our app is built on top of latest <strong>Angular 5.0</strong> version and
-                uses <a href="https://webpack.js.org/">Webpack</a> Module Bundler and NPM as a package manager,
-                so everything
-                works out of the box! <br /><br /></p>
-              <a
-                className="btn btn-default btn-block"
-                href="https://demo.flatlogic.com/sing-app/angular/"
-              >
-                Go to Demo
-              </a>
-            </Widget>
-          </Col>
-          <Col md={6}>
-            <Widget
-              title={
-                <p className={"fw-bold"}>AngularJS 1.X Version</p>
-              } customDropDown
-            >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={angularJSLogo} width="80" alt="" />
-              <h3>AngularJS Version</h3>
-              <p className="text-muted">We don’t know about you but we’re very excited that it’s finally here!
-                Our brand new Light Blue Angular version.</p>
-              <p><strong>Angular 1.0</strong> have so many opportunities in comparison to HTML. It lets you
-                extend HTML vocabulary.
-                And as a result your application can be very expressive and readable.
-                <strong>Directives</strong> can hide complex DOM structure, CSS. They can let you invent new
-                HTML syntax, specific to your application.
-                We strongly believe that there’s nothing better than arranging an outstanding end-user experience.</p>
-              <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">Angular</a>
-                should be definitely
-                among your top considerations when choosing the right framework.</p>
-              <p>Angular version makes it possible by letting responsive, fast-loading and
-                seamlessly-navigating application.</p>
-              <a
-                className="btn btn-default btn-block"
-                href="https://demo.flatlogic.com/sing-app/angularjs/"
-              >
-                Go to Demo
-              </a>
-            </Widget>
-          </Col>
-          <Col md={6}>
-            <Widget
-              title={
                 <p className={"fw-bold"}>Pure HTML5 Version</p>
               } customDropDown
             >
@@ -132,35 +72,8 @@ class SPackage extends React.Component {
                 schemes which you can easily switch based on your choice.</p>
               <a
                 className="btn btn-default btn-block"
-                href="https://demo.flatlogic.com/sing-app/html-bs4/dashboard/index.html"
+                href="https://flatlogic.com/templates/one-bootstrap-template/demo"
               >
-                Go to Demo
-              </a>
-            </Widget>
-          </Col>
-          <Col md={6}>
-            <Widget
-              title={
-                <p className={"fw-bold"}>Vue JS Version</p>
-              } customDropDown
-            >
-              <img className={['rounded pull-left mb-1 mr-3', s.image].join(' ')} src={vueLogo} width="80" alt="" />
-              <h3>VUE JS Version</h3>
-              <p className="text-muted">Coming soon version. Seed
-                project is <span className="fw-semi-bold">50%</span> ready.</p>
-              <p><a href="https://reactjs.org/" rel="nofollow noopener noreferrer" target="_blank">Vue</a> is a
-                an open-source progressive
-                JavaScript framework for building user interfaces. Vue is designed to be
-                incrementally adoptable meaning that
-                adding new libraries is made incredibly easy.
-              </p>
-              <p>Supporting Vue JS version is a main
-                priority of <a href="https://flatlogic.com">Flatlogic</a> for next months,
-                so seed version will ready really soon! <br /><br /><br /><br /><br /></p>
-                <a
-                  className="btn btn-default btn-block"
-                  href="https://demo.flatlogic.com/sing-app-vue/#/app/main/analytics"
-                >
                 Go to Demo
               </a>
             </Widget>

@@ -1,4 +1,4 @@
-@import '../../styles/app';
+@import "../../styles/app";
 
 .themeHelper {
   width: $helper-width;
@@ -22,11 +22,19 @@
   @include transition(right $sidebar-transition-time ease-in-out);
 
   & :global {
-    .abc-radio-secondary input[type="radio"]:not(:checked)+label::before {
+    .abc-radio-secondary input[type="radio"]:not(:checked) + label::before {
       background-color: #798892;
     }
 
     .abc-radio {
+      & input:not(:checked) {
+        & + label {
+          &:before {
+            border: 2px solid $input-border-color;
+          }
+        }
+      }
+
       & > label {
         padding-left: 30px;
 
@@ -40,12 +48,10 @@
 
         &:before {
           border: 2px solid var(--main-color);
-          &:not(:checked) {
-            border: 2ox solid $input-border-color;
-          }
         }
-  
-        &:before, &:after {
+
+        &:before,
+        &:after {
           outline: none !important;
           transition: $transition-base;
           margin-left: 4px;
@@ -53,8 +59,8 @@
       }
     }
 
-    .abc-radio-warning input[type="radio"]:not(:checked)+label::before {
-      background-color: theme-color('warning');
+    .abc-radio-warning input[type="radio"]:not(:checked) + label::before {
+      background-color: theme-color("warning");
     }
   }
 
@@ -87,7 +93,7 @@
         border: 1px solid $input-border-color;
         padding: 3px;
         border-radius: $border-radius;
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
         cursor: pointer;
         display: block;
 
@@ -125,6 +131,7 @@
     padding: $spacer * 0.8 $spacer / 2 $spacer * 0.8 $spacer;
     display: flex;
     justify-content: center;
+    box-shadow: -1px 0 8px rgba(0,0,0,0.2);
 
     img {
       animation-duration: 6500ms;

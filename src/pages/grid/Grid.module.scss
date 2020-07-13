@@ -10,7 +10,7 @@
       list-style: none;
       box-sizing: content-box;
       border-top: 1px solid $gray-200;
-      padding: 12px;
+      padding: 12px 0;
       cursor: pointer;
 
       @include transition(background-color 0.2s ease-out);
@@ -69,6 +69,7 @@
         .list-group-item {
           display: flex;
           align-items: center;
+          padding: 1.25rem 1.90rem;
         }
       }
     }

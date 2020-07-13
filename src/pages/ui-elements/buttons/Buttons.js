@@ -178,6 +178,7 @@ class Buttons extends React.Component {
                   <Button color="primary" className="btn-rounded-f mb-md mr-md">Primary</Button>
                   <Button color="info" className="btn-rounded-f mb-md mr-md">Info</Button>
                   <Button color="success" className="btn-rounded-f mb-md mr-md">Success</Button>
+                  <br/>
                   <Button outline color="warning" className="btn-rounded mb-md mr-md">Warning</Button>
                   <Button outline color="danger" className="btn-rounded mb-md mr-md">Danger</Button>
                   <Button outline color="gray" className="btn-rounded mb-md mr-md">Gray</Button>
@@ -199,11 +200,11 @@ class Buttons extends React.Component {
                   to <code>&lt;Button&gt;</code> component.
                   Great for menu & social buttons.
                 </p>
-                <Button color="info" block>Block Button</Button>
-                <Button color="default" block>Show Menu &nbsp;&nbsp;&nbsp;<i
+                <Button color="info" block className={"mb-md"}>Block Button</Button>
+                <Button color="default" block className={"mb-md"}>Show Menu &nbsp;&nbsp;&nbsp;<i
                   className="fa fa-bars"
                 /></Button>
-                <Button color="primary" block><i className="fa fa-facebook" />&nbsp;&nbsp;Login mit
+                <Button color="primary" block className={"mb-md"}><i className="fa fa-facebook" />&nbsp;&nbsp;Login mit
                   Facebook</Button>
                 <Button color="warning" block>Are you sure?</Button>
               </div>
@@ -245,7 +246,7 @@ class Buttons extends React.Component {
                   Add on optional JavaScript radio and checkbox
                   style behavior with Bootstrap buttons plugin.
                 </p>
-                <ButtonGroup className="mb-xs">
+                <ButtonGroup className="mb-md">
                   <Button color="default">Left</Button>
                   <Button color="default">Middle</Button>
                   <Button color="default">Right</Button>
@@ -253,18 +254,18 @@ class Buttons extends React.Component {
 
                 <ButtonToolbar className="mb-xs">
                   <ButtonGroup className="mr-2">
-                    <Button color="default">1</Button>
+                    <Button color="default" className={"ml-0"}>1</Button>
                     <Button color="default">2</Button>
                     <Button color="default">3</Button>
                     <Button color="default">4</Button>
                   </ButtonGroup>
                   <ButtonGroup className="mr-2">
-                    <Button color="default">5</Button>
+                    <Button color="default" className={"ml-0"}>5</Button>
                     <Button color="default">6</Button>
                     <Button color="default">7</Button>
                   </ButtonGroup>
                   <ButtonGroup className="mr-2">
-                    <Button color="default">8</Button>
+                    <Button color="default" className={"ml-0"}>8</Button>
                   </ButtonGroup>
                 </ButtonToolbar>
 
@@ -367,7 +368,7 @@ class Buttons extends React.Component {
                     of checkboxes for checkbox style toggling on
                     btn-group.
                   </p>
-                  <div className="mb-xs">
+                  <div className="mb-md">
                     <ButtonGroup>
                       <Button
                         color="default" onClick={() => this.onCheckboxBtnClickOne(1)}
@@ -411,7 +412,7 @@ class Buttons extends React.Component {
                     Use <code>ButtonGroup</code> to a group of radio
                     inputs for radio style toggling on btn-group.
                   </p>
-                  <div className="mb-xs">
+                  <div className="mb-md">
                     <ButtonGroup>
                       <Button
                         color="default" onClick={() => this.onRadioBtnClickOne(1)}
@@ -427,7 +428,7 @@ class Buttons extends React.Component {
                       >Right way</Button>
                     </ButtonGroup>
                   </div>
-                  <div className="mb-xs">
+                  <div className="mb-sm">
                     <ButtonGroup>
                       <Button
                         size="sm" color="default" onClick={() => this.onRadioBtnClickTwo(1)}
@@ -453,7 +454,7 @@ class Buttons extends React.Component {
                     button groups for a toolbar, navigation, or prepended form inputs.
                     Let your buttons shine!
                   </p>
-                  <div className="text-center">
+                  <div className="text-left">
                     <Button color="default" className="mr-md mb-md">
                       <i className="glyphicon glyphicon-tree-conifer text-success mr-xs mb-xs" />
                       Forest
@@ -467,7 +468,7 @@ class Buttons extends React.Component {
                       Login
                     </Button>
                   </div>
-                  <div className="text-center">
+                  <div className="text-left">
                     <Button color="inverse" className="mr-md mb-md">
                       <i className="fa fa-exclamation text-warning mr-xs mb-xs" />
                       Error

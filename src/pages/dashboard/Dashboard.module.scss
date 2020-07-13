@@ -10,15 +10,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    &Danger {
-      border-top: 3px solid theme-color("danger")
-    }
-    &Warning {
-      border-top: 3px solid theme-color("warning")
-    }
-    &Black {
-      border-top: 3px solid #323232
-    }
+    border-top-width: 3px;
+    border-top-style: solid;
     p {
       color: rgba(#323232, .6);
       white-space: nowrap;

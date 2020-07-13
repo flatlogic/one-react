@@ -50,7 +50,7 @@ import darkUIDanger from "../../images/theme-icons/red/ui elements_filled.svg";
 import logoDanger from "../../images/theme-icons/red/Logo.svg";
 import settingsOutlinedDanger from "../../images/theme-icons/red/Settings_outlined.svg";
 import settingsFilledDanger from "../../images/theme-icons/red/Settings_outlined.svg";
-import logoutIconDanger from "../../images/logout.svg";
+import logoutIconDanger from "../../images/theme-icons/red/Logout_outlined.svg";
 import eCommerceOutlinedDanger from "../../images/theme-icons/red/E-commerce_outlined.svg";
 import eCommerceFilledDanger from "../../images/theme-icons/red/E-commerce_filled.svg";
 import packageOutlinedDanger from "../../images/theme-icons/red/Package_outlined.svg";
@@ -73,8 +73,8 @@ import tablesOutlinedDanger from "../../images/theme-icons/red/Tables_outlined.s
 import tablesFilledDanger from "../../images/theme-icons/red/Tables_filled.svg";
 import mapsOutlinedDanger from "../../images/theme-icons/red/Maps_outlined.svg";
 import mapsFilledDanger from "../../images/theme-icons/red/Maps_filled.svg";
-import extraOutlinedDanger from "../../images/light-extra.svg";
-import extraFilledDanger from "../../images/dark-extra.svg";
+import extraOutlinedDanger from "../../images/theme-icons/red/Extra_outlined.svg";
+import extraFilledDanger from "../../images/theme-icons/red/Extra_filled.svg";
 
 // success
 import lightDashboardIconSuccess from "../../images/theme-icons/green/Dashboard_outlined.svg";
@@ -84,7 +84,7 @@ import darkUISuccess from "../../images/theme-icons/green/ui elements_filled.svg
 import logoSuccess from "../../images/theme-icons/green/Logo.svg";
 import settingsOutlinedSuccess from "../../images/theme-icons/green/Settings_outlined.svg";
 import settingsFilledSuccess from "../../images/theme-icons/green/Settings_outlined.svg";
-import logoutIconSuccess from "../../images/logout.svg";
+import logoutIconSuccess from "../../images/theme-icons/green/Logout_outlined.svg";
 import eCommerceOutlinedSuccess from "../../images/theme-icons/green/E-commerce_outlined.svg";
 import eCommerceFilledSuccess from "../../images/theme-icons/green/E-commerce_filled.svg";
 import packageOutlinedSuccess from "../../images/theme-icons/green/Package_outlined.svg";
@@ -107,8 +107,8 @@ import tablesOutlinedSuccess from "../../images/theme-icons/green/Tables_outline
 import tablesFilledSuccess from "../../images/theme-icons/green/Tables_filled.svg";
 import mapsOutlinedSuccess from "../../images/theme-icons/green/Maps_outlined.svg";
 import mapsFilledSuccess from "../../images/theme-icons/green/Maps_filled.svg";
-import extraOutlinedSuccess from "../../images/light-extra.svg";
-import extraFilledSuccess from "../../images/dark-extra.svg";
+import extraOutlinedSuccess from "../../images/theme-icons/green/Extra_outlined.svg";
+import extraFilledSuccess from "../../images/theme-icons/green/Extra_filled.svg";
 
 // info
 import lightDashboardIconBlue from "../../images/theme-icons/blue/Dashboard_outlined.svg";
@@ -118,7 +118,7 @@ import darkUIBlue from "../../images/theme-icons/blue/ui elements_filled.svg";
 import logoBlue from "../../images/theme-icons/blue/Logo.svg";
 import settingsOutlinedBlue from "../../images/theme-icons/blue/Settings_outlined.svg";
 import settingsFilledBlue from "../../images/theme-icons/blue/Settings_outlined.svg";
-import logoutIconBlue from "../../images/logout.svg";
+import logoutIconBlue from "../../images/theme-icons/blue/Logout_outlined.svg";
 import eCommerceOutlinedBlue from "../../images/theme-icons/blue/E-commerce_outlined.svg";
 import eCommerceFilledBlue from "../../images/theme-icons/blue/E-commerce_filled.svg";
 import packageOutlinedBlue from "../../images/theme-icons/blue/Package_outlined.svg";
@@ -141,8 +141,8 @@ import tablesOutlinedBlue from "../../images/theme-icons/blue/Tables_outlined.sv
 import tablesFilledBlue from "../../images/theme-icons/blue/Tables_filled.svg";
 import mapsOutlinedBlue from "../../images/theme-icons/blue/Maps_outlined.svg";
 import mapsFilledBlue from "../../images/theme-icons/blue/Maps_filled.svg";
-import extraOutlinedBlue from "../../images/light-extra.svg";
-import extraFilledBlue from "../../images/dark-extra.svg";
+import extraOutlinedBlue from "../../images/theme-icons/blue/Extra_outlined.svg";
+import extraFilledBlue from "../../images/theme-icons/blue/Extra_filled.svg";
 
 //dark sidebar
 import darkSidebarDashboardOutlined from "../../images/theme-icons/dark sidebar/yellow/Dashboard_outlined.svg";
@@ -396,7 +396,7 @@ class Sidebar extends React.Component {
                 ? darkSidebarSettingsFilledDanger
                 : darkSidebarSettingsOutlinedDanger;
             case "logout":
-              return darkSidebarLogout;
+              return darkSidebarLogoutDanger;
             case "email":
               return window.location.href.includes(currentPage)
                 ? darkSidebarEmailFilledDanger
@@ -461,7 +461,7 @@ class Sidebar extends React.Component {
                 ? darkSidebarSettingsFilledSuccess
                 : darkSidebarSettingsOutlinedSuccess;
             case "logout":
-              return darkSidebarLogout;
+              return darkSidebarLogoutSuccess;
             case "email":
               return window.location.href.includes(currentPage)
                 ? darkSidebarEmailFilledSuccess
@@ -526,7 +526,7 @@ class Sidebar extends React.Component {
                 ? darkSidebarSettingsFilledBlue
                 : darkSidebarSettingsOutlinedBlue;
             case "logout":
-              return darkSidebarLogout;
+              return darkSidebarLogoutBlue;
             case "email":
               return window.location.href.includes(currentPage)
                 ? darkSidebarEmailFilledBlue
@@ -1274,10 +1274,9 @@ class Sidebar extends React.Component {
                   {
                     header: "Login Page",
                     link: "/app/login",
-                  },
-                  {
-                    header: "Error Page",
-                    link: "/app/extra/error",
+                    onClick: () => {
+                      this.doLogout()
+                    }
                   },
                   {
                     header: "Gallery",

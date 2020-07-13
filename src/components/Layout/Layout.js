@@ -93,7 +93,7 @@ class Layout extends React.Component {
   }
 
   handleResize() {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth < 768) {
       this.props.dispatch(toggleSidebar());
     } else if (window.innerWidth >= 768) {
       this.props.dispatch(openSidebar());

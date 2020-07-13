@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import cx from 'classnames';
-import {
-  Alert,
-} from 'reactstrap';
+import React, { Component } from "react";
+import cx from "classnames";
+import { Alert, Row, Col } from "reactstrap";
 
-import Filters from './components/Filters/Filters';
-import MessageTable from './components/MessageTable/MessageTable';
+import Filters from "./components/Filters/Filters";
+import MessageTable from "./components/MessageTable/MessageTable";
 
-import s from './Email.module.scss';
+import s from "./Email.module.scss";
 
 class Email extends Component {
   state = {
@@ -17,10 +15,12 @@ class Email extends Component {
     compose: false,
     composeData: null,
     alertAfter: false,
-  }
+  };
 
   componentDidMount() {
-    setTimeout(() => { this.fixAlert(); }, 0);
+    setTimeout(() => {
+      this.fixAlert();
+    }, 0);
   }
 
   fixAlert() {
@@ -29,19 +29,19 @@ class Email extends Component {
 
   filter = (filter) => {
     this.setState({ filter, compose: false, composeData: null });
-  }
+  };
 
   closeNotification() {
     this.setState({ isNotificationOpen: false });
   }
 
   openMessage = (id) => {
-    this.setState(pvState => ({
+    this.setState((pvState) => ({
       openedMessage: id,
       compose: id === null ? false : pvState.compose,
       composeData: id === null ? null : pvState.composeData,
     }));
-  }
+  };
 
   changeCompose = (compose, data) => {
     this.setState({ compose });
@@ -49,7 +49,7 @@ class Email extends Component {
     if (data) {
       this.setState({ composeData: data });
     }
-  }
+  };
 
   render() {
     const {
@@ -67,26 +67,31 @@ class Email extends Component {
             isOpen={isNotificationOpen}
             color="success"
             toggle={() => this.closeNotification()}
-            className={cx(s.alert, { [s.alertAfter]: alertAfter })}
+            className={cx(s.alert, { [s.alertAfter]: alertAfter }, "pr-4")}
           >
-            Hey! This is a <span className="fw-semi-bold">real app</span> with CRUD and Search functions. Have fun!
+            Hey! This is a <span className="fw-semi-bold">real app</span> with
+            CRUD and Search functions. Have fun!
           </Alert>
         </div>
-        <div className={s.view}>
-          <Filters
-            filter={this.filter}
-            openMessage={this.openMessage}
-            compose={this.changeCompose}
-          />
-          <MessageTable
-            filter={filter}
-            openedMessage={openedMessage}
-            openMessage={this.openMessage}
-            compose={compose}
-            changeCompose={this.changeCompose}
-            composeData={composeData}
-          />
-        </div>
+        <Row>
+          <Col sm={3}>
+            <Filters
+              filter={this.filter}
+              openMessage={this.openMessage}
+              compose={this.changeCompose}
+            />
+          </Col>
+          <Col sm={9}>
+            <MessageTable
+              filter={filter}
+              openedMessage={openedMessage}
+              openMessage={this.openMessage}
+              compose={compose}
+              changeCompose={this.changeCompose}
+              composeData={composeData}
+            />
+          </Col>
+        </Row>
       </div>
     );
   }

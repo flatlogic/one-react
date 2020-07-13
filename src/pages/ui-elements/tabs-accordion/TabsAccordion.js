@@ -123,7 +123,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <div className="clearfix">
 
-              <Nav tabs className={`float-left ${s.coloredNav}`}>
+              <Nav tabs className={`float-left ${s.coloredNav} shadow`}>
                 <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeFirstTab === 'tab11' })}
@@ -163,7 +163,7 @@ class TabsAccordion extends React.Component {
             </div>
             {/* tab content */}
 
-            <TabContent className='mb-lg' activeTab={this.state.activeFirstTab}>
+            <TabContent className='mb-lg shadow' activeTab={this.state.activeFirstTab}>
               <TabPane tabId="tab11">
                 <h3>Tabs-enabled widget</h3>
                 <p>You will never know exactly how something will go until you try it.</p>
@@ -223,7 +223,7 @@ class TabsAccordion extends React.Component {
           <Col md="6" xs="12">
             <Row>
               <Col xs="12" className="mb-5">
-                <Nav tabs  className={`${s.coloredNav}`}>
+                <Nav tabs  className={`${s.coloredNav} shadow`}>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeSecondTab === 'tab21' })}
@@ -250,7 +250,7 @@ class TabsAccordion extends React.Component {
                   </NavItem>
                 </Nav>
 
-                <TabContent className='mb-lg' activeTab={this.state.activeSecondTab}>
+                <TabContent className='mb-lg shadow' activeTab={this.state.activeSecondTab}>
                   <TabPane tabId="tab21">
                     <p>
                       I had an idea named Great Work. It was a service aimed to help people find
@@ -295,7 +295,7 @@ class TabsAccordion extends React.Component {
 
             <Row>
               <Col xs="12">
-                <Nav  className={`${s.coloredNav}`} tabs>
+                <Nav  className={`${s.coloredNav} shadow`} tabs>
                   <NavItem>
                     <NavLink
                       className={classnames({ active: this.state.activeThirdTab === 'tab31' })}
@@ -322,7 +322,7 @@ class TabsAccordion extends React.Component {
                   </NavItem>
                 </Nav>
 
-                <TabContent className='mb-lg' activeTab={this.state.activeThirdTab}>
+                <TabContent className='mb-lg shadow' activeTab={this.state.activeThirdTab}>
                   <TabPane tabId="tab31">
                     <p>
                       I had an idea named Great Work. It was a service aimed to help people find
@@ -375,7 +375,7 @@ class TabsAccordion extends React.Component {
               <div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
                 { /* eslint-disable */ }
                 <div
-                  className="card-header panel-header bg-light" role="button"
+                  className="card-header panel-header bg-white shadow" role="button"
                   onClick={() => { this.toggleAccordionFirst(index); }}
                 >
                   { /* eslint-enable */ }
@@ -397,7 +397,7 @@ class TabsAccordion extends React.Component {
             {this.state.accordionSecondContent.map((element, index) => (<div className="card panel mb-xs" key={`accord-one-${index.toString()}`}>
               { /* eslint-disable */ }
               <div
-                className="card-header panel-header bg-light" role="button"
+                className="card-header panel-header bg-white shadow" role="button"
                 onClick={() => { this.toggleAccordionSecond(index); }}
               >
                 { /* eslint-enable */ }

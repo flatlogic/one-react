@@ -4,24 +4,13 @@ import { Row, Col, Progress, Table, Label, Input } from "reactstrap";
 import Widget from "../../components/Widget";
 import Map from "./components/am4chartMap/am4chartMap";
 
-import AnimateNumber from "react-animated-number";
 
 import s from "./Dashboard.module.scss";
 
-import peopleA1 from "../../images/people/a1.jpg";
-import peopleA2 from "../../images/people/a2.jpg";
-import peopleA5 from "../../images/people/a5.jpg";
-import peopleA4 from "../../images/people/a4.jpg";
 
 import stocksImg from "../../images/stocks.svg";
 import stocksDownImg from "../../images/stocksDown.svg";
 import ApexChart from "react-apexcharts";
-import {chartData} from "./chartsMock";
-import p1 from "../../images/people/p1.png";
-import p2 from "../../images/people/p2.png";
-import p3 from "../../images/people/p3.png";
-import p4 from "../../images/people/p4.png";
-import p5 from "../../images/userAvatar.png";
 
 const splineArea = {
   series: [
@@ -43,8 +32,8 @@ const splineArea = {
       },
     },
     fill: {
-      colors: ["rgba(255, 205, 101, .2)", 'rgba(0,0,0,0)'],
-      type: 'solid'
+      colors: ["rgba(255, 205, 101, .2)", "rgba(0,0,0,0)"],
+      type: "solid",
     },
     colors: ["#FFBF69", "#323232"],
     legend: {
@@ -55,6 +44,9 @@ const splineArea = {
     },
     stroke: {
       curve: "smooth",
+    },
+    grid: {
+      borderColor: 'rgba(196, 196, 196, 0.2)'
     },
     yaxis: {
       labels: {
@@ -177,57 +169,62 @@ class Dashboard extends React.Component {
               </p>
               <div className="row progress-stats mb-4">
                 <div className="col-12">
-                  <h6 className="name">Foreign Visits</h6>
+                  <div className={"d-flex justify-content-between"}>
+                    <h6 className="name">Foreign Visits</h6>
+                    <h6>80%</h6>
+                  </div>
                   <Progress
                     color="success"
                     value="80"
-                    className="progress-xs"
-                    style={{backgroundColor: 'rgba(129, 212, 187, 0.2)'}}
+                    className="progress-xs mb-0"
+                    style={{ backgroundColor: "rgba(129, 212, 187, 0.2)" }}
                   />
+                  <small className={"fw-thin"}>50k users (+0.9%)</small>
                 </div>
               </div>
               <div className="row progress-stats mb-3">
                 <div className="col-12">
-                  <h6 className="name">Local Visits</h6>
+                  <div className={"d-flex justify-content-between"}>
+                    <h6 className="name">Local Visits</h6>
+                    <h6>39%</h6>
+                  </div>
                   <Progress
                     color="danger"
                     value="39"
-                    className="progress-xs"
-                    style={{backgroundColor: 'rgba(255, 119, 105, .2)'}}
+                    className="progress-xs mb-0"
+                    style={{ backgroundColor: "rgba(255, 119, 105, .2)" }}
                   />
+                  <small className={"fw-thin"}>35k users (+0.9%)</small>
                 </div>
               </div>
               <div className="row progress-stats mb-4">
                 <div className="col-12">
-                  <h6 className="name">Sound Frequencies</h6>
+                  <div className={"d-flex justify-content-between"}>
+                    <h6 className="name">Sound Frequencies</h6>
+                    <h6>80%</h6>
+                  </div>
                   <Progress
                     color="info"
                     value="80"
-                    className="progress-xs"
-                    style={{backgroundColor: 'rgba(159, 219, 233, .2)'}}
+                    className="progress-xs mb-0"
+                    style={{ backgroundColor: "rgba(159, 219, 233, .2)" }}
                   />
+                  <small className={"fw-thin"}>55k users (+0.9%)</small>
                 </div>
               </div>
               <div className="row progress-stats mb-3">
                 <div className="col-12">
-                  <h6 className="name">Sound Frequencies</h6>
+                  <div className={"d-flex justify-content-between"}>
+                    <h6 className="name">Sound Frequencies</h6>
+                    <h6>80%</h6>
+                  </div>
                   <Progress
                     color="warning"
                     value="80"
-                    className="progress-xs"
-                    style={{backgroundColor: 'rgba(255, 191, 105, .2)'}}
+                    className="progress-xs mb-0"
+                    style={{ backgroundColor: "rgba(255, 191, 105, .2)" }}
                   />
-                </div>
-              </div>
-              <div className="row progress-stats mb-3">
-                <div className="col-12">
-                  <h6 className="name">Sound Frequencies</h6>
-                  <Progress
-                    color="success"
-                    value="80"
-                    className="progress-xs"
-                    style={{backgroundColor: 'rgba(129, 212, 187, 0.2)'}}
-                  />
+                  <small className={"fw-thin"}>55k users (+0.9%)</small>
                 </div>
               </div>
             </Widget>
@@ -236,57 +233,66 @@ class Dashboard extends React.Component {
 
         <Row>
           <Col lg={4} xs={12}>
-            <Widget title={<p className={"fw-bold"}>Userbase Growth</p>} customDropDown>
-              <div className="d-flex justify-content-between mt-3">
-                <p>Overlall Growth</p>
-                <p>78,3%</p>
+            <Widget
+              title={<p className={"fw-bold"}>Userbase Growth</p>}
+              customDropDown
+            >
+              <div className="d-flex justify-content-between mt-4">
+                <p className={"mb-1"}>Overlall Growth</p>
+                <p className={"mb-1"}>78,3%</p>
               </div>
               <Progress
                 color="danger"
                 value="60"
                 className="progress-xs"
-                style={{backgroundColor: 'rgba(255, 119, 105, .2)'}}
+                style={{ backgroundColor: "rgba(255, 119, 105, .2)" }}
               />
-              <p style={{fontSize: 14}} className={"mb-0"}>
-                <img src={stocksImg} alt="up"/>
+              <p style={{ fontSize: 14 }} className={"mb-3"}>
+                <img src={stocksImg} alt="up" />
                 <span className="text-success">&nbsp;17% higher</span>
                 &nbsp;than last month
               </p>
             </Widget>
           </Col>
           <Col lg={4} xs={12}>
-            <Widget title={<p className={"fw-bold"}>Traffic Values</p>} customDropDown>
-              <div className="d-flex justify-content-between mt-3">
-                <p>Overlall Growth</p>
-                <p>78,3%</p>
+            <Widget
+              title={<p className={"fw-bold"}>Traffic Values</p>}
+              customDropDown
+            >
+              <div className="d-flex justify-content-between mt-4">
+                <p className={"mb-1"}>Overlall Growth</p>
+                <p className={"mb-1"}>78,3%</p>
               </div>
               <Progress
-                  color="warning"
-                  value="60"
-                  className="progress-xs"
-                  style={{backgroundColor: 'rgba(255, 191, 105, .2)'}}
+                color="warning"
+                value="60"
+                className="progress-xs"
+                style={{ backgroundColor: "rgba(255, 191, 105, .2)" }}
               />
-              <p style={{fontSize: 14}} className={"mb-0"}>
-                <img src={stocksDownImg} alt="down"/>
+              <p style={{ fontSize: 14 }} className={"mb-3"}>
+                <img src={stocksDownImg} alt="down" />
                 <span className="text-danger">&nbsp;17% lower</span>
                 &nbsp;than last month
               </p>
             </Widget>
           </Col>
           <Col lg={4} xs={12}>
-            <Widget title={<p className={"fw-bold"}>Sessions Time</p>} customDropDown>
-              <div className="d-flex justify-content-between mt-3">
-                <p>Overlall Growth</p>
-                <p>78,3%</p>
+            <Widget
+              title={<p className={"fw-bold"}>Sessions Time</p>}
+              customDropDown
+            >
+              <div className="d-flex justify-content-between mt-4">
+                <p className={"mb-1"}>Overlall Growth</p>
+                <p className={"mb-1"}>78,3%</p>
               </div>
               <Progress
-                  color="info"
-                  value="60"
-                  className="progress-xs"
-                  style={{backgroundColor: 'rgba(159, 219, 233, .2)'}}
+                color="info"
+                value="60"
+                className="progress-xs"
+                style={{ backgroundColor: "rgba(159, 219, 233, .2)" }}
               />
-              <p style={{fontSize: 14}} className={"mb-0"}>
-                <img src={stocksImg} alt="up"/>
+              <p style={{ fontSize: 14 }} className={"mb-3"}>
+                <img src={stocksImg} alt="up" />
                 <span className="text-success">&nbsp;17% higher</span>
                 &nbsp;than last month
               </p>
@@ -297,19 +303,17 @@ class Dashboard extends React.Component {
         <Row>
           <Col xs={8}>
             <Widget
-              title={
-                <p className={"fw-bold"}>Users, Session Analytics</p>
-              }
+              title={<p className={"fw-bold"}>Users, Session Analytics</p>}
               customDropDown
             >
-              <Row style={{ marginTop: -36 }}>
+              <Row>
                 <Col sm={12}>
                   <ApexChart
-                      className="sparkline-chart"
-                      series={splineArea.series}
-                      options={splineArea.options}
-                      type={"area"}
-                      height={"350px"}
+                    className="sparkline-chart"
+                    series={splineArea.series}
+                    options={splineArea.options}
+                    type={"area"}
+                    height={"350px"}
                   />
                 </Col>
               </Row>
@@ -317,78 +321,66 @@ class Dashboard extends React.Component {
           </Col>
           <Col xs={4}>
             <Widget
-                title={
-                  <p className={"fw-bold"}>Recent Sales</p>
-                }
-                customDropDown
+              title={<p className={"fw-bold"}>Recent Sales</p>}
+              customDropDown
             >
               <Row>
                 <Col sm={12}>
                   <Table className={"mb-0 mt-4"} borderless responsive>
                     <thead>
-                    <tr>
-                      <th key={0} scope="col" className={"pl-0"}>
-                        State
-                      </th>
-                      <th key={1} scope="col" className={"pl-0"}>
-                        Amount
-                      </th>
-                      <th key={2} scope="col" className={"pl-0"}>
-                        Date
-                      </th>
-                    </tr>
+                      <tr>
+                        <th key={0} scope="col" className={"pl-0"}>
+                          State
+                        </th>
+                        <th key={1} scope="col" className={"pl-0"}>
+                          Amount
+                        </th>
+                        <th key={2} scope="col" className={"pl-0"}>
+                          Date
+                        </th>
+                      </tr>
                     </thead>
                     <tbody className="text-dark">
-                    <tr key={0}>
-                      <td className="fw-thin pl-0 fw-thin">
-                        <i className={`fa fa-circle text-danger mr-3`} />
-                        California
-                      </td>
-                      <td className={"pl-0 fw-thin"}>
-                        $8400
-                      </td>
-                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
-                    </tr>
-                    <tr key={1}>
-                      <td className="fw-thin pl-0 fw-thin">
-                        <i className={`fa fa-circle text-info mr-3`} />
-                        Florida
-                      </td>
-                      <td className={"pl-0 fw-thin"}>
-                        $780
-                      </td>
-                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
-                    </tr>
-                    <tr key={1}>
-                      <td className="fw-thin pl-0 fw-thin">
-                        <i className={`fa fa-circle text-warning mr-3`} />
-                        New Mexico
-                      </td>
-                      <td className={"pl-0 fw-thin"}>
-                        $1300
-                      </td>
-                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
-                    </tr>
-                    <tr key={1}>
-                      <td className="fw-thin pl-0 fw-thin">
-                        <i className={`fa fa-circle text-success mr-3`} />
-                        Texas
-                      </td>
-                      <td className={"pl-0 fw-thin"}>
-                        $880
-                      </td>
-                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
-                    </tr>
-                    <tr key={1}>
-                      <td className="fw-thin pl-0 fw-thin">
-                        <i className={`fa fa-circle text-info mr-3`} />
-                        Mississippi
-                      </td>
-                      <td className={"pl-0 fw-thin"}>
-                        $9400
-                      </td>
-                      <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
-                    </tr>
+                      <tr key={0}>
+                        <td className="fw-thin pl-0 fw-thin">
+                          <i className={`fa fa-circle text-danger mr-3`} />
+                          California
+                        </td>
+                        <td className={"pl-0 fw-thin"}>$8400</td>
+                        <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                      </tr>
+                      <tr key={1}>
+                        <td className="fw-thin pl-0 fw-thin">
+                          <i className={`fa fa-circle text-info mr-3`} />
+                          Florida
+                        </td>
+                        <td className={"pl-0 fw-thin"}>$780</td>
+                        <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                      </tr>
+                      <tr key={1}>
+                        <td className="fw-thin pl-0 fw-thin">
+                          <i className={`fa fa-circle text-warning mr-3`} />
+                          New Mexico
+                        </td>
+                        <td className={"pl-0 fw-thin"}>$1300</td>
+                        <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                      </tr>
+                      <tr key={1}>
+                        <td className="fw-thin pl-0 fw-thin">
+                          <i className={`fa fa-circle text-success mr-3`} />
+                          Texas
+                        </td>
+                        <td className={"pl-0 fw-thin"}>$880</td>
+                        <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                      </tr>
+                      <tr key={1}>
+                        <td className="fw-thin pl-0 fw-thin">
+                          <i className={`fa fa-circle text-info mr-3`} />
+                          Mississippi
+                        </td>
+                        <td className={"pl-0 fw-thin"}>$9400</td>
+                        <td className={"pl-0 fw-thin"}>3 Feb, 2020</td>
+                      </tr>
                     </tbody>
                   </Table>
                 </Col>

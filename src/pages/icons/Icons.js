@@ -61,7 +61,7 @@ class Icons extends React.Component {
     return (
       <section className={`${s.root} mb-4`}>
         {/* tabs */}
-        <Nav className="bg-light" tabs>
+        <Nav className="bg-light shadow" tabs>
           <NavItem>
             <NavLink
                 className={classnames({ active: this.state.activeTab === '1' })}
@@ -130,7 +130,7 @@ class Icons extends React.Component {
 
         {/* tab content */}
 
-        <TabContent activeTab={this.state.activeTab}>
+        <TabContent activeTab={this.state.activeTab} className={"shadow"}>
           <TabPane tabId="1">
             <div>
               <h4>Flatlogic <span className="fw-semi-bold">One</span> Icons</h4>

@@ -113,7 +113,6 @@ class Helper extends Component {
                   checked={navbarType === NavbarTypes.FLOATING}
                   name="navbar-type"
                   id="navbar_floating"
-                  className={s.radio}
                 />
                 <label htmlFor="navbar_floating">Floating</label>
               </div>

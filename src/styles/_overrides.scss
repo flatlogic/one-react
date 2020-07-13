@@ -177,6 +177,9 @@ legend {
   th {
     background-color: $text-color;
   }
+  td {
+    border: 1px solid #d6dee5 !important;
+  }
 }
 
 .table-sm {
@@ -199,6 +202,19 @@ legend {
 
 td {
   white-space: nowrap;
+}
+
+.table th, .table td {
+  border-top: none;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+}
+
+.table tr:last-child > td {
+  border: none;
+}
+
+.table thead th {
+  border: none;
 }
 
 .small,
@@ -846,4 +862,7 @@ a {
 
 .jumbotron {
   background-color: $white;
+  &-fluid {
+    border-radius: .35rem;
+  }
 }

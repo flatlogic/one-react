@@ -5,16 +5,18 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding-bottom: 15px;
   margin-bottom: 15px;
+  border-bottom: 1px solid #d6dee5 !important;
 }
 
 .paginationText {
+  margin-right: auto;
   color: #868e96;
   font-size: $font-size-mini;
 }
 
 .paginationPages {
-  border-left: 1px solid #868e96;
   padding-left: 11px;
   margin-left: 10px;
   display: flex;
@@ -42,7 +44,7 @@
 }
 
 .buttonActive {
-  background: $gray-300;
+  font-weight: $font-weight-semi-bold;
 }
 
 .buttonDisabled {

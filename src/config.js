@@ -19,9 +19,9 @@ export default {
     },
     themeColors: {
       warning: '#FEBE69',
-      danger: '#FF7769',
-      success: '#81D4BB',
-      info: '#4DC7DF'
+      danger: '#f5695a',
+      success: '#3bbf97',
+      info: '#12b4de'
     }
   }
 };

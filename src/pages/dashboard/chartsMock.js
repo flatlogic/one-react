@@ -80,6 +80,11 @@ export const chartData = {
                         }
                     }
                 },
+                dataLabels: {
+                    dropShadow: {
+                        enabled: false
+                    }
+                },
                 legend: {
                     show: false
                 },

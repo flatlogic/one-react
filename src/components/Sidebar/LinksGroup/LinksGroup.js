@@ -115,7 +115,10 @@ class LinksGroup extends Component {
               s.headerLink,
               this.props.className
             )}
-            onClick={() => this.closeSidebarOnClick()}
+            onClick={() => {
+              this.closeSidebarOnClick();
+              this.togglePanelCollapse(this.props.link)
+            }}
           >
             <NavLink
               to={this.props.link}
@@ -229,7 +232,10 @@ class LinksGroup extends Component {
                         childrenLinks={child.childrenLinks}
                         deep={this.props.deep + 1}
                         key={ind} // eslint-disable-line
-                        onClick={() => this.closeSidebarOnClick()}
+                        onClick={() => {
+                          this.closeSidebarOnClick()
+                          if (child.onClick) child.onClick()
+                        }}
                       />
                     ))}
                 </ul>
