@@ -61,6 +61,7 @@ import Product from "../../pages/product";
 import Profile from "../../pages/profile";
 import SPackage from "../../pages/package";
 import Email from '../../pages/email'
+import ErrorPage from "../../pages/error";
 
 class Layout extends React.Component {
   static propTypes = {
@@ -237,6 +238,7 @@ class Layout extends React.Component {
                     <Route path={"/app/profile"} component={Profile} />
                     <Route path={"/app/package"} component={SPackage} />
                     <Route path={"/app/email"} component={Email} />
+                    <Route render={() => <Redirect to={{pathname: '/error'}}/>}/>
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
