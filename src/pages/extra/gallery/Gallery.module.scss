@@ -12,8 +12,8 @@
   margin-bottom: $spacer;
 }
 
-:global .btn-group {
-  .btn {
+.galleryBtnGroup {
+  :global .btn {
     transition: border-color 0.15s ease-in-out;
     background-color: $white !important;
     border-bottom: 2px solid transparent;
