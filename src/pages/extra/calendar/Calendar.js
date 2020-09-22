@@ -19,9 +19,9 @@ import Widget from "../../../components/Widget";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 
-import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
 
@@ -40,10 +40,10 @@ class Calendar extends React.Component {
       currentMonth: moment().format("MMM YYYY"),
       currentDay: moment().format("dddd"),
       calendarOptions: {
-        header: {
-          left: "",
-          center: "",
-          right: "",
+        headerToolbar: {
+          left: '',
+          center: 'title',
+          right: ''
         },
         events: [
           {
@@ -117,7 +117,7 @@ class Calendar extends React.Component {
         editable: true,
         droppable: true,
       },
-      calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin],
+      calendarPlugins: [dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin],
       dragOptions: { zIndex: 999, revert: true, revertDuration: 0 },
     };
   }
@@ -167,6 +167,7 @@ class Calendar extends React.Component {
     this.fullCalendar.getApi().today();
   };
   changeView = (view) => {
+    this.setState({ calendarView: view });
     this.fullCalendar.getApi().changeView(view);
   };
   getFormattedDate = (date) => {
@@ -283,6 +284,13 @@ class Calendar extends React.Component {
                       active={this.state.calendarView === "timeGridDay"}
                     >
                       Day
+                    </Button>
+                    <Button
+                      color="default"
+                      onClick={() => this.changeView("list")}
+                      active={this.state.calendarView === "list"}
+                    >
+                      List
                     </Button>
                   </ButtonGroup>
                 </Col>

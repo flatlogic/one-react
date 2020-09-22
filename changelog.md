@@ -1,41 +1,19 @@
 # Changelog
 
-## [7.3.0]
+## [1.1.0]
 
-### New Features
+### Update
 
-- Brand new chat component
+- Updated fullcalendar package to v5.3.0
 
-## [7.2.0]
+## [1.0.1]
 
-### New Features
+### Update
 
-- New exquisite design
+- Updated dependencies, fixed bugs
 
-## [7.1.1]
+## [1.0.0]
 
-### New Features
+### Initial release
 
-- Virtual Tour
-
-## [7.1.0]
-
-### New Features
-
-- Theme customizer
-
-## [7.0.1]
-
-### Fixed
-
-- Fix bugs and css improvements
-
-## [7.0.0]
-
-### Updated
-
-- Removed Jquery from core layout
-
-### New Features
-
-- New charts
+- Initial release of one-react template
