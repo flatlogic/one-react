@@ -186,7 +186,7 @@ class Header extends React.Component {
           />
         </NavItem>
         <button className={`btn btn-bordered ml-auto ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
-          <a href="https://flatlogic.com/templates/one-react-template" target={"_black"}>Buy Now<img src={this.state.arrowImg} alt="" style={{marginLeft: 14}}/></a></button>
+          <a href="https://flatlogic.com/templates/one-react-template" target={"_black"}>Buy Now<div className={s.arrow}></div></a></button>
         <Form className={`d-md-down-none`} inline>
           <InputGroup
             onFocus={this.toggleFocus}
@@ -226,21 +226,12 @@ class Header extends React.Component {
               }`}
               style={{ marginLeft: 20 }}
             >
-              {this.state.notificationsOpen ? (
-                <img
-                  src={lightNotify}
-                  alt="notify"
-                  width="24px"
-                  height={"24px"}
-                />
-              ) : (
                 <>
                   <img src={navbarColor === "#FFFFFF" ? notifyLightTheme: notify} alt="notify" width="24px" height={"24px"} />
-                  <i
+                  {!this.state.notificationsOpen && ( <i
                     className={`fa fa-circle text-danger mb-2 ${s.circleStyle}`}
-                  />
+                  />)}
                 </>
-              )}
             </DropdownToggle>
             <DropdownMenu
               right
@@ -262,14 +253,6 @@ class Header extends React.Component {
               }`}
               style={{ marginLeft: 20 }}
             >
-              {this.state.messagesOpen ? (
-                <img
-                  src={lightMessages}
-                  alt="notify"
-                  width="24px"
-                  height={"24px"}
-                />
-              ) : (
                 <>
                   <img
                     src={navbarColor === "#FFFFFF" ? messagesLightTheme : messages}
@@ -277,11 +260,10 @@ class Header extends React.Component {
                     width="24px"
                     height={"24px"}
                   />
-                  <i
+                  {!this.state.messagesOpen && ( <i
                     className={`fa fa-circle text-success mb-2 ${s.emailStyle}`}
-                  />
+                  />)}
                 </>
-              )}
             </DropdownToggle>
             <DropdownMenu
               right

@@ -1,0 +1,15 @@
+.root {
+    :global {
+        .badge {
+            padding: 7px 11px;
+            font-size: 12px;
+            margin-right: 12px;
+            font-weight: 600;
+        }
+        .badge.badge-pill {
+            padding: 7px 11px;
+            border-radius: 15px;
+            font-weight: 600;
+        }        
+    }
+}

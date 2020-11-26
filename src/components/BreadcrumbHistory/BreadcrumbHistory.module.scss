@@ -5,6 +5,12 @@
   margin-right: 32px;
   box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.25) !important;
   font-size: 14px;
+
+  &::after {
+    font-size: 100%;
+    opacity: 1;
+    margin-left: 20px;
+  }
 }
 
 .btnShadow {

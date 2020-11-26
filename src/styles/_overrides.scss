@@ -428,6 +428,10 @@ small {
   }
 }
 
+.alert-dismissible {
+  padding-right: 1rem;
+}
+
 .alert-danger {
   background: theme-color("danger");
   color: $white;

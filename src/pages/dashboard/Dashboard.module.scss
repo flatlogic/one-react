@@ -1,6 +1,12 @@
 @import '../../styles/app';
 
 .root {
+  .tableBody tr:hover, .tableBody tr:focus {
+    background: #F7F7F7;
+    cursor: pointer;
+    transition: background .35s ease;
+  }
+
   .dashboardBlock {
     @media (min-width: 1170px) and (max-width: 1280px) {
       display: none;

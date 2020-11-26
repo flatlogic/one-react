@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 
 import Widget from '../../../components/Widget';
+import s from './Grid.module.scss';
 
 const Typography = () => (
   <div>
@@ -23,17 +24,17 @@ const Typography = () => (
           <div className="bg-light p-3">
             <Row className="mb-lg">
               <Col xs={4}>
-                <div className="py-4 text-center text-white p-1" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white p-1`}>
                   One of three columns
                 </div>
               </Col>
               <Col xs={4}>
-                <div className="py-4 text-center text-white p-1" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white p-1`}>
                   One of three columns
                 </div>
               </Col>
               <Col xs={4}>
-                <div className="py-4 text-center text-white p-1" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white p-1`}>
                   One of three columns
                 </div>
               </Col>
@@ -69,12 +70,12 @@ const Typography = () => (
           <div className="bg-light p-3">
             <Row className="mb-lg">
               <Col>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   1 of 2
                 </div>
               </Col>
               <Col>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   2 of 2
                 </div>
               </Col>
@@ -182,17 +183,17 @@ const Typography = () => (
           <div className="bg-light p-3">
             <Row className="mb-lg" style={{ height: '150px' }}>
               <Col className="align-self-start">
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   Start
                 </div>
               </Col>
               <Col className="align-self-center">
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   Center
                 </div>
               </Col>
               <Col className="align-self-end">
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   End
                 </div>
               </Col>
@@ -224,41 +225,41 @@ const Typography = () => (
           <div className="bg-light p-3">
             <Row className="mb-lg justify-content-end">
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   1
                 </div>
               </Col>
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   2
                 </div>
               </Col>
             </Row>
             <Row className="mb-lg justify-content-around">
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   1
                 </div>
               </Col>
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   2
                 </div>
               </Col>
             </Row>
             <Row className="mb-lg justify-content-between">
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   1
                 </div>
               </Col>
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   2
                 </div>
               </Col>
               <Col xs={3}>
-                <div className="py-4 text-center text-white" style={{background: '#FEB04A'}}>
+                <div className={`${s.blockColor} py-4 text-center text-white`}>
                   3
                 </div>
               </Col>

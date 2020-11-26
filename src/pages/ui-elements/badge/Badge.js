@@ -7,9 +7,10 @@ import {
 } from 'reactstrap';
 
 import Widget from '../../../components/Widget';
+import s from './Badge.module.scss';
 
 const Badges = () => (
-  <div>
+  <div className={s.root}>
     <Row>
       <Col xs={12}>
         <Widget
