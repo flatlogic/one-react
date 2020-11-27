@@ -186,7 +186,7 @@ class Header extends React.Component {
           />
         </NavItem>
         <button className={`btn btn-bordered ml-auto ${s.fullVersionBtn}`} onMouseOver={() => this.changeArrowImg()} onMouseLeave={() => this.changeArrowImgOut()}>
-          <a href="https://flatlogic.com/templates/one-react-template" target={"_black"}>Buy Now<div className={s.arrow}></div></a></button>
+          <a href="https://flatlogic.com/templates/one-react-template" target={"_black"} className={s.buyNow}>Buy Now<div className={s.arrow}></div></a></button>
         <Form className={`d-md-down-none`} inline>
           <InputGroup
             onFocus={this.toggleFocus}

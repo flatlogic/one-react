@@ -60,7 +60,7 @@ export const chartData = {
         theme: {
           monochrome: {
             enabled: true,
-            color: warning,
+            color: '#4DC7DF',
           }
         },
         stroke: {

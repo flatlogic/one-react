@@ -46,7 +46,7 @@ class PopoverExamples extends Component {
                 onClick={() => this.toggle(0, 'popovers')}
               >Click to toggle popover</Button>
               <Button
-                id="p-2" color="danger" disabled
+                id="p-2" color="danger" disabled className="mb-md"
                 onClick={() => this.toggle(1, 'popovers')}
               >Disabled button</Button>
             </Widget>

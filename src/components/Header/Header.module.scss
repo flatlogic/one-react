@@ -12,6 +12,12 @@
     box-shadow: 4px 4px 25px rgba(109, 105, 105, 0.15);
   }
 
+  @media (max-width: 576px) {
+    .buyNow {
+      font-size: 12px;
+    }
+  }
+
   .arrow {
     border: solid var(--logo-background-color);
     border-width: 0 2px 2px 0;
@@ -270,6 +276,7 @@
   border: 1px solid var(--logo-background-color);
   border-radius: 2px;
   margin-right: 30px;
+  min-width: 90px;
   &:hover {
     background-color: var(--logo-background-color);
     a {

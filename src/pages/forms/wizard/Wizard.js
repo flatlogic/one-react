@@ -227,7 +227,7 @@ class Wizard extends React.Component {
                   </NavLink>
                 </NavItem>
               </Nav>
-              <Progress value={this.state.progress} color="success" className="progress-xs" />
+              <Progress value={this.state.progress} color="dark" className="progress-xs" />
               <div className="tab-content">
                 <div className={s.stepBody}>
                   <Formsy.Form>
