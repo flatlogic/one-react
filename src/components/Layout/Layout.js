@@ -215,6 +215,7 @@ class Layout extends React.Component {
                       component={SearchResult}
                     />
                     <Route path={"/app/extra/timeline"} component={Timeline} />
+                    <Route path={"/app/extra/error"} component={ErrorPage} />
                     <Route
                       path={"/app/forms/validation"}
                       component={FormValidation}

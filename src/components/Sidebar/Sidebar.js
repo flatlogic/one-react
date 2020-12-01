@@ -1290,6 +1290,10 @@ class Sidebar extends React.Component {
                     header: "Time line",
                     link: "/app/extra/timeline",
                   },
+                  {
+                    header: "Error page",
+                    link: "/app/extra/error",
+                  },
                 ]}
               >
                 <img
