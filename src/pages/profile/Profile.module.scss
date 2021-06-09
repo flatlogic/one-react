@@ -82,9 +82,11 @@
 }
 
 .eventFooter {
+  position: relative;
+  //background-color: $gray-100;
   border-top: 1px solid #e9ecef;
-  margin: 20px 0px 0;
-  padding: 10px 0;
+  margin: 20px -20px 0;
+  padding: 10px 20px;
 }
 
 .eventTimestamp {

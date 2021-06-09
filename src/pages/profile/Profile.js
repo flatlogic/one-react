@@ -185,7 +185,7 @@ const Profile = () => (
       </Col>
       <Col lg={6} xs={12}>
         <section className="activities">
-          <h3 className={"mb-4"}>Activities</h3>
+          <h2 className={"ml-3"}>Activities</h2>
           <section className={s.event}>
             <header>
               <span className={s.eventAvatar}>
@@ -206,27 +206,17 @@ const Profile = () => (
               maturity, there is ...
             </div>
             <footer className={s.eventFooter}>
-              <ul className="post-links" style={{ margin: ".5em 0" }}>
-                <li>
-                  <button className="btn-link">1 hour</button>
-                </li>
-                <li>
-                  <button className="btn-link">
-                    <span className="text-danger">
-                      <i className="fa fa-heart" /> Like
-                    </span>
-                  </button>
-                </li>
-                <li>
-                  <button className="btn-link">Comment</button>
-                </li>
+              <ul className="post-links">
+                <li><button className="btn-link">1 hour</button></li>
+                <li><button className="btn-link"><span className="text-danger"><i className="fa fa-heart" /> Like</span> </button></li>
+                <li><button className="btn-link">Comment</button></li>
               </ul>
             </footer>
           </section>
           <section className={s.event}>
             <header>
               <span className={s.eventAvatar}>
-                <img className="rounded-circle" src={tn7} alt="..." />
+               <img className="rounded-circle" src={tn7} alt="..." />
               </span>
               <h5 className={s.eventTitle}>
                 <button className="btn-link">Jessica Smith</button>{" "}
@@ -241,23 +231,10 @@ const Profile = () => (
             </div>
             <footer className={s.eventFooter}>
               <div className="clearfix">
-                <ul
-                  className="post-links mt-sm pull-left"
-                  style={{ margin: ".5em 0" }}
-                >
-                  <li>
-                    <button className="btn-link">1 hour</button>
-                  </li>
-                  <li>
-                    <button className="btn-link">
-                      <span className="text-danger">
-                        <i className="fa fa-heart-o" /> Like
-                      </span>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="btn-link">Comment</button>
-                  </li>
+                <ul className="post-links mt-sm pull-left" style={{ margin: ".5em 0"}}>
+                  <li><button className="btn-link">1 hour</button></li>
+                  <li><button className="btn-link"><span className="text-danger"><i className="fa fa-heart-o" /> Like</span></button></li>
+                  <li><button className="btn-link">Comment</button></li>
                 </ul>
 
                 <span className="thumb thumb-sm pull-right">
@@ -282,9 +259,7 @@ const Profile = () => (
                     <img className="rounded-circle" src={a1} alt="..." />
                   </span>
                   <div className="comment-body">
-                    <h6 className="author fs-sm fw-semi-bold">
-                      Ignacio Abad <small>6 mins ago</small>
-                    </h6>
+                    <h6 className="author fs-sm fw-semi-bold">Ignacio Abad <small>6 mins ago</small></h6>
                     <p>Hey, have you heard anything about that?</p>
                   </div>
                 </li>

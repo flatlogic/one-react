@@ -1,0 +1,116 @@
+@import '../../../styles/app';
+
+.root {
+  :global {
+    .apexcharts-menu-item {
+      white-space: nowrap;
+    }
+
+    /*       NVD3      */
+    .nvtooltip {
+      padding: $padding-small-vertical $padding-small-horizontal;
+      font-family: $font-family-base;
+      font-size: $font-size-sm;
+      text-align: center;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      h3 {
+        background: none;
+        border-bottom: 0;
+      }
+    }
+
+    svg text {
+      font: $font-weight-base $font-size-sm $font-family-base;
+      fill: $text-color;
+      //transform: rotate(-45deg) !important;
+    }
+
+    svg .title {
+      font: $font-weight-bold $font-size-base $font-family-base;
+    }
+
+    .nvd3.nv-noData {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+    }
+
+    .nvd3 .nv-axis path.domain {
+      stroke-opacity: 0;
+    }
+
+    .nv-controlsWrap {
+      .nv-legend-symbol {
+        fill: #666 !important;
+        stroke: #666 !important;
+      }
+    }
+
+    /*         Flot        */
+    .chart-tooltip {
+      position: fixed;
+      padding: $padding-small-vertical $padding-small-horizontal;
+      border: 1px solid $gray-600;
+      font-size: $font-size-mini;
+      background-color: $white;
+    }
+
+    /*   Easy Pie Chart    */
+    .easy-pie-chart {
+      position: relative;
+      display: inline-block;
+      line-height: 120px;
+      height: 120px;
+      width: 120px;
+      text-align: center;
+      color: $gray-600;
+
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+.square {
+  width: 10px;
+  height: 10px;
+  background: #f447ff;
+}
+.square1 {
+  width: 10px;
+  height: 10px;
+  background: green;
+}
+.square2 {
+  width: 10px;
+  height: 10px;
+  background: yellow;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.rows{
+  display:block;
+  width: 100%;
+  height: auto
+}
+.frame{
+  display:inline-block;
+  width: 20%
+}
+.frame2{
+  display:inline-block;
+  width: 80%
+}
+

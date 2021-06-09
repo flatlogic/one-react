@@ -1170,6 +1170,10 @@ class Sidebar extends React.Component {
                     header: "Echarts Charts",
                     link: "/app/charts/echarts",
                   },
+                  {
+                    header: "Nivo Charts",
+                    link: "/app/charts/nivocharts",
+                  }
                 ]}
               >
                 <img

@@ -4,7 +4,7 @@ import {
   Col,
 } from 'reactstrap';
 import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official'
+import HighchartsReact from 'highcharts-react-official';
 import variablePie from 'highcharts/modules/variable-pie';
 import exporting from 'highcharts/modules/exporting';
 import exportData from 'highcharts/modules/export-data';

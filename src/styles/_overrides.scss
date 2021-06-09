@@ -809,7 +809,7 @@ pre {
 
 //// React Joyride Shadow fix ////
 .__floater {
-  filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 0px 10px) !important;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1)) !important;
 }
 
 .table-striped {
@@ -864,5 +864,17 @@ a {
   background-color: $white;
   &-fluid {
     border-radius: .35rem;
+  }
+}
+div.abc-checkbox {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+
+  label {
+    padding-left: 0;
+    &:before {
+    top: 0;
+    }
   }
 }

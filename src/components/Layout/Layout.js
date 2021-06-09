@@ -52,6 +52,7 @@ import FormWizard from "../../pages/forms/wizard";
 import ChartsOverview from "../../pages/charts";
 import ApexCharts from "../../pages/charts/apex";
 import Echarts from "../../pages/charts/echarts";
+import NivoCharts from "../../pages/charts/nivocharts";
 import GridSeparate from "../../pages/grid";
 import Visits from "../../pages/dashboard/Visits";
 import Modal from '../../pages/ui-elements/modal'
@@ -60,8 +61,7 @@ import Products from "../../pages/products";
 import Product from "../../pages/product";
 import Profile from "../../pages/profile";
 import SPackage from "../../pages/package";
-import Email from '../../pages/email'
-import ErrorPage from "../../pages/error";
+import Email from '../../pages/email';
 
 class Layout extends React.Component {
   static propTypes = {
@@ -226,10 +226,11 @@ class Layout extends React.Component {
                     <Route path={"/app/forms/wizard"} component={FormWizard} />
                     <Route
                       path={"/app/charts/overview"}
-                      component={ChartsOverview} 
+                      component={ChartsOverview}
                     />
                     <Route path={"/app/charts/apex"} component={ApexCharts} />
                     <Route path={"/app/charts/echarts"} component={Echarts} />
+                    <Route path={"/app/charts/nivocharts"} component={NivoCharts} />
                     <Route path={"/app/grid"} component={GridSeparate} />
                     <Route path={"/app/ecommerce/management"} component={Management} />
                     <Route path={"/app/ecommerce/products"} component={Products} />

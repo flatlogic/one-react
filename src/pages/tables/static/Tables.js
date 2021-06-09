@@ -150,6 +150,7 @@ class Tables extends React.Component {
               title={<p style={{ fontWeight: 700 }}>Table Styles</p>}
               customDropDown
             >
+            <div className="table-responsive">
               <Table>
                 <thead>
                   <tr className="fs-sm">
@@ -218,6 +219,7 @@ class Tables extends React.Component {
                   ))}
                 </tbody>
               </Table>
+            </div>
               <div className="clearfix">
                 <div className="float-right">
                   <Button color={"warning"} className="mr-xs" size="sm">
@@ -260,6 +262,7 @@ class Tables extends React.Component {
                 Each row is highlighted. You will never lost there. Just{" "}
                 <code>.table-striped</code> it.
               </p>
+              <div className="table-responsive">
               <Table className="table-striped">
                 <thead>
                   <tr>
@@ -349,6 +352,7 @@ class Tables extends React.Component {
                   </tr>
                 </tbody>
               </Table>
+              </div>
               <br />
               <br />
               <h3>
@@ -443,6 +447,7 @@ class Tables extends React.Component {
                 add
                 <code>.table-bordered</code> to it.
               </p>
+              <div className="table-responsive">
               <Table className="table-bordered table-lg mt-lg mb-0">
                 <thead>
                   <tr>
@@ -451,6 +456,7 @@ class Tables extends React.Component {
                         <Input
                           id="checkbox10"
                           type="checkbox"
+                          className="checkbox"
                           checked={this.state.checkboxes2[0]}
                           onChange={event =>
                             this.checkAll(event, "checkboxes2")
@@ -602,6 +608,7 @@ class Tables extends React.Component {
                   </tr>
                 </tbody>
               </Table>
+              </div>
             </Widget>
             <Widget
               title={<p style={{ fontWeight: 700 }}>Table Styles</p>}
