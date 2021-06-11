@@ -120,7 +120,7 @@ class Grid extends React.Component {
                 tooltipPlacement={tooltipPlacement}
                 title={
                   <p style={{ fontWeight: 700 }}>
-                    <span className="badge badge-primary">
+                    <span className="badge badge-primary" style={{verticalAlign: "middle", marginBottom: "1%"}}>
                       <i className="fa fa-facebook" />
                     </span>{" "}
                     &nbsp; Latest Shares

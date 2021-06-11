@@ -1,11 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
-
-import Rating from "../Rating/Rating";
-
 import s from "./General.module.scss";
-import { Label } from "reactstrap";
 
 const General = ({ rating, title, subtitle, price }) => (
   <div className={s.general}>

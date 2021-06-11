@@ -24,5 +24,5 @@ export default [
   {latitude: 15.3, longitude: -61.38 , name: 'Dominica'},
   {latitude: -20.2, longitude: 57.5 , name: 'Mauritius'},
   {latitude: 26.02, longitude: 50.55 , name: 'Bahrain'},
-  {latitude: 0.33, longitude: 6.73 , name: 'S?o Tom? and Pr?ncipe'},
+  {latitude: 0.33, longitude: 6.73 , name: 'Saint Thomas and Prince'},
 ]

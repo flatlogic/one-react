@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
-import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Popover, PopoverBody, PopoverHeader, Alert } from "reactstrap";

@@ -1,7 +1,7 @@
 import config from './config';
 
 const colors = config.app.colors;
-const { warning } = colors;
+const { warning} = colors;
 const chartColors = config.app.chartColors;
 const {axisColor} = chartColors;
 
@@ -60,7 +60,12 @@ export const chartData = {
         theme: {
           monochrome: {
             enabled: true,
-            color: warning,
+            color: warning
+          }
+        },
+        dataLabels: {
+          dropShadow: {
+            enabled: false
           }
         },
         stroke: {
@@ -68,17 +73,6 @@ export const chartData = {
           width: 0
         },
         legend: false,
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
-            }
-          }
-        }]
       }
     }
   },

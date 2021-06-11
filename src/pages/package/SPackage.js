@@ -7,9 +7,9 @@ import {
 import Widget from '../../components/Widget';
 import s from './SPackage.module.scss';
 import reactLogo from '../../images/react-logo.svg';
-import angularLogo from '../../images/angularjs-logo.svg';
-import angularJSLogo from '../../images/angular-logo.svg';
-import vueLogo from '../../images/vue-logo.svg';
+//import angularLogo from '../../images/angularjs-logo.svg';
+//import angularJSLogo from '../../images/angular-logo.svg';
+//import vueLogo from '../../images/vue-logo.svg';
 import jsLogo from '../../images/js-logo.svg';
 
 class SPackage extends React.Component {

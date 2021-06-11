@@ -43,11 +43,15 @@ class VectorMap extends React.Component {
     place.propertyFields.longitude = "longitude";
     let circle = place.createChild(am4core.Circle);
     circle.radius = 5;
-    circle.fill = am4core.color("#FEB04A");
-    circle.stroke = am4core.color("#FEB04A");
-    circle.strokeWidth = 2;
+    circle.fill = am4core.color("#323232");
+    circle.stroke = am4core.color("#000000");
+    circle.strokeWidth = 1;
+    circle.strokeOpacity = 1;
     placeSeries.data = places;
-    circle.tooltipText = '{name}';
+    circle.tooltipText = '{name}'
+    var latitudeState = circle.states.create("hover");
+    latitudeState.properties.scale = 1.3;
+
     this.map = map;
   }
 

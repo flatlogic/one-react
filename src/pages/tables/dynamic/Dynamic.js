@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Progress,
-  Dropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem,
-} from "reactstrap";
+import { Progress } from "reactstrap";
 
 import ReactTable from "react-table";
 

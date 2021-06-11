@@ -4,7 +4,6 @@ import React from "react";
 import {
   Row,
   Col,
-  ButtonGroup,
   Button,
   Nav,
   NavItem,
@@ -12,11 +11,7 @@ import {
   Pagination,
   PaginationLink,
   PaginationItem,
-  Badge,
-  UncontrolledButtonDropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem,
+  Badge
 } from "reactstrap";
 import Widget from '../../../components/Widget'
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Progress, Table, Label, Input } from "reactstrap";
+import { Row, Col, Progress, Table } from "reactstrap";
 
 import Widget from "../../components/Widget";
 import Map from "./components/am4chartMap/am4chartMap";
