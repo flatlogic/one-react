@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import ProductCard from "./components/ProductCard/ProductCard";
 import Widget from "../../components/Widget";
 
-
 import {
   Row,
   Col,
@@ -38,7 +37,7 @@ class ProductList extends Component {
   };
 
   static defaultProps = {
-    products: [],
+    products: []
   };
 
   state = {
@@ -68,6 +67,7 @@ class ProductList extends Component {
     return this.setState({});
   }
 
+
   componentDidMount() {
     this.props.dispatch(getProductsRequest());
     if (this.props.products.length !== 0) {
@@ -83,6 +83,7 @@ class ProductList extends Component {
   }
 
   render() {
+    console.log(this.props.products)
     const productFilter = (e) => {
       let products = [];
       this.props.products.forEach((c) => {
@@ -240,11 +241,11 @@ class ProductList extends Component {
             <FormGroup className="checkbox abc-checkbox abc-checkbox-warning mb-1 mt-1">
               <Input id="checkbox21" type="checkbox" />{" "}
               <Label for="checkbox21">
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
               </Label>
             </FormGroup>
             <FormGroup
@@ -253,71 +254,71 @@ class ProductList extends Component {
             >
               <Input id="checkbox22" type="checkbox" defaultChecked />{" "}
               <Label for="checkbox22" check>
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
               </Label>
             </FormGroup>
             <FormGroup className="checkbox abc-checkbox abc-checkbox-warning mb-1">
               <Input id="checkbox23" type="checkbox" />{" "}
               <Label for="checkbox23">
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
               </Label>
             </FormGroup>
             <FormGroup className="checkbox abc-checkbox abc-checkbox-warning mb-1">
               <Input id="checkbox24" type="checkbox" />{" "}
               <Label for="checkbox24">
-                <i className="fa fa-star" aria-hidden="true"></i>
-                <i className="fa fa-star pl-1" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"/>
+                <i className="fa fa-star pl-1" aria-hidden="true"/>
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
               </Label>
             </FormGroup>
             <FormGroup className="checkbox abc-checkbox abc-checkbox-warning mb-1">
               <Input id="checkbox25" type="checkbox" />{" "}
               <Label for="checkbox25">
-                <i className="fa fa-star" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"/>
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
                 <i
                   className="fa fa-star pl-1 text-black-50"
                   aria-hidden="true"
-                ></i>
+                />
               </Label>
             </FormGroup>
             <div className={"text-right fs-sm text-muted pt-2"}>
@@ -336,7 +337,7 @@ class ProductList extends Component {
                       addonType="prepend"
                       className={s.searchIcon}
                     >
-                      <img src={SearchIcon} alt="search" width={"24px"} height={"23px"}/>
+                      <img src={SearchIcon} alt="search" width={"24px"} height={"24px"}/>
                     </InputGroupAddon>
                     <Input
                       type="text"

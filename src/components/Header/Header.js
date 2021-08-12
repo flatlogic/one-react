@@ -75,9 +75,15 @@ class Header extends React.Component {
       focus: false,
       showNewMessage: false,
       hideMessage: true,
-      run: true,
+      run: false,
       arrowImg: arrowUnactive
     };
+  }
+
+  componentDidMount() {
+    if (window.location.href.includes('main')){
+      this.setState({run: true})
+    }
   }
 
   toggleFocus = () => {
@@ -155,8 +161,7 @@ class Header extends React.Component {
     const { navbarType, navbarColor, openUsersList } = this.props;
 
     const user = JSON.parse(localStorage.getItem("user") || {});
-
-    const firstUserLetter = (user.name || user.email || "P")[0].toUpperCase();
+    //const firstUserLetter = (user.name || user.email || "A")[0].toUpperCase();
 
     return (
       <Navbar
@@ -305,7 +310,8 @@ class Header extends React.Component {
                 {user.avatar || user.email === "admin@flatlogic.com" ? (
                   <img src={user.avatar || userAvatar} alt="..." />
                 ) : (
-                  <span>{firstUserLetter}</span>
+                    <span>{user.user.email[0].toUpperCase()}</span>
+                    // <span>{firstUserLetter}</span>
                 )}
               </span>
             </DropdownToggle>

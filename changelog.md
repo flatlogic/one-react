@@ -1,4 +1,44 @@
 # Changelog
+## [1.1.5]
+updated work with backend on page Auth, Analytics, Products
+updated following dependencies and devDependencies:
+`"dependencies": {
+"@amcharts/amcharts4": "^4.10.18" - "^4.10.21"
+"@amcharts/amcharts4-geodata": "^4.1.20" - "^4.1.21"
+"@fullcalendar/core": "5.7.0" - "5.9.0",
+"@fullcalendar/daygrid": "5.7.0" - "5.9.0", 
+"@fullcalendar/interaction": "5.7.0" - "5.9.0",
+"@fullcalendar/list": "5.7.0" - "5.9.0",
+"@fullcalendar/react": "5.7.0" - "5.9.0",
+"@fullcalendar/timegrid": "5.7.0" - "5.9.0",
+"@nivo/bar": "^0.70.1" - "^0.73.1", 
+"@nivo/calendar": "^0.70.1" - "^0.73.1",
+"@nivo/chord": "^0.70.1" - "^0.73.0",
+"@nivo/circle-packing": "^0.70.1" - "^0.73.0",
+"@nivo/core": "^0.70.1" - "^0.73.0" ,
+"@nivo/pie": "^0.70.1" - "^0.73.0" ,
+"@nivo/stream": "^0.70.1" - "^0.73.0",
+"@nivo/radar": "^0.70.1" - "^0.73.0", 
+"@nivo/sunburst": "^0.70.1" - "^0.73.0", 
+"@nivo/swarmplot": "^0.70.1" - "^0.73.0",
+"@nivo/waffle": "^0.70.1" - "^0.73.0",
+"apexcharts": "^3.27.1" - "^3.27.3",
+"formik": "^2.2.8" - "^2.2.9",
+"prettier": "^2.3.0" - "^2.3.2",
+"redux": "^4.1.0" - "^4.1.1",
+"sortablejs": "1.13.0" - "1.14.0"
+}
+ "devDependencies": { 
+"@babel/core": "7.14.3" - "7.15.0",
+"@babel/plugin-proposal-class-properties": "7.13.0" - "7.14.5",
+"@babel/plugin-proposal-optional-chaining": "^7.14.2" - "^7.14.5",
+"babel-plugin-named-asset-import": "1.0.0-next.103" - "1.0.0-next.75",
+"eslint-plugin-import": "2.23.2" - "2.24.0",
+"eslint-plugin-react": "7.23.2" - "7.24.0",
+"pnp-webpack-plugin": "1.6.4" -  "1.7.0",
+"react-responsive-carousel": "^3.2.18" - "^3.2.20"
+}`
+
 ## [1.1.4] 
 updated position icon on page Grid, 
 customized vector map circles

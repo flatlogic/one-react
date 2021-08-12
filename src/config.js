@@ -1,12 +1,14 @@
-const hostApi = process.env.NODE_ENV === "development" ? "http://localhost" : "https://flatlogic-node-backend.herokuapp.com";
-const portApi = process.env.NODE_ENV === "development" ? 8080 : "";
-const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}`;
+const hostApi = process.env.NODE_ENV === "development" ? "https://sing-generator-node.herokuapp.com" : "http://localhost";
+const portApi = process.env.NODE_ENV === "development" ? "" : 8080;
+const baseURLApi = `${hostApi}${portApi ? `:${portApi}` : ``}/api`;
+const redirectUrl = process.env.NODE_ENV === "development" ? "https://demo.flatlogic.com/one-react" : "http://localhost:3000";
 
 export default {
+  redirectUrl,
   hostApi,
   portApi,
   baseURLApi,
-  remote: "https://flatlogic-node-backend.herokuapp.com",
+  remote: "https://sing-generator-node.herokuapp.com",
   isBackend: process.env.REACT_APP_BACKEND,
   auth: {
     email: 'admin@flatlogic.com',

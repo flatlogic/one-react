@@ -372,6 +372,8 @@ class Sidebar extends React.Component {
               return window.location.href.includes(currentPage)
                 ? darkSidebarExtraFilled
                 : darkSidebarExtraOutlined;
+            default:
+              return;
           }
         case "danger":
           switch (currentPage) {
@@ -437,6 +439,8 @@ class Sidebar extends React.Component {
               return window.location.href.includes(currentPage)
                 ? darkSidebarExtraFilledDanger
                 : darkSidebarExtraOutlinedDanger;
+            default:
+              return;
           }
         case "success":
           switch (currentPage) {
@@ -502,6 +506,8 @@ class Sidebar extends React.Component {
               return window.location.href.includes(currentPage)
                 ? darkSidebarExtraFilledSuccess
                 : darkSidebarExtraOutlinedSuccess;
+            default:
+              return;
           }
         case "info":
           switch (currentPage) {
@@ -567,7 +573,11 @@ class Sidebar extends React.Component {
               return window.location.href.includes(currentPage)
                 ? darkSidebarExtraFilledBlue
                 : darkSidebarExtraOutlinedBlue;
+            default:
+              return;
           }
+        default:
+          return;
       }
     }
     switch (this.props.themeColor) {
@@ -635,6 +645,8 @@ class Sidebar extends React.Component {
             return window.location.href.includes(currentPage)
               ? extraFilled
               : extraOutlined;
+          default:
+            return;
         }
       case "danger":
         switch (currentPage) {
@@ -700,6 +712,8 @@ class Sidebar extends React.Component {
             return window.location.href.includes(currentPage)
               ? extraFilledDanger
               : extraOutlinedDanger;
+          default:
+            return;
         }
       case "success":
         switch (currentPage) {
@@ -765,6 +779,8 @@ class Sidebar extends React.Component {
             return window.location.href.includes(currentPage)
               ? extraFilledSuccess
               : extraOutlinedSuccess;
+          default:
+            return;
         }
       case "info":
         switch (currentPage) {
@@ -830,7 +846,11 @@ class Sidebar extends React.Component {
             return window.location.href.includes(currentPage)
               ? extraFilledBlue
               : extraOutlinedBlue;
+          default:
+            return;
         }
+      default:
+        return;
     }
   }
 
@@ -844,6 +864,8 @@ class Sidebar extends React.Component {
         return logoSuccess;
       case "info":
         return logoBlue;
+      default:
+        return;
     }
   }
 

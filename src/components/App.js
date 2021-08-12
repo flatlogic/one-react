@@ -11,8 +11,10 @@ import ErrorPage from '../pages/error';
 import '../styles/theme.scss';
 import LayoutComponent from '../components/Layout';
 import DocumentationLayoutComponent from '../documentation/DocumentationLayout';
-import Login from '../pages/login';
-import Register from '../pages/register';
+import Login from '../pages/auth/login';
+import Register from '../pages/auth/register';
+import Forgot from "../pages/auth/forgot";
+import Reset from "../pages/auth/reset";
 import { logoutUser } from '../actions/user';
 
 const PrivateRoute = ({dispatch, component, ...rest }) => {
@@ -48,6 +50,8 @@ class App extends React.PureComponent {
                     <Route path="/documentation" component={DocumentationLayoutComponent}/>
                     <Route path="/register" exact component={Register}/>
                     <Route path="/login" exact component={Login}/>
+                    <Route path="/forgot" exact component={Forgot}/>
+                    <Route path="/password-reset" exact component={Reset}/>
                     <Route path="/error" exact component={ErrorPage}/>
                     <Route component={ErrorPage}/>
                 </Switch>

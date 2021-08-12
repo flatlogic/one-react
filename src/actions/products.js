@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import mock from "../pages/products/backendMock";
 import config from "../config";
 
+
 export const RECEIVED_PRODUCTS = 'RECEIVED_PRODUCTS';
 export const RECEIVING_PRODUCTS = 'RECEIVING_PRODUCTS';
 export const RECEIVED_PRODUCT = 'RECEIVED_PRODUCT';
@@ -51,10 +52,10 @@ export function updateProductRequest(product) {
         if (!config.isBackend) return;
 
         dispatch(updatingProduct());
-        axios.put('/products/' + product.id, product).then(res => {
-            dispatch(updateProduct(res.data));
-            toast.success("Product has been Updated!");
-        })
+            axios.put('/products/' + product.id, product).then(res => {
+                 dispatch(updateProduct(res.data));
+                 toast.success("Product has been Updated!");
+            })
     };
 }
 

@@ -35,6 +35,7 @@ class ProductCard extends Component {
             updatedAt,
             activeList
         } = this.props;
+
         const label = discount ? "Sale" : createdAt === updatedAt ? "New" : null;
         return (
             <Widget>
@@ -63,7 +64,7 @@ class ProductCard extends Component {
                     <div className={`${s.productsCardPrice} mb-2`}>
                         {rating && (
                             <div className={"d-flex align-items-center"}>
-                                <i className="fa fa-star" aria-hidden="true"></i>
+                                <i className="fa fa-star" aria-hidden="true"/>
                                 <small className={"mb-0 pl-1"}>{rating}.0</small>
                                 <button className="btn-link ml-3" style={{fontSize: 14}}>
                                     53 Reviews

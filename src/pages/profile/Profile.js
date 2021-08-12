@@ -170,7 +170,7 @@ const Profile = () => (
                   <img src={smilesIcon} alt="smiles"/>
                 </button>
                 <button className="btn btn-sm btn-default bg-transparent border-0">
-                  <img src={photoIcon} alt="photo"/>
+                  <img src={photoIcon} alt="photoIcon"/>
                 </button>
                 <button className="btn btn-sm btn-default bg-transparent border-0">
                   <img src={locationIcon} alt="location"/>

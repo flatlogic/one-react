@@ -121,7 +121,6 @@ class Timeline extends React.Component {
     };
 
     render() {
-        const {cd} = this.state;
 
         return (
             <div>
@@ -130,7 +129,7 @@ class Timeline extends React.Component {
                         <li className={Data.inverted ? `${s.timelineInverted}` : null}>
                             {Data.badgeImg ?
                                 <div className={`${s.timelineBadge} ${s.badgeImg}`}>
-                                    <a>
+                                    <a href="/#">
                                         <i className={`${s.fa} fa fa-circle invert`}>
                                             <img
                                                 className={`rounded-circle`}
@@ -142,7 +141,7 @@ class Timeline extends React.Component {
                                     </a>
                                 </div> :
                                 <div className={s.timelineBadge}>
-                                    <a>
+                                    <a href='/#'>
                                         <i className={`${s.fa} fa fa-circle`}>
                                             <img src={Data.imgIcon} alt=""/>
                                         </i>
@@ -161,7 +160,7 @@ class Timeline extends React.Component {
                       />
                     </span>
                                         <h5 className={s.eventHeading}>
-                                            {Data.userName} <a href="#">{Data.userNick}</a>
+                                            {Data.userName} <a href="/#">{Data.userNick}</a>
                                         </h5>
                                         <p className={`text-muted fs-sm`}>{Data.timeZone}</p>
                                         {Data.PostBody ? Data.PostBody.map((post) => (
@@ -178,17 +177,17 @@ class Timeline extends React.Component {
                                         <footer className={s.timelineFooter}>
                                             <ul className={s.postLinks}>
                                                 <li>
-                                                    <a href="#">{Data.lastPublish} </a>
+                                                    <a href="/#">{Data.lastPublish} </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">
+                                                    <a href="/#">
                             <span className="text-danger">
                                 <i className={`fa fa-heart${Data.liked ? '' : '-o'}`}/> Like
                             </span>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">Comment</a>
+                                                    <a href="/#">Comment</a>
                                                 </li>
                                             </ul>
                                             {Data.postComments
