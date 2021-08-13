@@ -13,9 +13,9 @@ export function receiveDataRequest() {
             dispatch(receivingData());
             new Promise((resolve) => {
                 resolve(mock.backendData)
-            }).then(data => {
-                dispatch(receiveDataSuccess(mock.backendData));
-            })
+            }).then(
+                dispatch(receiveDataSuccess(mock.backendData))
+            )
         }
 
         else {

@@ -92,7 +92,6 @@ class ProductList extends Component {
         ) {
           products.push(c);
         }
-        return;
       });
       this.setState({
         localProducts: products,

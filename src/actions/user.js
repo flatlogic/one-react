@@ -168,7 +168,7 @@ export function resetPassword(token, password) {
             dispatch({
                 type: RESET_REQUEST
             });
-            axios.put("/auth/password-reset", {token, password}).then(res => {
+            axios.put("/auth/password-reset", {token, password}).then(() => {
                 dispatch({
                     type: RESET_SUCCESS,
                 });
@@ -188,14 +188,10 @@ export function sendPasswordResetEmail(email) {
             dispatch({
                 type: PASSWORD_RESET_EMAIL_REQUEST,
             });
-            axios.post("/auth/send-password-reset-email", {email}).then(res => {
-                dispatch({
-                    type: PASSWORD_RESET_EMAIL_SUCCESS,
-                });
+            axios.post("/auth/send-password-reset-email", {email}).then(() => {
+                dispatch({ type: PASSWORD_RESET_EMAIL_SUCCESS });
                 toast.success("Email with resetting instructions has been sent");
-            }).catch(err => {
-                dispatch(loginError('Something was wrong. Try again'));
-            })
+            }).catch(dispatch(loginError('Something was wrong. Try again')))
         }
     }
 }

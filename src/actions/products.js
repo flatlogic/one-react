@@ -79,7 +79,7 @@ export function deleteProductRequest(payload) {
         if (!config.isBackend) return;
 
         dispatch(deletingProduct(payload));
-        axios.delete('/products/' + payload.id).then(res => {
+        axios.delete('/products/' + payload.id).then(() => {
             dispatch(deleteProduct({id: payload.id}));
             if (payload.history.location.pathname !== '/app/ecommerce/management') {
                 payload.history.push('/app/ecommerce/management');
