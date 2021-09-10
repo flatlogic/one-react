@@ -447,7 +447,7 @@ class Tables extends React.Component {
                 add
                 <code>.table-bordered</code> to it.
               </p>
-              <div className="table-responsive">
+              <div className="table-responsive-md">
               <Table className="table-bordered table-lg mt-lg mb-0">
                 <thead>
                   <tr>

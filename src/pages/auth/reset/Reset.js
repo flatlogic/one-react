@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Alert, Button } from 'reactstrap';
-import { authError, resetPassword } from '../../../actions/user';
+import { authError, resetPassword } from '../../../actions/auth';
 import s from "../forgot/Forgot.module.scss";
 
 class Reset extends React.Component {

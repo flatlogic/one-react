@@ -20,6 +20,9 @@
   .toggleSidebarNav {
     height: calc(100% + 14px);
     background: #FEB049;
+    & > a > i {
+      color: #fff;
+    }
   }
 
   &.navbarFloatingType {

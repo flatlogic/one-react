@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import {Alert, Button } from 'reactstrap';
-import { sendPasswordResetEmail } from '../../../actions/user';
+import { sendPasswordResetEmail } from '../../../actions/auth';
 import s from './Forgot.module.scss';
 
 

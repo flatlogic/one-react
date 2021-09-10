@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import s from "./Sidebar.module.scss";
 import LinksGroup from "./LinksGroup/LinksGroup";
 import { changeActiveSidebarItem } from "../../actions/navigation";
-import { logoutUser } from "../../actions/user";
+import { logoutUser } from "../../actions/auth";
 import cx from "classnames";
 
 // white sidebar
@@ -972,20 +972,39 @@ class Sidebar extends React.Component {
                 />
               </LinksGroup>
               <LinksGroup
-                onActiveSidebarItemChange={(activeItem) =>
-                  this.props.dispatch(changeActiveSidebarItem(activeItem))
-                }
-                activeItem={this.props.activeItem}
-                header="Profile"
-                isHeader
-                link="/app/profile"
-                index="profile"
+                  onActiveSidebarItemChange={(activeItem) =>
+                      this.props.dispatch(changeActiveSidebarItem(activeItem))
+                  }
+                  activeItem={this.props.activeItem}
+                  header="Profile"
+                  isHeader
+                  link="/app/user"
+                  index="user"
+                  exact={false}
+                  childrenLinks={[
+                    {
+                      header: "Users",
+                      link: "/admin/users",
+                    },
+                    {
+                      header: "My Profile",
+                      link: "/app/profile",
+                    },
+                    {
+                      header: "Edit Profile",
+                      link: "/app/edit_profile",
+                    },
+                    {
+                      header: "Change Password",
+                      link: "/app/password",
+                    },
+                  ]}
               >
                 <img
-                  src={this.themeIcons("profile")}
-                  alt="lightDashboard"
-                  width={"24px"}
-                  height={"24px"}
+                    src={this.themeIcons("profile")}
+                    alt="lightDashboard"
+                    width={"24px"}
+                    height={"24px"}
                 />
               </LinksGroup>
               <LinksGroup

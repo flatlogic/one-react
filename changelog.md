@@ -1,4 +1,9 @@
 # Changelog
+## [1.1.6]
+Added User Management Component
+Added Route Components
+Added Auth Pages(forgot password, login page, register page, reset password)
+
 ## [1.1.5]
 updated work with backend on page Auth, Analytics, Products
 updated following dependencies and devDependencies:

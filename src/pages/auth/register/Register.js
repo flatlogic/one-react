@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Alert, Button, Label, FormGroup, Input } from "reactstrap";
 import Widget from "../../../components/Widget";
 import { registerUser, registerError } from "../../../actions/register";
-import { loginUser } from "../../../actions/user";
+import { loginUser } from "../../../actions/auth";
 import Login from "../login";
 import signupImg from "../../../images/signupImg.svg";
 import s from './Register.module.scss';

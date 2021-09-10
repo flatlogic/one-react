@@ -83,7 +83,6 @@ class ProductList extends Component {
   }
 
   render() {
-    console.log(this.props.products)
     const productFilter = (e) => {
       let products = [];
       this.props.products.forEach((c) => {

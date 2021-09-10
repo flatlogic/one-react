@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 
-import { logoutUser } from "../../../actions/user";
+import { logoutUser } from "../../../actions/auth";
 
 import s from "./ListGroup.module.scss";
 

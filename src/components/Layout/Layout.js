@@ -62,6 +62,10 @@ import Product from "../../pages/product";
 import Profile from "../../pages/profile";
 import SPackage from "../../pages/package";
 import Email from '../../pages/email';
+import UserListPage from "../Users/list/UserListPage";
+import UsersFormPage from "../Users/form/UsersFormPage";
+import UsersViewPage from "../Users/view/UsersViewPage";
+import ChangePasswordFormPage from "../Users/changePassword/ChangePasswordFormPage";
 
 class Layout extends React.Component {
   static propTypes = {
@@ -170,6 +174,41 @@ class Layout extends React.Component {
                       component={Visits}
                     />
                     <Route
+                        path="/app/edit_profile"
+                        exact
+                        component={UsersFormPage}
+                    />
+                    <Route
+                        path="/app/password"
+                        exact
+                        component={ChangePasswordFormPage}
+                    />
+                    <Route
+                      path="/admin"
+                      exact
+                      render={() => <Redirect to="/admin/users" />}
+                    />
+                    <Route
+                      path="/admin/users"
+                      exact
+                      component={UserListPage}
+                    />
+                    <Route
+                        path="/admin/users/new"
+                        exact
+                        component={UsersFormPage}
+                    />
+                    <Route
+                        path="/admin/users/:id/edit"
+                        exact
+                        component={UsersFormPage}
+                    />
+                    <Route
+                        path="/admin/users/:id"
+                        exact
+                        component={UsersViewPage}
+                    />
+                    <Route
                       path={"/app/core/typography"}
                       component={Typography}
                     />
@@ -258,6 +297,7 @@ function mapStateToProps(store) {
     dashboardTheme: store.layout.dashboardTheme,
     sidebarType: store.layout.sidebarType,
     sidebarColor: store.layout.sidebarColor,
+    currentUser: store.auth.currentUser
   };
 }
 

@@ -18,7 +18,7 @@ import {
 import cx from "classnames";
 import { NavbarTypes } from "../../reducers/layout";
 import Notifications from "../Notifications";
-import { logoutUser } from "../../actions/user";
+import { logoutUser } from "../../actions/auth";
 import chroma from "chroma-js";
 import {
   toggleSidebar,

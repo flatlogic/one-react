@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter, Redirect, Link } from "react-router-dom";
+import config from "../../../config";
 import { connect } from "react-redux";
 import { Alert, Button, Label, Input, FormGroup } from "reactstrap";
 import Widget from "../../../components/Widget";
-import {doInit, loginUser, receiveToken} from "../../../actions/user";
+import {doInit, loginUser, receiveToken} from "../../../actions/auth";
 import jwt from "jsonwebtoken";
-import config from "../../../config";
 import s from './Login.module.scss';
-import signinImg from "../../../images/signinImg.svg";
+import signInImg from "../../../images/signinImg.svg";
 import img1 from "../../../images/Vector-1.svg";
 import img2 from "../../../images/Vector-2.svg";
 import img3 from "../../../images/Vector-3.svg";
@@ -56,9 +56,7 @@ class Login extends React.Component {
 
   doLogin(e) {
     e.preventDefault();
-    this.props.dispatch(
-      loginUser({ email: this.state.email, password: this.state.password })
-    );
+    this.props.dispatch(loginUser({ email: this.state.email, password: this.state.password }));
   }
 
   googleLogin() {
@@ -178,7 +176,7 @@ class Login extends React.Component {
             <footer className={s.footer}>{new Date().getFullYear()} © One React - React Admin Dashboard Template Made by &nbsp;<a href="https://flatlogic.com" rel="noopener noreferrer" target="_blank">Flatlogic LLC</a></footer>
           </form>
         </Widget>
-        <img src={signinImg} alt="signin" className={"backImg"} />
+        <img src={signInImg} alt="signIn" className={"backImg"} />
       </div>
     );
   }
