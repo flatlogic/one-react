@@ -254,9 +254,9 @@ class Gallery extends React.Component {
                   <small className="mt-0 mb-sm">{item.name}</small>
                   <hr className={"mt-1"}/>
                    <ul className="post-links">
-                    <li><a href="#">{item.date}</a></li>
+                    <li><a href="/#">{item.date}</a></li>
                     <li><button className="btn-link"><span className="text-danger"><i className={`fa ${item.like ? 'fa-heart' : 'fa-heart-o'}`} /> Like</span></button></li>
-                    <li><a href="#">Details</a></li>
+                    <li><a href="/#">Details</a></li>
                   </ul>
                 </div>
               </div>

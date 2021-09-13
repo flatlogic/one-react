@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import mock from "../pages/products/backendMock";
 import config from "../config";
 
+
 export const RECEIVED_PRODUCTS = 'RECEIVED_PRODUCTS';
 export const RECEIVING_PRODUCTS = 'RECEIVING_PRODUCTS';
 export const RECEIVED_PRODUCT = 'RECEIVED_PRODUCT';
@@ -51,10 +52,10 @@ export function updateProductRequest(product) {
         if (!config.isBackend) return;
 
         dispatch(updatingProduct());
-        axios.put('/products/' + product.id, product).then(res => {
-            dispatch(updateProduct(res.data));
-            toast.success("Product has been Updated!");
-        })
+            axios.put('/products/' + product.id, product).then(res => {
+                 dispatch(updateProduct(res.data));
+                 toast.success("Product has been Updated!");
+            })
     };
 }
 
@@ -78,7 +79,7 @@ export function deleteProductRequest(payload) {
         if (!config.isBackend) return;
 
         dispatch(deletingProduct(payload));
-        axios.delete('/products/' + payload.id).then(res => {
+        axios.delete('/products/' + payload.id).then(() => {
             dispatch(deleteProduct({id: payload.id}));
             if (payload.history.location.pathname !== '/app/ecommerce/management') {
                 payload.history.push('/app/ecommerce/management');

@@ -31,20 +31,17 @@ export function registerUser(payload) {
         if (!config.isBackend) {
             toast.success("You've been registered successfully");
             payload.history.push('/login');
-        }
-
-        else {
+        } else {
             dispatch(requestRegister());
             const creds = payload.creds;
             if (creds.email.length > 0 && creds.password.length > 0) {
-              axios.post("/user/signup", creds).then(res => {
+              axios.post("/auth/signup", creds).then(() => {
                 dispatch(receiveRegister());
                 toast.success("You've been registered successfully");
                 payload.history.push('/login');
               }).catch(err => {
                 dispatch(registerError(err.response.data));
               })
-
             } else {
               dispatch(registerError('Something was wrong. Try again'));
             }

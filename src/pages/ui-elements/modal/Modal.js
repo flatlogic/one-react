@@ -179,7 +179,7 @@ class ModalExample extends React.Component {
             cupiditate odio vitae? Eligendi nisi consequuntur vero tenetur nemo!
           </ModalBody>
           <ModalFooter>
-            <Button color="secondary" className={"text-lowercase"} onClick={() => this.toggle('large')} className={"text-capitalize"}>Close</Button>
+            <Button color="secondary" className={"text-lowercase text-capitalize"} onClick={() => this.toggle('large')}>Close</Button>
             <Button color="warning" className={"text-capitalize"}>Save changes</Button>
           </ModalFooter>
         </Modal>

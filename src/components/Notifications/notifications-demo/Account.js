@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
 
-import { logoutUser } from "../../../actions/user";
+import { logoutUser } from "../../../actions/auth";
 
 import s from "./ListGroup.module.scss";
 
@@ -14,24 +14,38 @@ import {connect} from "react-redux";
 class MessagesDemo extends React.Component {
   constructor(props) {
     super(props);
+
     this.doLogout = this.doLogout.bind(this);
   }
+
   doLogout() {
     this.props.dispatch(logoutUser());
   }
+
   render() {
+    const user = JSON.parse(localStorage.getItem("user") || {});
     return (
       <ListGroup className={[s.listGroupAccount, "thin-scroll"].join(" ")}>
-        <p className={`${s.listGroupTitleAccount}`}>Sara Smith</p>
-        <p className={`${s.listGroupSubtitleAccount}`}>Sara_smith@gmail.com</p>
+          {user.user === undefined ?
+              <div>
+                  <p className={`${s.listGroupTitleAccount}`}>Admin</p>
+                  <p className={`${s.listGroupSubtitleAccount}`}> Sara_smith@gmail.com </p>
+              </div> :
+              <div>
+                  <p className={`${s.listGroupTitleAccount}`}>{user.user.name ? user.user.name : 'Admin'}</p>
+                  <p className={`${s.listGroupSubtitleAccount}`}>{user.user.email ? user.user.email : 'Sara_smith@gmail.com'}</p>
+              </div>
+          }
+        {/*<p className={`${s.listGroupTitleAccount}`}>{user.user.name ? user.user.name : 'Admin'}</p>*/}
+        {/*<p className={`${s.listGroupSubtitleAccount}`}>{user.user.email ? user.user.email : 'Sara_smith@gmail.com'}</p>*/}
         <ListGroupItem className={`${s.listGroupItemAccount} mt-3`}>
-          <img src={settingsIcon} alt="settings" className={"mr-2"} /> Settings
+            <img src={settingsIcon} alt="settings" className={"mr-2"} /> Settings
         </ListGroupItem>
-        <ListGroupItem className={`${s.listGroupItemAccount} mt-2`}>
-          <img src={accountIcon} alt="settings" className={"mr-2"} /> Account
+        <ListGroupItem tag="a" href="/profile#/app/profile" action className={`${s.listGroupItemAccount} mt-2`}>
+            <img src={accountIcon} alt="settings" className={"mr-2"} /> Account
         </ListGroupItem>
         <ListGroupItem className={`${s.listGroupItemAccount} mt-2 mb-3`} onClick={() => this.doLogout()}>
-          <img src={logoutIcon} alt="settings" className={"mr-2"} /> Log out
+          <img src={logoutIcon} alt="logOut" className={"mr-2"} /> Log out
         </ListGroupItem>
       </ListGroup>
     );

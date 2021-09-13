@@ -1,4 +1,4 @@
-import config from "../../config";
+//import config from "../../config";
 
 //images
 import ProductImg1 from '../../images/products/product1.png'

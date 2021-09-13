@@ -5,7 +5,7 @@ import * as am4maps from "@amcharts/amcharts4/maps";
 import cities from './mock';
 import am4geodata_usaHigh from "@amcharts/amcharts4-geodata/usaHigh";
 
-import AnimateNumber from 'react-animated-number';
+//import AnimateNumber from 'react-animated-number';
 import s from './am4chartMap.module.scss';
   
   class Am4chartMap extends Component {

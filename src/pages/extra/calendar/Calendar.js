@@ -183,8 +183,6 @@ class Calendar extends React.Component {
   render() {
     const {
       event,
-      currentMonth,
-      currentDay,
       calendarOptions,
       modal,
       modalEvent,
@@ -356,8 +354,8 @@ class Calendar extends React.Component {
             {event.title}
           </ModalHeader>
           <ModalBody className="bg-white">
-            <p class="text-muted">
-              <i class="la la-calendar"></i>
+            <p className="text-muted">
+              <i className="la la-calendar"/>
               {this.getFormattedDate(event.start)}
             </p>
             <p>{event.extendedProps && event.extendedProps.description}</p>

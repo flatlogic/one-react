@@ -24,16 +24,16 @@ const Banner = ({ data }) => (
         <img src={img1} alt={"img1"}/>
       </div>
       <div>
-        <img src={img2} />
+        <img src={img2} alt={"img2"} />
       </div>
       <div>
-        <img src={img3} />
+        <img src={img3} alt={"img3"} />
       </div>
       <div>
-        <img src={img4} />
+        <img src={img4} alt={"img4"} />
       </div>
       <div>
-        <img src={img5} />
+        <img src={img5} alt={"img4"} />
       </div>
     </Carousel>
     <div className={s.productInfo}>
@@ -48,7 +48,7 @@ const Banner = ({ data }) => (
           add to card
         </Button>
         <Button color={"danger"}>
-          <i className="fa fa-heart-o mr-xs" aria-hidden="true"></i>add to
+          <i className="fa fa-heart-o mr-xs" aria-hidden="true"/>add to
           wishlist
         </Button>
       </div>

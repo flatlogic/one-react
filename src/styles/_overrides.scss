@@ -592,6 +592,23 @@ h6,
   }
 }
 
+// Headlines
+.headline-1 {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semi-bold;
+}
+
+.headline-2 {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semi-bold;
+}
+
+.headline-3 {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semi-bold;
+}
+
+
 // Popovers
 
 .popover {

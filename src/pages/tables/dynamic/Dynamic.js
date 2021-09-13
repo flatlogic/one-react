@@ -32,7 +32,7 @@ export default class Dynamic extends React.Component {
               key={ text }
               role="presentation"
               className="dropdown-item">
-              <a href="#"
+              <a href="/#"
                  tabIndex="-1"
                  role="menuitem"
                  data-page={ page }

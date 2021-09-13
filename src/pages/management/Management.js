@@ -199,11 +199,6 @@ class Management extends React.Component {
   }
 
   render() {
-    const options = {
-      sizePerPage: 10,
-      paginationSize: 3,
-      sizePerPageDropDown: this.renderSizePerPageDropDown,
-    };
 
     return (
       <div>
@@ -229,7 +224,7 @@ class Management extends React.Component {
             <div
               className={"d-flex align-items-center justify-content-between"}
             >
-              <img src={product.img} height={130} width={170} />
+              <img src={product.img} alt={"img"} height={130} width={170} />
               <h3 className={"mb-0"}>{product.title}</h3>
               <div
                 className={

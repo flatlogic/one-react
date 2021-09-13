@@ -35,6 +35,7 @@ import p4 from "../../images/people/p4.png";
 import p5 from "../../images/userAvatar.png";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import {receiveDataRequest} from "../../actions/analytics";
 
 const orderValueOverride = {
   options: {
@@ -1302,11 +1303,14 @@ class Dashboard extends React.Component {
           ordersImg: ordersInfoImg
         });
         break;
+      default:
+        break;
     }
   }
 
   componentDidMount() {
     window.addEventListener("resize", this.forceUpdate.bind(this));
+    this.props.dispatch(receiveDataRequest());
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -1320,10 +1324,12 @@ class Dashboard extends React.Component {
           break;
         case "success":
           this.updateChartsColor("success")
-              break;
+          break;
         case "info":
           this.updateChartsColor("info")
-              break;
+          break;
+        default:
+          break;
       }
     }
   }
