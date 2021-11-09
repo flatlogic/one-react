@@ -75,7 +75,7 @@ class Icons extends React.Component {
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              <span>Glypicons</span>
+              <span>Glyphicons</span>
             </NavLink>
           </NavItem>
           <NavItem>
