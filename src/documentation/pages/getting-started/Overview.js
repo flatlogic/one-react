@@ -19,13 +19,13 @@ const Overview = () => (
       <Widget id="Overview">
         <h1>Overview</h1>
         <p className="lead">
-          Sing App React is an admin dashboard template built with React 16.5.2. Sing App goes beyond usual admin
+          One React is an admin dashboard template built with React 16.5.2. Sing App goes beyond usual admin
           templates and provides you entire intuitive programming framework. Server Side Rendering and Node.js backend
-          will even further speed up your development. You can use Sing App React to build any type of web applications
+          will even further speed up your development. You can use One React to build any type of web applications
           like SAAS, CMS, financial dashboards, project management tools, etc.
         </p>
         <p className="lead">
-            Moreover, there is a version of <a rel="noreferrer noopener" href="https://flatlogic.com/admin-dashboards/sing-app-react-nodejs" target="_blank">Sing App React with Node.js</a>, enhanced with working node.js
+            Moreover, there is a version of <a rel="noreferrer noopener" href="https://flatlogic.com/admin-dashboards/sing-app-react-nodejs" target="_blank">One React with Node.js</a>, enhanced with working node.js
             backend with authentication, login strategies and basic CRUD functions. Please refer to <a
             href="https://github.com/flatlogic/nodejs-backend" rel="noopener noreferrer" target="_blank">backend documentation</a> for details
         </p>

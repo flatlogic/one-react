@@ -35,7 +35,7 @@ const QuickStart = () => (
           <li><code>yarn lint</code>: to check the source code for syntax errors and potential issues</li>
         </ul>
       </Widget>
-      <p>For more instruction please refer to Sing App React readme.md.</p>
+      <p>For more instruction please refer to One React readme.md.</p>
     </Col>
   </Row>
 );
