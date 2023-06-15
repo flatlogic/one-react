@@ -22,8 +22,8 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 
-import "@fullcalendar/daygrid/main.css";
-import "@fullcalendar/timegrid/main.css";
+// import "@fullcalendar/daygrid/main.css";
+// import "@fullcalendar/timegrid/main.css";
 
 class Calendar extends React.Component {
   constructor(props) {

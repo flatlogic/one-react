@@ -37,6 +37,10 @@ import 'rc-slider/assets/index.css';
 const SliderWithTooltip = createSliderWithTooltip(Slider);
 const RangeTooltip = createSliderWithTooltip(Range);
 
+// const createSliderWithTooltip = Slider.createSliderWithTooltip;
+// const SliderWithTooltip = createSliderWithTooltip(Slider);
+// const RangeTooltip = createSliderWithTooltip(Slider.Range);
+
 class Elements extends React.Component {
 
   constructor(props) {

@@ -8,7 +8,7 @@ import Widget from '../../../components/Widget';
 import echartsData from './mock';
 
 import ReactEchartsCore from 'echarts-for-react/lib/core';
-import echarts from 'echarts/lib/echarts';
+import * as echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/bar';
 import 'echarts/lib/chart/pie';
 import 'echarts/lib/chart/line';
@@ -18,6 +18,7 @@ import 'echarts/lib/component/polar';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/legend';
+import 'echarts/lib/component/toolbox'
 
 import './Echarts.scss';
 

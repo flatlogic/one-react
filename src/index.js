@@ -14,6 +14,8 @@ import createRootReducer from './reducers';
 import { doInit } from "./actions/auth";
 import { createHashHistory } from "history";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const history = createHashHistory();
 
