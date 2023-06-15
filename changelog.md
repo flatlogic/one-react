@@ -1,6 +1,9 @@
 # Changelog
 ## [1.1.7]
 ### Updated following dependencies:
+    "react": "^16.14.0" - "^18.2.0",
+    "react-dom": "^16.14.0" - "^18.2.0",
+    "node-sass": "4.14.1" --> "sass": "^1.63.4",
     "@amcharts/amcharts4": "4.10.21" - "4.10.36"
     "@amcharts/amcharts4-geodata": "4.1.21" - "4.1.27"
     "@fullcalendar/core": "5.9.0" - "6.1.8"
