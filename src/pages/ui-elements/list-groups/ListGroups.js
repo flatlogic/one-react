@@ -120,12 +120,14 @@ class ListGroups extends React.Component {
           <Row className="nestable">
             <Col md="6" xs="12" className="mb-xs">
               <SortableTree
+                isVirtualized={false}
                 treeData={this.state.nestableFirstItems}
                 onChange={nestableFirstItems => this.setState({ nestableFirstItems })}
               />
             </Col>
             <Col md="6">
               <SortableTree
+                isVirtualized={false}
                 treeData={this.state.nestableSecondItems}
                 onChange={nestableSecondItems => this.setState({ nestableSecondItems })}
               />

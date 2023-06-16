@@ -12,13 +12,14 @@ import {chartData} from './mock';
 
 import ReactEchartsCore from 'echarts-for-react/lib/core';
 
-import echarts from 'echarts/lib/echarts';
+import * as echarts from 'echarts/lib/echarts';
 
 import 'echarts/lib/chart/line';
 import 'echarts/lib/chart/pie';
 import 'echarts/lib/chart/themeRiver';
 import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/legend';
+import 'echarts/lib/component/singleAxis'
 
 class Charts extends React.Component {
 

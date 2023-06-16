@@ -29,6 +29,8 @@ import ListOutlined from "../../images/icons/List_outlined.svg";
 import ListFilled from "../../images/icons/List_filled.svg";
 
 const RangeTooltip = createSliderWithTooltip(Range);
+// const createSliderWithTooltip = Slider.createSliderWithTooltip;
+// const RangeTooltip = createSliderWithTooltip(Slider.Range);
 
 class ProductList extends Component {
   static propTypes = {

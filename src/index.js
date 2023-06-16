@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { routerMiddleware } from "connected-react-router";
 import {createStore, applyMiddleware, compose} from 'redux';
 import { Provider } from 'react-redux';
@@ -13,6 +13,8 @@ import createRootReducer from './reducers';
 
 import { doInit } from "./actions/auth";
 import { createHashHistory } from "history";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const history = createHashHistory();
@@ -40,11 +42,11 @@ export const store = createStore(
 
 store.dispatch(doInit());
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
     <Provider store={store}>
         <App />
-    </Provider>,
-    document.getElementById('root')
+    </Provider>
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -12,7 +12,7 @@ import { ResponsiveCalendar } from '@nivo/calendar';
 import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveSunburst } from '@nivo/sunburst';
 import { ResponsiveRadar } from '@nivo/radar';
-import { ResponsiveCirclePackingCanvas } from '@nivo/circle-packing';
+import { ResponsiveCirclePacking } from '@nivo/circle-packing';
 import s from './nivocharts.module.scss';
 import Widget from '../../../components/Widget';
 import chartsData from './mock';
@@ -165,7 +165,7 @@ class NivoCharts extends Component {
                    >
                        <div style={{height: "40vh", width: "100%"}}>
                            <ResponsiveChord
-                               matrix={cd.matrix}
+                               data={cd.matrix}
                                keys={[ 'John', 'Raoul', 'Jane', 'Marcel', 'Ibrahim' ]}
                                margin={{ top: 60, right: 60, bottom: 90, left: 60 }}
                                valueFormat=".2f"
@@ -242,7 +242,7 @@ class NivoCharts extends Component {
                           legendOffset: 36
                       }}
                       axisLeft={{ orient: 'left', tickSize: 5, tickPadding: 5, tickRotation: 0, legend: '', legendOffset: -40 }}
-                      offsetType="silhouette"
+                      offsetType="expand"
                       colors={{ scheme: 'nivo' }}
                       fillOpacity={0.85}
                       borderColor={{ from: 'color', modifiers: [] }}
@@ -332,7 +332,7 @@ class NivoCharts extends Component {
                     customDropDown
                 >
                     <div style={{width: "100%", height: "30vh"}}>
-                        <ResponsiveCirclePackingCanvas
+                        <ResponsiveCirclePacking
                             data={cd.canvas}
                             margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
                             id="name"

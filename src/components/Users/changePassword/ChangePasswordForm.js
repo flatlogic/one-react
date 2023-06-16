@@ -25,6 +25,7 @@ class UsersForm extends Component {
         return (
             <Widget className="widget-p-md">
                 <Formik
+                    initialValues={{}}
                     onSubmit={this.handleSubmit}
                     render={(form) => {
                         return (
