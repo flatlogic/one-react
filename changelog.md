@@ -1,5 +1,11 @@
 # Changelog
+
+## [1.1.8] - 25/12/2023
+
+- Updated dependencies
+
 ## [1.1.7]
+
 ### Updated following dependencies:
     "react": "^16.14.0" - "^18.2.0",
     "react-dom": "^16.14.0" - "^18.2.0",

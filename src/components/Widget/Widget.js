@@ -411,7 +411,7 @@ class Widget extends React.Component {
               )}
             </div>
           )}
-          <AnimateHeight duration={500} height={height}>
+          {/*<AnimateHeight duration={500} height={height}>*/}
             <div className={`${s.widgetBody} widget-body ${bodyClass}`} style={{paddingTop: title ? '' : 23}}>
               {reloading || fetchingData ? (
                 <Loader className={s.widgetLoader} size={40} />
@@ -443,7 +443,7 @@ class Widget extends React.Component {
                 children
               )}
             </div>
-          </AnimateHeight>
+          {/*</AnimateHeight>*/}
         </section>
         {prompt && (
           <Modal isOpen={modal} toggle={this.toggleModal} id="news-close-modal">
