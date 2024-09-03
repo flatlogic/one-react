@@ -41,7 +41,7 @@ import messagesLightTheme from '../../images/theme-icons/light-navbar/message.sv
 import notifyLightTheme from '../../images/theme-icons/light-navbar/notification.svg'
 import lightSearch from '../../images/theme-icons/light-navbar/search.svg'
 
-import s from "./Header.module.scss"; // eslint-disable-line css-modules/no-unused-class
+import s from "./Header.module.scss";
 
 class Header extends React.Component {
   static propTypes = {
