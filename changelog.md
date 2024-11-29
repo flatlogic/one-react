@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.2.1] - 27/11/2024
+
+- Updated dependencies
+
 ## [1.2.0] - 06/09/2024
 
 - Added react-scripts version 5 along with webpack version 5 support.
