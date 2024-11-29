@@ -37,29 +37,40 @@ We have implemented some basic pages, so you can see our template in action.
 * Login
 * Error page
 
-## Instalation 
+## Quick Start
 
-1. Clone repository
+#### 1. Get the latest version
+
+You can start by cloning the latest version of One React on your
+local machine by running:
+
 ```shell
-git clone https://github.com/flatlogic/one-react-template
-```
-2. Get in the project folder
-```shell
-cd one-react-template
-```
-3. Install dependencies via npm or yarn
-```shell
-npm install
-```
-```shell
-yarn
+$ git clone https://github.com/flatlogic/one-react.git
 ```
 
-## Quick start
-Run development server
-```shell
-yarn run serve
-```
+#### 2. Run `yarn install`
+
+This will install both run-time project dependencies and developer tools listed
+in [package.json](package.json) file.
+
+#### 3. Run `yarn start`
+
+Runs the app in the development mode.
+
+Open http://localhost:3000 to view it in the browser. Whenever you modify any of the source files inside the `/src` folder,
+the module bundler ([Webpack](http://webpack.github.io/)) will recompile the
+app on the fly and refresh all the connected browsers.
+
+#### 3.1 Run `yarn start:backend`
+Runs the app in the development mode with node-backend
+
+#### 4. Run `yarn build`
+
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
 
 ## Support
 For any additional information please refer to [Flatlogic homepage](https://flatlogic.com).
