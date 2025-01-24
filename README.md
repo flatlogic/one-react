@@ -4,7 +4,7 @@
 
 **Originally a premium product priced at $69+, made available for free in January 2025!** 🎉
 
-[![image](https://user-images.githubusercontent.com/43149862/80715665-5d031c80-8aff-11ea-801b-dd22163b4874.png)](https://flatlogic.github.io/one-react-template/)
+[![image](https://user-images.githubusercontent.com/43149862/80715665-5d031c80-8aff-11ea-801b-dd22163b4874.png)](https://flatlogic.com/templates/one-react-template/demo)
 
 Looking for a perfect codebase generator for your Startup? Try [Flatlogic AI Web App Generator](https://flatlogic.com/generator) - our new tool, sort of a template++.
 
