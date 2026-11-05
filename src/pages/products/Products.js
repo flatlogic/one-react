@@ -132,7 +132,7 @@ class ProductList extends Component {
               <Label for="checkbox5">Hatchback</Label>
             </FormGroup>
             <div className={"text-right fs-sm text-muted pt-2"}>
-              View more >
+              View more &gt;
             </div>
             <hr />
             <small className={"fw-semi-bold"}>Price</small>
@@ -174,7 +174,7 @@ class ProductList extends Component {
               <Label for="checkbox10">Ford</Label>
             </FormGroup>
             <div className={"text-right fs-sm text-muted pt-2"}>
-              View more >
+              View more &gt;
             </div>
             <hr />
             <small className={"fw-semi-bold"}>Colour</small>
@@ -204,7 +204,7 @@ class ProductList extends Component {
               <Label for="checkbox15">Blue</Label>
             </FormGroup>
             <div className={"text-right fs-sm text-muted pt-2"}>
-              View more >
+              View more &gt;
             </div>
             <hr />
             <small className={"fw-semi-bold"}>Year</small>
@@ -234,7 +234,7 @@ class ProductList extends Component {
               <Label for="checkbox20">2017</Label>
             </FormGroup>
             <div className={"text-right fs-sm text-muted pt-2"}>
-              View more >
+              View more &gt;
             </div>
             <hr />
             <small className={"fw-semi-bold"}>Rating</small>
@@ -322,7 +322,7 @@ class ProductList extends Component {
               </Label>
             </FormGroup>
             <div className={"text-right fs-sm text-muted pt-2"}>
-              View more >
+              View more &gt;
             </div>
             <Button color={"danger"} outline className={"mt-3 w-100"} style={{fontSize: 12}}>remove filters</Button>
           </Widget>

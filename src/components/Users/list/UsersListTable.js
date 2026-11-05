@@ -92,7 +92,7 @@ class UsersListTable extends Component {
                             bordered={false}
                             data={rows.filter(row => Object.values(row).some(value => typeof value !== 'object' && String(value).toLowerCase().includes(this.state.search.toLowerCase())))}
                             columns={[
-                                { dataField: "avatars", text: "Avatar", sort: true, formatter: dataFormat.imageFormatter },
+                                { dataField: "avatars", text: "Avatar", sort: true, formatter: (cell, row, rowIndex) => dataFormat.imageFormatter(cell, row, null, rowIndex) },
                                 { dataField: "firstName", text: "First Name", sort: true },
                                 { dataField: "lastName", text: "Last Name", sort: true },
                                 { dataField: "phoneNumber", text: "Phone Number", sort: true },
