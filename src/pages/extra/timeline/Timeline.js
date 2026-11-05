@@ -1,10 +1,5 @@
 import React from "react";
-import {
-    withGoogleMap,
-    withScriptjs,
-    GoogleMap,
-    Marker,
-} from "react-google-maps";
+import { LoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 
 import s from "./Timeline.module.scss";
 
@@ -28,12 +23,12 @@ import tn6 from "../../../images/people/tn6.png";
 // import i4 from "../../../images/search/13.jpg";
 import cardsData from "./mock";
 
-const BasicMap = withScriptjs(
-    withGoogleMap(() => (
-        <GoogleMap
-            defaultZoom={8}
-            defaultCenter={{lat: 51, lng: 7}}
-            defaultOptions={{
+const BasicMap = () => (
+  <LoadScript googleMapsApiKey="AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg">
+    <GoogleMap mapContainerStyle={{ height: "100%", width: "100%" }}
+            zoom={8}
+            center={{lat: 51, lng: 7}}
+            options={{
                 mapTypeControl: false,
                 fullscreenControl: false,
                 gestureHandling: "greedy",
@@ -41,7 +36,7 @@ const BasicMap = withScriptjs(
         >
             <Marker position={{lat: 51, lng: 7}} draggable/>
         </GoogleMap>
-    ))
+  </LoadScript>
 );
 
 
@@ -67,12 +62,7 @@ const WriteComment = () => {
 const MapBox = () => {
     return (
         <div className={s.eventMap}>
-            <BasicMap
-                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg"
-                loadingElement={<div style={{height: "200px", width: "100%"}}/>}
-                containerElement={<div style={{height: "200px"}}/>}
-                mapElement={<div style={{height: "200px"}}/>}
-            />
+            <BasicMap />
         </div>
     );
 };

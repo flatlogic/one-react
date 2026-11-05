@@ -1,26 +1,21 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
-import {
-  withGoogleMap,
-  withScriptjs,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import { LoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 
 import Widget from "../../components/Widget";
 
-const BasicMap = withScriptjs(
-  withGoogleMap(() => (
-    <GoogleMap
-      defaultZoom={12}
-      defaultCenter={{
+const BasicMap = () => (
+  <LoadScript googleMapsApiKey="AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg">
+    <GoogleMap mapContainerStyle={{ height: "100%", width: "100%" }}
+      zoom={12}
+      center={{
         lat: parseFloat(-37.813179),
         lng: parseFloat(144.950259)
       }}
     >
       <Marker position={{ lat: -37.813179, lng: 144.950259 }} />
     </GoogleMap>
-  ))
+  </LoadScript>
 );
 
 class Maps extends React.Component {
@@ -41,12 +36,7 @@ class Maps extends React.Component {
                     margin: '0 -30px -30px'
                 }}
               >
-                <BasicMap
-                  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB7OXmzfQYua_1LEhRdqsoYzyJOPh9hGLg"
-                  loadingElement={<div style={{ height: 'inherit', width: 'inherit' }} />}
-                  containerElement={<div style={{ height: 'inherit' }} />}
-                  mapElement={<div style={{ height: 'inherit' }} />}
-                />
+                <BasicMap />
               </div>
             </Widget>
           </Col>
