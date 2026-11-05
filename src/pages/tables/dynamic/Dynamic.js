@@ -5,19 +5,19 @@ import ReactTable from "react-table";
 
 import { reactTableData, reactBootstrapTableData } from "./data";
 import Widget from "../../../components/Widget";
-import s from "./Dynamic.modules.scss";
+import s from "./Dynamic.module.scss";
 
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
-import ToolkitProvider, { Search } from "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit"
 
-const { SearchBar } = Search;
+
 
 export default class Dynamic extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      search: '',
       reactTable: reactTableData(),
       reactBootstrapTable: reactBootstrapTableData(),
     };
@@ -125,26 +125,10 @@ export default class Dynamic extends React.Component {
             </a>
           </p>
 
-          <ToolkitProvider
-              keyField="id"
-              data={this.state.reactBootstrapTable}
-              columns={ columns }
-              search
-          >
-            {
-              props => (
-                  <div>
-                    <div className="mb-sm-5 offset-md-8" style={{float: 'right'}}>
-                      <SearchBar { ...props.searchProps } />
-                    </div>
-
-                    <BootstrapTable bootstrap4 class="table table-responsive table-striped table-hover"  pagination={ paginationFactory(options)} keyField='id' data={this.state.reactBootstrapTable} columns={ columns }
-                                    { ...props.baseProps }
-                    />
-                  </div>
-              )
-            }
-          </ToolkitProvider>
+          <input className="form-control mb-3" aria-label="Search table" placeholder="Search" value={this.state.search} onChange={event => this.setState({ search: event.target.value })} />
+          <BootstrapTable bootstrap4 wrapperClasses="table-responsive" classes="table-striped table-hover" pagination={paginationFactory(options)} keyField="id" columns={columns}
+            data={this.state.reactBootstrapTable.filter(row => Object.values(row).some(value => typeof value !== 'object' && String(value).toLowerCase().includes(this.state.search.toLowerCase())))}
+          />
         </Widget>
 
         <Widget

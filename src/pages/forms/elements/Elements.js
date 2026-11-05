@@ -16,8 +16,7 @@ import {
   DropdownItem,
   DropdownToggle,
 } from "reactstrap"
-import { Editor } from "react-draft-wysiwyg"
-import { EditorState } from "draft-js"
+import Editor from "../../../components/RichTextEditor";
 import Select from "react-select"
 import Datetime from "react-datetime"
 import ColorPicker from "rc-color-picker"
@@ -25,7 +24,11 @@ import MaskedInput from "react-maskedinput"
 import Slider, { Range, createSliderWithTooltip } from "rc-slider"
 import Dropzone from "react-dropzone"
 import TextareaAutosize from "react-autosize-textarea"
-import ReactMde, { ReactMdeCommands } from "react-mde"
+import ReactMde from "react-mde";
+import "react-mde/lib/styles/css/react-mde-all.css";
+import MarkdownIt from "markdown-it";
+import taskLists from "markdown-it-task-lists";
+import DOMPurify from "dompurify";
 
 import Widget from "../../../components/Widget"
 
@@ -40,6 +43,8 @@ const RangeTooltip = createSliderWithTooltip(Range)
 // const SliderWithTooltip = createSliderWithTooltip(Slider);
 // const RangeTooltip = createSliderWithTooltip(Slider.Range);
 
+const markdown = new MarkdownIt({ html: true, linkify: true }).use(taskLists);
+
 class Elements extends React.Component {
   constructor(props) {
     super(props)
@@ -51,7 +56,6 @@ class Elements extends React.Component {
       orangeSelectDropdownValue: "Shi",
       redSelectDropdownValue: "Ichi",
       bigSelectDropdownValue: "Fourth Item",
-      editorState: EditorState.createEmpty(),
       selectGroupData: [
         {
           label: "NFC EAST",
@@ -89,22 +93,12 @@ class Elements extends React.Component {
       groupSelectVal: "",
       colorpickerValue: "#ff0000",
       colorpickerInputValue: "#ff0000",
-      isDatePickerOpen: false,
-      isTimePickerOpen: false,
       dropFiles: [],
       inputFiles: [],
       imageFiles: [],
-      reactMdeValue: {
-        text: "",
-        selection: null,
-      },
+      reactMdeValue: '',
+      markdownTab: 'write',
     }
-  }
-
-  onEditorStateChange(editorState) {
-    this.setState({
-      editorState,
-    })
   }
 
   onDrop(files) {
@@ -590,7 +584,9 @@ class Elements extends React.Component {
                       }}
                       value={this.state.reactMdeValue}
                       onChange={this.handleValueChange}
-                      commands={ReactMdeCommands.getDefaultCommands()}
+                      selectedTab={this.state.markdownTab}
+                      onTabChange={markdownTab => this.setState({ markdownTab })}
+                      generateMarkdownPreview={text => Promise.resolve(DOMPurify.sanitize(markdown.render(text)))}
                     />
                   </Col>
                 </FormGroup>
@@ -909,8 +905,7 @@ class Elements extends React.Component {
                       <div className="datepicker" style={{ display: "flex" }}>
                         <Datetime
                           id="datepicker"
-                          open={this.state.isDatePickerOpen}
-                          viewMode="days"
+                          initialViewMode="days"
                           timeFormat={false}
                           inputProps={{
                             ref: (input) => {
@@ -933,14 +928,13 @@ class Elements extends React.Component {
                     <Col xs="6">
                       <div className="datepicker" style={{ display: "flex" }}>
                         <Datetime
-                          open={this.state.isTimePickerOpen}
                           id="timepicker"
                           inputProps={{
                             ref: (input) => {
                               this.refTimePicker = input
                             },
                           }}
-                          viewMode="time"
+                          initialViewMode="time"
                           dateFormat={false}
                         />
                         <InputGroupAddon

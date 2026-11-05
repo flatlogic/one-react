@@ -8,7 +8,7 @@ import TextareaAutosize from "react-autosize-textarea"
 import DateTime from "react-datetime"
 import Slider, { createSliderWithTooltip } from "rc-slider"
 import Select from "react-select"
-import { Editor } from "react-draft-wysiwyg"
+import Editor from "../../components/RichTextEditor";
 import MaskedInput from "react-maskedinput"
 import Scrollspy from "./ScrollSpyComponent"
 import { Link } from "react-router-dom"
@@ -253,7 +253,7 @@ export default class Libs extends Component {
           <Widget id="React-Autosize-Textarea">
             <h3>react-autosize-textarea</h3>
             <p>
-              A light replacement for built-in <code>&lt;textarea /></code> component which automatically adjusts its height to match the
+              A light replacement for built-in <code>&lt;textarea /&gt;</code> component which automatically adjusts its height to match the
               content.
             </p>
             <TextareaAutosize placeholder="Try to type" />
@@ -297,13 +297,13 @@ export default class Libs extends Component {
             </p>
           </Widget>
           <Widget id="React-Draft-Wysiwyg">
-            <h3>React-draft-wysiwyg</h3>
-            <p>A Wysiwyg editor built using ReactJS and DraftJS libraries</p>
+            <h3>Rich text editor</h3>
+            <p>A rich text editor built with Tiptap, supporting text formatting, links, images, and sandboxed HTTPS embeds.</p>
             <Editor />
             <p>
               For more examples and documentation please refer to{" "}
-              <a href="https://github.com/jpuri/react-draft-wysiwyg" target="_blank" rel="noopener noreferrer">
-                React Wysiwyg
+              <a href="https://tiptap.dev/docs/editor/getting-started/overview" target="_blank" rel="noopener noreferrer">
+                Tiptap
               </a>
             </p>
           </Widget>
@@ -323,7 +323,7 @@ export default class Libs extends Component {
           <Widget id="React-Maskedinput">
             <h3>React-maskedinput</h3>
             <p>
-              A React component for <code>&lt;input></code> masking, built on top of inputmask-core.
+              A React component for <code>&lt;input&gt;</code> masking, built on top of inputmask-core.
             </p>
             <div style={{ width: "200px" }}>
               <MaskedInput mask="1111 1111 1111 1111" name="card" size="20" className="form-control" />

@@ -5,20 +5,15 @@ import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
 
 import {
-    DropdownMenu,
-    DropdownToggle,
-    DropdownItem,
     Button,
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter, ButtonDropdown,
+    ModalFooter,
 } from 'reactstrap';
 
-import {
-    BootstrapTable,
-    TableHeaderColumn,
-} from 'react-bootstrap-table';
+import BootstrapTable from 'react-bootstrap-table-next';
+import paginationFactory from 'react-bootstrap-table2-paginator';
 
 import Widget from 'components/Widget';
 
@@ -26,6 +21,7 @@ import s from '../Users.module.scss';
 
 class UsersListTable extends Component {
     state = {
+        search: '',
         modalOpen: false,
         idToDelete: null,
     }
@@ -80,73 +76,35 @@ class UsersListTable extends Component {
         dispatch(actions.doFetch({}));
     }
 
-    renderSizePerPageDropDown = (props) => {
-        const limits = [];
-        props.sizePerPageList.forEach((limit) => {
-            limits.push(<DropdownItem key={limit} onClick={() => props.changeSizePerPage(limit)}>{ limit }</DropdownItem>);
-        });
-
-        return (
-            <ButtonDropdown isOpen={props.open} toggle={props.toggleDropDown}>
-                <DropdownToggle color="default" caret>
-                    { props.currSizePerPage }
-                </DropdownToggle>
-                <DropdownMenu>
-                    { limits }
-                </DropdownMenu>
-            </ButtonDropdown>
-        );
-    };
-
     render() {
         const {
             rows
         } = this.props;
-
-        const options = {
-            sizePerPage: 10,
-            paginationSize: 5,
-            sizePerPageDropDown: this.renderSizePerPageDropDown,
-        };
 
         return (
             <div>
                 <Widget className="widget-padding-md" collapse close>
                     <p className="headline-1">Users</p>
                     <div className={s.usersTableWrapper}>
-                        <BootstrapTable bordered={false} data={rows} version="4" pagination options={options} search  className="table-responsive" tableContainerClass={`table-responsive table-striped table-hover ${s.usersListTableMobile}`}>
-                            <TableHeaderColumn dataField="avatars" dataSort dataFormat={dataFormat.imageFormatter}>
-                                <span className="fs-sm">Avatar</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn dataField="firstName" dataSort>
-                                <span className="fs-sm">First Name</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn dataField="lastName" dataSort>
-                                <span className="fs-sm">Last Name</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn dataField="phoneNumber" dataSort>
-                                <span className="fs-sm">Phone Number</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn dataField="email" dataSort>
-                                <span className="fs-sm">E-mail</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn dataField="role" dataSort>
-                                <span className="fs-sm">Role</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn dataField="disabled" dataSort dataFormat={dataFormat.booleanFormatter}>
-                                <span className="fs-sm">Disabled</span>
-                            </TableHeaderColumn>
-
-                            <TableHeaderColumn isKey dataField="id" dataFormat={this.actionFormatter.bind(this)}>
-                                <span className="fs-sm">Actions</span>
-                            </TableHeaderColumn>
-                        </BootstrapTable>
+                        <input className="form-control my-3" aria-label="Search users" placeholder="Search" value={this.state.search} onChange={event => this.setState({ search: event.target.value })} />
+                        <BootstrapTable
+                            keyField="id"
+                            bordered={false}
+                            data={rows.filter(row => Object.values(row).some(value => typeof value !== 'object' && String(value).toLowerCase().includes(this.state.search.toLowerCase())))}
+                            columns={[
+                                { dataField: "avatars", text: "Avatar", sort: true, formatter: dataFormat.imageFormatter },
+                                { dataField: "firstName", text: "First Name", sort: true },
+                                { dataField: "lastName", text: "Last Name", sort: true },
+                                { dataField: "phoneNumber", text: "Phone Number", sort: true },
+                                { dataField: "email", text: "E-mail", sort: true },
+                                { dataField: "role", text: "Role", sort: true },
+                                { dataField: "disabled", text: "Disabled", sort: true, formatter: dataFormat.booleanFormatter },
+                                { dataField: "id", text: "Actions", formatter: this.actionFormatter.bind(this) },
+                            ]}
+                            pagination={paginationFactory({ sizePerPage: 10, paginationSize: 5, sizePerPageList: [10, 25, 30, 50] })}
+                            wrapperClasses={`table-responsive ${s.usersListTableMobile}`}
+                            classes="table-striped table-hover"
+                        />
                     </div>
                 </Widget>
 

@@ -27,30 +27,36 @@ Looking for a perfect codebase generator for your Startup? Try [Flatlogic AI Web
    ```
 2. **Install dependencies**  
    ```bash
-   yarn install  # Or npm install
+   npm ci --legacy-peer-deps
    ```
 3. **Run the app**  
    ```bash
-   yarn start
+   npm start
    ```
-   Navigate to http://localhost:3000/.
+   Navigate to http://localhost:5173/.
 
 4. **Backend Support**  
    ```bash
-   yarn start:backend
+   npm run start:backend
    ```
 
 5. **Build for production**  
    ```bash
-   yarn build
+   npm run build
    ```
+
+Use Node.js 22.12 or newer. `package-lock.json` is the canonical dependency lock. The explicit legacy peer flag preserves existing React 18 / connected-react-router / Bootstrap 4 integration; several legacy libraries publish older React peer ranges. No global npm peer bypass is configured.
+
+`npm run build` writes `build/`; `npm run preview` serves that production output. `npm test` runs JWT/URL/cache isolation checks and real Chrome regressions (local Google Chrome required). Use `PLAYWRIGHT_DEV=1 npm test` for the development server. Tests mock authentication and API responses; they exercise navigation, user actions, tables, charts, the rich text/Markdown editors, date inputs, tree dragging, calendar, and logout.
+
+The `docs/` demo contains the same production build, with relative asset URLs for GitHub Pages. After changing the app, replace its generated output from `build/`, preserving deployment metadata. `PLAYWRIGHT_DOCS=1 npm test` checks the `/one-react/` base and retirement of the old scoped service worker. The retirement worker clears only responses within its own app scope and unregisters itself; other apps on the same origin retain their cached responses.
 
 ---
 
 ## 🧩 Features
 
 - Fully Responsive Layout
-- React 16
+- React 18
 - Bootstrap 4
 - Redux State Management
 - Beautiful Charts (Amcharts, Echarts, Apexcharts)
@@ -61,10 +67,10 @@ Looking for a perfect codebase generator for your Startup? Try [Flatlogic AI Web
 ---
 
 ## 🛠 Built With
-- React 16
+- React 18
 - Bootstrap 4
 - Redux
-- Webpack
+- Vite 8
 - JavaScript (ES6)
 
 ---

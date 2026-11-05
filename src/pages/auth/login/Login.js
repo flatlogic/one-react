@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 import { Alert, Button, Label, Input, FormGroup } from "reactstrap";
 import Widget from "../../../components/Widget";
 import {doInit, loginUser, receiveToken} from "../../../actions/auth";
-import jwt from "jsonwebtoken";
+import decodeToken from "../../../helpers/decodeToken.mjs";
 import s from './Login.module.scss';
 import signInImg from "../../../images/signinImg.svg";
 import img1 from "../../../images/Vector-1.svg";
@@ -25,7 +25,7 @@ class Login extends React.Component {
     if (!config.isBackend && token) return true;
     if (!token) return;
     const date = new Date().getTime() / 1000;
-    const data = jwt.decode(token);
+    const data = decodeToken(token);
     if(!data) return;
     return date < data.exp;
   }

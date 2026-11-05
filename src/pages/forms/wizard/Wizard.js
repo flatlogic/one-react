@@ -123,7 +123,7 @@ const StepsComponents = {
             <Datetime
               id="datepicker"
               open={props.isDatePickerOpen} //eslint-disable-line
-              viewMode="days"
+              initialViewMode="days"
             />
           </div>
         </FormGroup>

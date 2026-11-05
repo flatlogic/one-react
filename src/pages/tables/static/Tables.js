@@ -1,3 +1,8 @@
+import tablePicture0 from "../../../images/tables/1.png";
+import tablePicture1 from "../../../images/tables/2.png";
+import tablePicture2 from "../../../images/tables/3.png";
+import tablePicture3 from "../../../images/tables/4.png";
+import tablePicture4 from "../../../images/tables/5.png";
 import React from "react";
 import {
   Row,
@@ -16,7 +21,7 @@ import {
 import { Sparklines, SparklinesBars } from "react-sparklines";
 
 import Widget from "../../../components/Widget";
-import s from "./Tables.modules.scss";
+import s from "./Tables.module.scss";
 
 class Tables extends React.Component {
   constructor(props) {
@@ -26,7 +31,7 @@ class Tables extends React.Component {
       tableStyles: [
         {
           id: 1,
-          picture: require("../../../images/tables/1.png"), // eslint-disable-line global-require
+          picture: tablePicture0, // eslint-disable-line global-require
           description: "Palo Alto",
           info: {
             type: "JPEG",
@@ -41,7 +46,7 @@ class Tables extends React.Component {
         },
         {
           id: 2,
-          picture: require("../../../images/tables/2.png"), // eslint-disable-line global-require
+          picture: tablePicture1, // eslint-disable-line global-require
           description: "The Sky",
           info: {
             type: "PSD",
@@ -56,7 +61,7 @@ class Tables extends React.Component {
         },
         {
           id: 3,
-          picture: require("../../../images/tables/3.png"), // eslint-disable-line global-require
+          picture: tablePicture2, // eslint-disable-line global-require
           description: "Down the road",
           label: {
             colorClass: "info",
@@ -75,7 +80,7 @@ class Tables extends React.Component {
         },
         {
           id: 4,
-          picture: require("../../../images/tables/4.png"), // eslint-disable-line global-require
+          picture: tablePicture3, // eslint-disable-line global-require
           description: "The Edge",
           info: {
             type: "PNG",
@@ -90,7 +95,7 @@ class Tables extends React.Component {
         },
         {
           id: 5,
-          picture: require("../../../images/tables/5.png"), // eslint-disable-line global-require
+          picture: tablePicture4, // eslint-disable-line global-require
           description: "Fortress",
           info: {
             type: "JPEG",
